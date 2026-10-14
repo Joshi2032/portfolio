@@ -1,0 +1,194 @@
+import { useEffect, useRef, useState } from "react";
+
+const STORAGE_KEY = "portfolio-lang";
+
+export function useLanguageState() {
+  const [lang, setLangState] = useState(() => {
+    try {
+      return localStorage.getItem(STORAGE_KEY) === "en" ? "en" : "es";
+    } catch {
+      return "es";
+    }
+  });
+
+  const setLang = (next) => {
+    const value = next === "en" ? "en" : "es";
+    setLangState(value);
+    try {
+      localStorage.setItem(STORAGE_KEY, value);
+    } catch {
+      /* private mode */
+    }
+  };
+
+  return { lang, setLang };
+}
+
+export function useDocumentMeta(lang, meta) {
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    document.title = meta.title;
+    const description = document.querySelector('meta[name="description"]');
+    if (description) description.setAttribute("content", meta.description);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogTitle) ogTitle.setAttribute("content", meta.title);
+    if (ogDescription) ogDescription.setAttribute("content", meta.description);
+  }, [lang, meta]);
+}
+
+export function useScrollProgress(ref) {
+  useEffect(() => {
+    const supported = window.CSS?.supports?.("animation-timeline: scroll()");
+    if (supported) return undefined;
+
+    const bar = ref.current;
+    if (!bar) return undefined;
+
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? window.scrollY / max : 0;
+      bar.style.transform = `scaleX(${Math.min(1, Math.max(0, ratio))})`;
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [ref]);
+}
+
+export function useScrollHeader() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return scrolled;
+}
+
+export function useActiveSection(ids) {
+  const [current, setCurrent] = useState(ids[0]);
+
+  useEffect(() => {
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setCurrent(entry.target.id);
+      });
+    }, { rootMargin: "-45% 0px -48% 0px" });
+
+    sections.forEach((section) => spy.observe(section));
+    return () => spy.disconnect();
+  }, [ids]);
+
+  return current;
+}
+
+export function useMobileMenu(isCompactNav) {
+  const [open, setOpen] = useState(false);
+  const toggleRef = useRef(null);
+  const navRef = useRef(null);
+  const restoreFocus = useRef(false);
+  const keepScroll = useRef(false);
+
+  const close = ({ followLink = false } = {}) => {
+    keepScroll.current = followLink;
+    restoreFocus.current = true;
+    setOpen(false);
+  };
+
+  const toggle = () => {
+    if (open) restoreFocus.current = true;
+    setOpen((value) => !value);
+  };
+
+  useEffect(() => {
+    if (isCompactNav) return;
+    restoreFocus.current = false;
+    keepScroll.current = false;
+    setOpen(false);
+  }, [isCompactNav]);
+
+  useEffect(() => {
+    if (open || !restoreFocus.current) return;
+    restoreFocus.current = false;
+    toggleRef.current?.focus({ preventScroll: true });
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const root = document.documentElement;
+    const { body } = document;
+    const scrollY = window.scrollY;
+
+    root.classList.add("menu-open");
+    body.classList.add("menu-open");
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
+
+    const onKey = (event) => {
+      if (event.key === "Escape") {
+        close();
+        return;
+      }
+      if (event.key !== "Tab") return;
+
+      const nav = navRef.current;
+      const toggleButton = toggleRef.current;
+      if (!nav || !toggleButton) return;
+
+      const items = [...nav.querySelectorAll("a[href]"), toggleButton];
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (!first || !last) return;
+
+      const active = document.activeElement;
+      const inside = items.includes(active);
+      if (event.shiftKey && (active === first || !inside)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && (active === last || !inside)) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", onKey);
+    return () => {
+      const followLink = keepScroll.current;
+      keepScroll.current = false;
+      root.classList.remove("menu-open");
+      body.classList.remove("menu-open");
+      body.style.position = "";
+      body.style.top = "";
+      body.style.left = "";
+      body.style.right = "";
+      body.style.width = "";
+      document.removeEventListener("keydown", onKey);
+
+      if (followLink) {
+        const target = document.getElementById(window.location.hash.slice(1));
+        target?.scrollIntoView();
+        return;
+      }
+      window.scrollTo({ top: scrollY, behavior: "instant" });
+    };
+  }, [open]);
+
+  return { open, toggleRef, navRef, toggle, close };
+}

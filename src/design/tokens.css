@@ -1,0 +1,15 @@
+:root {
+  --bg: #10120e;
+  --bg-2: #171a14;
+  --ink: #f4f0e6;
+  --muted: #b7b2a6;
+  --faint: #8f8a7e;
+  --line: rgba(244, 240, 230, 0.14);
+  --accent: #e2ff57;
+  --ink-on-accent: #15170f;
+  --serif: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif;
+  --sans: "Outfit", "Segoe UI", sans-serif;
+  --header: 76px;
+  color-scheme: dark;
+}
+

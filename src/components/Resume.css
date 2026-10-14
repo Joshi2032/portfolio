@@ -1,0 +1,46 @@
+.cv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.cv-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem 1.3rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(23, 26, 20, 0.65);
+  text-decoration: none;
+}
+
+.cv-card span {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cv-card strong {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.45rem, 2vw, 1.9rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.cv-card em {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-style: normal;
+  font-size: 0.95rem;
+}
+
+.cv-card:hover { border-color: rgba(226, 255, 87, 0.45); }
+.cv-card:hover em { color: var(--accent); }
+
+@media (max-width: bp-tablet) {
+  .cv-grid { grid-template-columns: 1fr; }
+}

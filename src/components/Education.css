@@ -1,0 +1,59 @@
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr;
+  gap: 1rem;
+}
+
+.edu-card {
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(23, 26, 20, 0.65);
+}
+
+.edu-card .when,
+.edu-note {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.edu-card h3,
+.lang-row h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.edu-card h3 {
+  margin: 0.35rem 0 0.55rem;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  line-height: 1.12;
+}
+
+.edu-card p:last-child { color: var(--muted); }
+
+.lang-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.lang-row h3 { font-size: 1.4rem; }
+
+.lang-row p { color: var(--muted); }
+
+@media (max-width: bp-tablet) {
+  .edu-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: bp-compact) {
+  .lang-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
