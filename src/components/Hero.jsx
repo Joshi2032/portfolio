@@ -42,7 +42,6 @@ export function Hero() {
               </li>
             ))}
           </ul>
-          <p className="dossier-foot">{text.dossier.foot}</p>
         </aside>
       </div>
       <div className="wrap">

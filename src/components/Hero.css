@@ -109,17 +109,9 @@ h1 em {
 
 .dossier li span { font-weight: 560; }
 
-.dossier li small,
-.dossier-foot {
+.dossier li small {
   color: var(--muted);
   font-size: 0.92rem;
-}
-
-.dossier-foot {
-  margin-top: 0.2rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--line);
-  font-size: 0.88rem;
 }
 
 .metrics {

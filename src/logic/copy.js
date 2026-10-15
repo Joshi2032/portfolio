@@ -19,7 +19,7 @@ export const copy = {
     hero: {
       kicker: "La Piedad, Michoacán",
       role: "Full Stack Developer · Flutter · IA aplicada",
-      lede: "Agentes de IA para procesos industriales y sistemas de operación en Flutter. Del ajuste con QLoRA a la app que usa el equipo.",
+      lede: "Agentes de IA para procesos industriales y sistemas de operación en Flutter.",
       primary: "Ver proyectos",
       cv: "Descargar CV",
       secondary: "Contactar",
@@ -31,7 +31,6 @@ export const copy = {
         { title: "Full Stack freelance", detail: "Dic 2025 – Presente · tiempo parcial" },
         { title: "Prácticas concluidas", detail: "Mitsubishi Electric · Enjo-it" },
       ],
-      foot: "Ingeniería en TIC · TecNM La Piedad · titulación estimada ene–feb 2027",
     },
     metrics: [
       { value: "40–80 h → 10 min", label: "Preparar render, planos y cotización" },
@@ -285,7 +284,7 @@ export const copy = {
     hero: {
       kicker: "La Piedad, Michoacán, Mexico",
       role: "Full Stack Developer · Flutter · Applied AI",
-      lede: "AI agents for industrial processes and operational systems in Flutter. From a QLoRA fine-tune to the app the team actually uses.",
+      lede: "AI agents for industrial processes and operational systems in Flutter.",
       primary: "View projects",
       cv: "Download CV",
       secondary: "Contact",
@@ -297,7 +296,6 @@ export const copy = {
         { title: "Full Stack freelance", detail: "Dec 2025 – Present · part-time" },
         { title: "Completed internships", detail: "Mitsubishi Electric · Enjo-it" },
       ],
-      foot: "B.S. in ICT · TecNM La Piedad · expected graduation Jan–Feb 2027",
     },
     metrics: [
       { value: "40–80 h → 10 min", label: "Prepare the render, drawings, and quotation" },

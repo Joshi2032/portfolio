@@ -72,6 +72,19 @@ function ProjectAlongside({ work }) {
   );
 }
 
+function showWithoutScroll(dialog) {
+  const top = window.scrollY;
+  const root = document.documentElement;
+  const previous = root.style.scrollBehavior;
+  root.style.scrollBehavior = "auto";
+  dialog.showModal();
+  window.scrollTo(0, top);
+  requestAnimationFrame(() => {
+    window.scrollTo(0, top);
+    root.style.scrollBehavior = previous;
+  });
+}
+
 function ProjectShots({ details, onOpen }) {
   return (
     <figure className="shots">
@@ -122,7 +135,7 @@ export function Projects() {
   useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog || !openId) return undefined;
-    dialog.showModal();
+    showWithoutScroll(dialog);
     return () => {
       if (!dialog.open) return;
       closingFromCleanup.current = true;
@@ -134,7 +147,7 @@ export function Projects() {
   useEffect(() => {
     const dialog = shotRef.current;
     if (!dialog || shotIndex == null) return undefined;
-    dialog.showModal();
+    showWithoutScroll(dialog);
     return () => {
       if (!dialog.open) return;
       shotCleanup.current = true;
