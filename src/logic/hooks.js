@@ -2,23 +2,41 @@ import { useEffect, useRef, useState } from "react";
 
 const STORAGE_KEY = "portfolio-lang";
 
-export function useLanguageState() {
-  const [lang, setLangState] = useState(() => {
-    try {
-      return localStorage.getItem(STORAGE_KEY) === "en" ? "en" : "es";
-    } catch {
-      return "es";
-    }
-  });
+function readLang() {
+  const param = new URLSearchParams(window.location.search).get("lang");
+  if (param === "en" || param === "es") return param;
+  try {
+    return localStorage.getItem(STORAGE_KEY) === "en" ? "en" : "es";
+  } catch {
+    return "es";
+  }
+}
 
-  const setLang = (next) => {
-    const value = next === "en" ? "en" : "es";
-    setLangState(value);
+function writeLangUrl(value) {
+  const url = new URL(window.location.href);
+  if (value === "en") url.searchParams.set("lang", "en");
+  else url.searchParams.delete("lang");
+  const next = `${url.pathname}${url.search}${url.hash}`;
+  const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+  if (next !== current) history.replaceState(null, "", next);
+}
+
+export function useLanguageState() {
+  const [lang, setLangState] = useState(readLang);
+
+  useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, value);
+      localStorage.setItem(STORAGE_KEY, lang);
     } catch {
       /* private mode */
     }
+    if (lang === "en") writeLangUrl("en");
+  }, [lang]);
+
+  const setLang = (next) => {
+    const value = next === "en" ? "en" : "es";
+    if (value === "es") writeLangUrl("es");
+    setLangState(value);
   };
 
   return { lang, setLang };

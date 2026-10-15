@@ -12,6 +12,13 @@
   font-size: 0.95rem;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  align-items: baseline;
+}
+
 .footer-bar a { color: var(--ink); }
 
 @media (max-width: bp-compact) {

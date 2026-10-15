@@ -22,6 +22,7 @@ export function Contact() {
   const contact = text.contact;
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
+  const [missing, setMissing] = useState(false);
   const nameId = useId();
   const messageId = useId();
   const draft = [
@@ -36,7 +37,14 @@ export function Contact() {
   function onSend(event) {
     if (message.trim()) return;
     event.preventDefault();
+    setMissing(true);
     document.getElementById(messageId)?.focus();
+  }
+
+  function onMessage(event) {
+    const value = event.target.value;
+    setMessage(value);
+    if (value.trim()) setMissing(false);
   }
 
   return (
@@ -87,8 +95,13 @@ export function Contact() {
                 rows={5}
                 placeholder={contact.messagePlaceholder}
                 value={message}
-                onChange={(event) => setMessage(event.target.value)}
+                aria-invalid={missing || undefined}
+                aria-describedby={missing ? `${messageId}-error` : undefined}
+                onChange={onMessage}
               />
+              {missing ? (
+                <p className="contact-error" id={`${messageId}-error`} role="alert">{contact.messageMissing}</p>
+              ) : null}
               <div className="contact-actions">
                 <a className="btn btn-primary" href={mailHref} onClick={onSend}>{contact.send}</a>
                 <a className="btn btn-ghost" href={whatsappHref} target="_blank" rel="noreferrer">{contact.whatsapp}</a>

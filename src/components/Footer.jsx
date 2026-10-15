@@ -9,7 +9,11 @@ export function Footer({ inert }) {
       <div className="wrap footer-bar">
         <p>Josué Isaí Salazar Castro</p>
         <p>{text.footer}</p>
-        <a href="mailto:joshi.jc2032@gmail.com">joshi.jc2032@gmail.com</a>
+        <div className="footer-links">
+          <a href="mailto:joshi.jc2032@gmail.com">joshi.jc2032@gmail.com</a>
+          <a href="https://github.com/Joshi2032?tab=repositories" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/josue-isai-salazar-castro-47600a227/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
       </div>
     </footer>
   );
