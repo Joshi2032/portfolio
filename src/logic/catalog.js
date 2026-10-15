@@ -1,14 +1,13 @@
-export const sectionIds = ["proyectos", "experiencia", "stack", "formacion", "cv", "contacto"];
+export const sectionIds = ["proyectos", "stack", "formacion", "cv", "contacto"];
 
 export const projectOrder = [
-  { id: "ensamble", tags: ["ia"], plate: "plate-ia", index: "01", org: "PM" },
+  { id: "ensamble", tags: ["ia", "flutter"], plate: "plate-ia", index: "01", org: "PM" },
   { id: "restaurantes", tags: ["flutter"], plate: "plate-food", index: "02", org: "Flutter + Supabase" },
   { id: "maxifum", tags: ["flutter", "ia"], plate: "plate-ops", index: "03", org: "MAXIFUM" },
   { id: "kaizen", tags: ["csharp"], plate: "plate-plant", index: "04", org: "Mitsubishi Electric" },
   { id: "sap", tags: ["sap"], plate: "plate-cloud", index: "05", org: "Enjo-it" },
   { id: "aguacate", tags: ["ia", "flutter"], plate: "plate-avo", index: "06", org: "YOLO26n" },
   { id: "tienda", tags: ["flutter"], plate: "plate-shop", index: "07", org: "Flutter + NestJS" },
-  { id: "plataforma", tags: ["flutter"], plate: "plate-board", index: "08", org: "Flutter + Supabase" },
 ];
 
 export const filters = [

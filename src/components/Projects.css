@@ -28,7 +28,7 @@
 
 .project {
   display: grid;
-  grid-template-columns: minmax(220px, 0.78fr) minmax(0, 1.35fr);
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.45fr);
   overflow: hidden;
   background: rgba(23, 26, 20, 0.72);
   border: 1px solid var(--line);
@@ -36,13 +36,17 @@
   scroll-margin-top: calc(var(--header) + 0.6rem);
 }
 
+.project.is-client { border-color: rgba(226, 255, 87, 0.55); }
+
 .project:hover { border-color: rgba(226, 255, 87, 0.4); }
+
+.project.is-client:hover { border-color: var(--accent); }
 
 .project.has-shots { cursor: pointer; }
 
 .project-float {
-  width: min(920px, calc(100vw - 2rem));
-  max-height: min(88vh, 900px);
+  width: min(1480px, calc(100vw - clamp(1.5rem, 4vw, 4rem)));
+  max-height: min(92vh, 980px);
   margin: auto;
   padding: 0;
   overflow: hidden;
@@ -58,9 +62,15 @@
 
 .project-float-layout {
   display: grid;
-  grid-template-columns: minmax(200px, 0.72fr) minmax(0, 1.4fr);
-  max-height: min(88vh, 900px);
+  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+  max-height: min(92vh, 980px);
   overflow: auto;
+}
+
+.project-float .plate-ia {
+  background:
+    linear-gradient(165deg, rgba(226, 255, 87, 0.22), transparent 46%),
+    #1a4a32;
 }
 
 .project-float-close {
@@ -134,7 +144,6 @@
 .plate-cloud { --mark: #c8c6ff; background: #171923; }
 .plate-avo { --mark: #b6e37a; background: #142016; }
 .plate-shop { --mark: #f0d36a; background: #241e10; }
-.plate-board { --mark: #9fd4ff; background: #121820; }
 
 .plate-lottie {
   height: 72px;
@@ -182,6 +191,42 @@
 }
 
 .project-body { padding: 1.35rem 1.4rem 1.3rem; }
+
+.project-kind {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.75rem;
+  margin: 0 0 0.85rem;
+}
+
+.project-kind span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.65rem;
+  padding: 0.12rem 0.58rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--ink-on-accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-kind strong {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.project-kind.is-own span {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
 
 .project-top {
   display: flex;
@@ -286,6 +331,55 @@
 .result span,
 .delivery { color: var(--muted); }
 
+.float-works {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.25rem 2rem;
+  align-items: start;
+}
+
+.project-alongside {
+  margin-top: 1.35rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: calc(var(--header) + 0.8rem);
+}
+
+.float-works .project-alongside {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--line);
+}
+
+.work-kicker {
+  margin-bottom: 0.45rem;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.alongside-name {
+  margin-top: 0.35rem;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.shot {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: transparent;
+  cursor: zoom-in;
+}
+
 .shots {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -307,10 +401,49 @@
   background: #0c0e0b;
 }
 
+.shot-zoom {
+  position: relative;
+  width: min(1280px, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  margin: auto;
+  padding: 0.7rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #10120e;
+  color: inherit;
+}
+
+.shot-zoom::backdrop {
+  background: rgba(16, 18, 14, 0.84);
+}
+
+.shot-zoom .project-float-close {
+  background: rgba(16, 18, 14, 0.88);
+}
+
+.shot-zoom img {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 3.4rem);
+  object-fit: contain;
+  border-radius: 12px;
+  background: #0c0e0b;
+}
+
 @media (max-width: bp-tablet) {
   .project { grid-template-columns: 1fr; }
 
   .plate { min-height: 220px; }
+
+  .float-works { grid-template-columns: 1fr; }
+
+  .float-works .project-alongside {
+    margin-top: 1.35rem;
+    padding: 1.2rem 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
 }
 
 @media (max-width: bp-compact) {

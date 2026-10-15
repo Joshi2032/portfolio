@@ -103,7 +103,7 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .wrap {
-  width: min(1120px, calc(100% - 2.5rem));
+  width: min(1720px, calc(100% - clamp(1.5rem, 3.5vw, 3rem)));
   margin-inline: auto;
 }
 

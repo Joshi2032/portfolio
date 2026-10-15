@@ -49,7 +49,10 @@ export function Hero() {
         <dl className="metrics">
           {text.metrics.map((metric) => (
             <div key={metric.label}>
-              <dt>{metric.label}</dt>
+              <dt>
+                <span>{metric.label}</span>
+                <small>{metric.note}</small>
+              </dt>
               <dd>{metric.value}</dd>
             </div>
           ))}

@@ -19,6 +19,22 @@ function PlateMotion({ reduceMotion }) {
   );
 }
 
+function ProjectKind({ details, intro }) {
+  if (details.client) {
+    return (
+      <p className="project-kind">
+        <span>{intro.forCompany}</span>
+        <strong>{details.client}</strong>
+      </p>
+    );
+  }
+  return (
+    <p className="project-kind is-own">
+      <span>{intro.ownWork}</span>
+    </p>
+  );
+}
+
 function ProjectFacts({ details }) {
   return (
     <>
@@ -45,15 +61,32 @@ function ProjectFacts({ details }) {
   );
 }
 
-function ProjectShots({ details }) {
+function ProjectAlongside({ work }) {
+  return (
+    <div className="project-alongside">
+      <p className="work-kicker">{work.kicker}</p>
+      <h3>{work.title}</h3>
+      <p>{work.lede}</p>
+      <ProjectFacts details={work} />
+    </div>
+  );
+}
+
+function ProjectShots({ details, onOpen }) {
   return (
     <figure className="shots">
       {details.shots.map((shot) => (
-        <img
+        <button
           key={shot.src}
-          src={`${import.meta.env.BASE_URL}${shot.src}`}
-          alt={shot.alt}
-        />
+          type="button"
+          className="shot"
+          onClick={(event) => onOpen(shot, event)}
+        >
+          <img
+            src={`${import.meta.env.BASE_URL}${shot.src}`}
+            alt={shot.alt}
+          />
+        </button>
       ))}
     </figure>
   );
@@ -66,8 +99,12 @@ export function Projects() {
   const [openId, setOpenId] = useState(null);
   const previous = useRef({ filter, lang });
   const dialogRef = useRef(null);
+  const shotRef = useRef(null);
   const returnFocus = useRef(null);
+  const shotReturn = useRef(null);
   const closingFromCleanup = useRef(false);
+  const shotCleanup = useRef(false);
+  const [shot, setShot] = useState(null);
   const intro = text.projectsIntro;
   const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const visibleCount = projectOrder.filter((project) => matchesFilter(project.tags, filter)).length;
@@ -92,6 +129,18 @@ export function Projects() {
     };
   }, [openId]);
 
+  useEffect(() => {
+    const dialog = shotRef.current;
+    if (!dialog || !shot) return undefined;
+    dialog.showModal();
+    return () => {
+      if (!dialog.open) return;
+      shotCleanup.current = true;
+      dialog.close();
+      shotCleanup.current = false;
+    };
+  }, [shot]);
+
   function openCard(id, event) {
     returnFocus.current = event.currentTarget;
     setOpenId(id);
@@ -106,7 +155,20 @@ export function Projects() {
   function onDialogClose() {
     if (closingFromCleanup.current) return;
     setOpenId(null);
+    setShot(null);
     const target = returnFocus.current;
+    if (target instanceof HTMLElement) target.focus({ preventScroll: true });
+  }
+
+  function openShot(next, event) {
+    shotReturn.current = event.currentTarget;
+    setShot(next);
+  }
+
+  function onShotDialogClose() {
+    if (shotCleanup.current) return;
+    setShot(null);
+    const target = shotReturn.current;
     if (target instanceof HTMLElement) target.focus({ preventScroll: true });
   }
 
@@ -140,12 +202,14 @@ export function Projects() {
           const details = text.projects[project.id];
           if (!matchesFilter(project.tags, filter)) return null;
           const hasShots = Boolean(details.shots?.length);
+          const opens = hasShots || Boolean(details.alongside);
+          const kind = details.client ? "is-client" : "is-own";
           return (
             <article
-              className={hasShots ? "project has-shots" : "project"}
+              className={`project ${kind}${opens ? " has-shots" : ""}`}
               id={project.id}
               key={project.id}
-              {...(hasShots
+              {...(opens
                 ? {
                     role: "button",
                     tabIndex: 0,
@@ -170,13 +234,18 @@ export function Projects() {
                 </div>
               </div>
               <div className="project-body">
+                <ProjectKind details={details} intro={intro} />
                 <div className="project-top">
                   <p>{details.meta}</p>
                   <p className="when">{details.when}</p>
                 </div>
-                <h3 id={hasShots ? `${project.id}-title` : undefined}>{details.title}</h3>
-                <p>{details.lede}</p>
-                {hasShots ? <p className="shots-hint">{intro.showShots}</p> : <ProjectFacts details={details} />}
+                <h3 id={opens ? `${project.id}-title` : undefined}>{details.title}</h3>
+                {details.alongside ? (
+                  <p className="alongside-name" id={details.alongside.anchor}>{details.alongside.title}</p>
+                ) : (
+                  <p>{details.lede}</p>
+                )}
+                {opens ? <p className="shots-hint">{intro.showShots}</p> : <ProjectFacts details={details} />}
               </div>
             </article>
           );
@@ -217,15 +286,48 @@ export function Projects() {
               </div>
             </div>
             <div className="project-body">
+              <ProjectKind details={openDetails} intro={intro} />
               <div className="project-top">
                 <p>{openDetails.meta}</p>
               </div>
-              <h3 id="project-float-title">{openDetails.title}</h3>
-              <p>{openDetails.lede}</p>
-              <ProjectFacts details={openDetails} />
-              <ProjectShots details={openDetails} />
+              <div className={openDetails.alongside ? "float-works" : undefined}>
+                <div>
+                  <h3 id="project-float-title">{openDetails.title}</h3>
+                  <p>{openDetails.lede}</p>
+                  <ProjectFacts details={openDetails} />
+                  {openDetails.shots?.length ? <ProjectShots details={openDetails} onOpen={openShot} /> : null}
+                </div>
+                {openDetails.alongside ? <ProjectAlongside work={openDetails.alongside} /> : null}
+              </div>
             </div>
           </div>
+        </dialog>
+      ) : null}
+      {shot ? (
+        <dialog
+          ref={shotRef}
+          className="shot-zoom"
+          aria-label={shot.alt}
+          onClose={onShotDialogClose}
+          onClick={(event) => {
+            if (event.target === event.currentTarget) event.currentTarget.close();
+          }}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") event.currentTarget.close();
+          }}
+        >
+          <button
+            type="button"
+            className="project-float-close"
+            aria-label={intro.closeShot}
+            onClick={() => shotRef.current?.close()}
+          >
+            ×
+          </button>
+          <img
+            src={`${import.meta.env.BASE_URL}${shot.src}`}
+            alt={shot.alt}
+          />
         </dialog>
       ) : null}
     </section>

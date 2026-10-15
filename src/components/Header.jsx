@@ -5,7 +5,6 @@ import "./Header.css";
 
 const navItems = [
   ["proyectos", "projects"],
-  ["experiencia", "experience"],
   ["stack", "stack"],
   ["formacion", "education"],
   ["cv", "cv"],

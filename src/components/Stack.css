@@ -1,7 +1,7 @@
 .stack-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 .stack-grid h3 {
@@ -37,8 +37,4 @@
   margin-top: 1.2rem;
   color: var(--faint);
   font-size: 0.92rem;
-}
-
-@media (max-width: bp-tablet) {
-  .stack-grid { grid-template-columns: 1fr; }
 }

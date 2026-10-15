@@ -1,6 +1,4 @@
 @media (max-width: bp-compact) {
-  .wrap { width: min(1120px, calc(100% - 1.6rem)); }
-
   .section { padding: 3.2rem 0; }
 }
 

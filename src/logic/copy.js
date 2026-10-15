@@ -11,7 +11,6 @@ export const copy = {
       open: "Abrir menú",
       close: "Cerrar menú",
       projects: "Proyectos",
-      experience: "Experiencia",
       stack: "Stack",
       education: "Formación",
       cv: "CV",
@@ -35,14 +34,41 @@ export const copy = {
       foot: "Ingeniería en TIC · TecNM La Piedad · titulación estimada ene–feb 2027",
     },
     metrics: [
-      { value: "40–80 h → 10 min", label: "Preparar render, planos y cotización" },
-      { value: "3 apps", label: "Zapata, Sushi Lim y Casa Lim" },
-      { value: "Gemma 4 12B", label: "Ajustado con QLoRA sobre CUDA" },
+      {
+        value: "40–80 h → 10 min",
+        label: "Preparar render, planos y cotización",
+        note: "En PM, el agente de ensamble hace en unos 10 minutos lo que antes tomaba una o dos semanas de jornada.",
+      },
+      {
+        value: "3 apps",
+        label: "Zapata, Sushi Lim y Casa Lim",
+        note: "Las construí y migré a Flutter y Supabase, en paralelo con PM. Comparten auth, storage y realtime.",
+      },
+      {
+        value: "Gemma 4 12B",
+        label: "Ajustado con QLoRA sobre CUDA",
+        note: "En PM, el modelo arma el ensamble 3D con piezas reales. Un Qwen lee el plano, propone los racks y estima la cotización.",
+      },
     ],
     about: {
       title: "Perfil",
       text: "Desarrollador Full Stack enfocado en inteligencia artificial aplicada a procesos industriales. Ajusté Gemma 4 12B con QLoRA sobre CUDA e integré un modelo Qwen para interpretar planos, definir racks, estimar la cotización y entregar el plano con el montaje. También desarrollo sistemas de operación en Flutter y Supabase.",
+      more: "Ese trabajo convive con el freelance: apps de restaurantes, el control de personal y la página de MAXIFUM, y sistemas de planta o de aprobaciones en C# y SAP. La idea es la misma: del modelo o del proceso a la herramienta que usa el equipo.",
       soft: ["Resolución de problemas", "Trabajo en equipo", "Adaptabilidad"],
+      notes: [
+        {
+          title: "En este momento",
+          text: "IA Engineer en PM desde agosto de 2025. En paralelo, freelance a tiempo parcial en la operación de restaurantes y en MAXIFUM.",
+        },
+        {
+          title: "Antes de eso",
+          text: "Prácticas en Mitsubishi Electric, con el flujo de propuestas Kaizen, y en Enjo-it, con aprobaciones y operación en SAP BTP.",
+        },
+        {
+          title: "Desde dónde",
+          text: "La Piedad, Michoacán. Ingeniería en TIC en el TecNM Campus La Piedad, titulación estimada ene–feb 2027. Español nativo e inglés B1.",
+        },
+      ],
     },
     projectsIntro: {
       title: "Proyectos",
@@ -57,11 +83,15 @@ export const copy = {
       },
       showShots: "Ver detalle",
       hideShots: "Cerrar",
+      closeShot: "Cerrar imagen",
+      forCompany: "Empresa",
+      ownWork: "Proyecto propio",
     },
     projects: {
       ensamble: {
         plate: "Piezas reales, plano y cotización",
         plateItems: ["Gemma 4 12B", "Qwen", "QLoRA · CUDA"],
+        client: "PM",
         meta: "IA Engineer · PM",
         when: "Ago 2025 – Presente",
         title: "Agente de ensamble 3D, cotización y planos",
@@ -75,10 +105,24 @@ export const copy = {
         tags: ["Gemma 4 12B", "QLoRA", "CUDA", "Qwen"],
         resultStat: "99.6%–99.8%",
         result: "menos tiempo: de 40–80 horas laborales (1–2 semanas, jornadas de 8 h) a 10 minutos.",
+        alongside: {
+          anchor: "ensamble-kanban",
+          kicker: "En paralelo, en el mismo periodo",
+          title: "Kanban en la plataforma por departamentos",
+          lede: "Participé en una plataforma empresarial con módulos por departamento. Dentro de ella desarrollé el kanban, con Gantt, calendario y fechas reales frente a las planeadas.",
+          points: [
+            "Los módulos se organizan por departamento. El conjunto se puede leer como un ERP.",
+            "El tablero junta kanban, Gantt y calendario.",
+            "Cada tarea compara la fecha planeada con la fecha real.",
+          ],
+          tags: ["Flutter", "Supabase"],
+          delivery: "Hecho en Flutter y Supabase.",
+        },
       },
       restaurantes: {
         plate: "Tres restaurantes, una base",
         plateItems: ["Zapata", "Sushi Lim", "Casa Lim"],
+        client: "Zapata, Sushi Lim y Casa Lim",
         meta: "Freelance · tiempo parcial",
         when: "Dic 2025 – Presente",
         title: "Sistema de gestión para restaurantes",
@@ -90,6 +134,7 @@ export const copy = {
       maxifum: {
         plate: "Campo, GPS y evidencia",
         plateItems: ["Roles y tareas", "GPS", "Fotos con IA"],
+        client: "MAXIFUM",
         meta: "Freelance · MAXIFUM",
         when: "Dic 2025 – Presente",
         title: "Plataforma web y control administrativo",
@@ -106,6 +151,7 @@ export const copy = {
       kaizen: {
         plate: "Kaizen, de punta a punta",
         plateItems: ["C#", "MySQL", "Angular"],
+        client: "Mitsubishi Electric",
         meta: "Practicante · Mitsubishi Electric Automotive de México",
         when: "Ago 2025 – Dic 2025",
         title: "Flujo digital de propuestas Kaizen",
@@ -121,6 +167,7 @@ export const copy = {
       sap: {
         plate: "Aprobación hasta SAP HANA",
         plateItems: ["SAP BTP", "SAP HANA", "Correo"],
+        client: "Enjo-it",
         meta: "Practicante · Enjo-it",
         when: "Sep 2023 – Feb 2025",
         title: "Aprobaciones y operación en SAP BTP",
@@ -140,13 +187,14 @@ export const copy = {
         title: "Detector del estado del aguacate",
         lede: "App Flutter con YOLO26n en el teléfono. Detecta si hay aguacate, si es Hass u otro, y si está inmaduro, maduro o podrido.",
         points: [
-          "Foto, galería, cámara en vivo e historial local en el teléfono.",
-          "El modelo del teléfono se entrenó con Hass y una clase «otro».",
-          "Méndez, Fuerte, Criollo, Reed y Bacon no tienen fotos de entrenamiento.",
+          "Cuatro pantallas: foto de un frame, cámara en vivo con identificadores estables (ByteTrack), historial en SQLite en el teléfono y una pantalla de ciencia.",
+          "También se puede elegir una imagen de la galería. El modelo TFLite va en el teléfono, así que la detección funciona sin red.",
+          "El modelo del teléfono es un ajuste fino del entrenamiento solo con Hass. Las clases con fotos son Hass y «otro», a partir de Mendeley, Agro227, Fruits-360 y Fruits-30.",
+          "La app puede nombrar Hass, Méndez, Fuerte, Criollo, Reed, Bacon y otro.",
         ],
         tags: ["Flutter", "YOLO26n", "TFLite"],
         resultStat: "97.65%",
-        result: "mAP50 en validación del modelo YOLO26n que corre en el teléfono.",
+        result: "mAP50 en validación del modelo YOLO26n que corre en el teléfono. En el mismo conjunto, mAP50-95 es 96.88%.",
         shots: [
           {
             src: "proyectos/aguacate/camara.png",
@@ -183,62 +231,6 @@ export const copy = {
           },
         ],
       },
-      plataforma: {
-        plate: "Departamentos, tablero y fechas",
-        plateItems: ["Kanban", "Gantt", "Calendario"],
-        meta: "IA Engineer · PM",
-        when: "Ago 2025 – Presente",
-        title: "Kanban en la plataforma por departamentos",
-        lede: "Participé en una plataforma empresarial con módulos por departamento. Dentro de ella desarrollé el kanban, con Gantt, calendario y fechas reales frente a las planeadas.",
-        points: [
-          "Los módulos se organizan por departamento. El conjunto se puede leer como un ERP.",
-          "El tablero junta kanban, Gantt y calendario.",
-          "Cada tarea compara la fecha planeada con la fecha real.",
-        ],
-        tags: ["Flutter", "Supabase"],
-        delivery: "Hecho en Flutter y Supabase.",
-      },
-    },
-    experience: {
-      title: "Experiencia",
-      lead: "Los periodos salen del CV. Varios roles conviven en las mismas fechas.",
-      note: "PM, Mitsubishi Electric y el freelance coinciden en el calendario. En el CV van marcados como trabajo en paralelo.",
-      roles: [
-        {
-          role: "IA Engineer",
-          org: "PM",
-          when: "Ago 2025 – Presente",
-          text: "Ajusté Gemma 4 12B con QLoRA sobre CUDA para el ensamble 3D de racks con piezas reales, y un Qwen que lee planos. También participé en una plataforma empresarial por departamentos, del tipo de un ERP, y ahí desarrollé el kanban.",
-          links: [
-            { href: "#ensamble", label: "Ver el proyecto" },
-            { href: "#plataforma", label: "Kanban" },
-          ],
-        },
-        {
-          role: "Desarrollador Full Stack",
-          org: "Freelance, tiempo parcial",
-          when: "Dic 2025 – Presente",
-          text: "Software a medida para restaurantes y control administrativo, en paralelo con PM.",
-          links: [
-            { href: "#restaurantes", label: "Restaurantes" },
-            { href: "#maxifum", label: "MAXIFUM" },
-          ],
-        },
-        {
-          role: "Practicante",
-          org: "Mitsubishi Electric Automotive de México",
-          when: "Ago 2025 – Dic 2025",
-          text: "Digitalicé los flujos de propuestas Kaizen en una solución modular de C# y MySQL, y migré módulos a Angular.",
-          links: [{ href: "#kaizen", label: "Ver el proyecto" }],
-        },
-        {
-          role: "Practicante",
-          org: "Enjo-it",
-          when: "Sep 2023 – Feb 2025",
-          text: "Automaticé procesos en SAP BTP Cockpit, con SAP HANA como repositorio y la operación migrada a la nube.",
-          links: [{ href: "#sap", label: "Ver el proyecto" }],
-        },
-      ],
     },
     stack: {
       title: "Stack",
@@ -303,7 +295,6 @@ export const copy = {
       open: "Open menu",
       close: "Close menu",
       projects: "Projects",
-      experience: "Experience",
       stack: "Stack",
       education: "Education",
       cv: "CV",
@@ -327,14 +318,41 @@ export const copy = {
       foot: "B.S. in ICT · TecNM La Piedad · expected graduation Jan–Feb 2027",
     },
     metrics: [
-      { value: "40–80 h → 10 min", label: "Prepare the render, drawings, and quotation" },
-      { value: "3 apps", label: "Zapata, Sushi Lim, and Casa Lim" },
-      { value: "Gemma 4 12B", label: "Fine-tuned with QLoRA on CUDA" },
+      {
+        value: "40–80 h → 10 min",
+        label: "Prepare the render, drawings, and quotation",
+        note: "At PM, the assembly agent does in about 10 minutes what used to take one or two work weeks.",
+      },
+      {
+        value: "3 apps",
+        label: "Zapata, Sushi Lim, and Casa Lim",
+        note: "I built and migrated them to Flutter and Supabase, alongside the work at PM. They share auth, storage, and realtime.",
+      },
+      {
+        value: "Gemma 4 12B",
+        label: "Fine-tuned with QLoRA on CUDA",
+        note: "At PM, the model builds the 3D assembly from real parts. A Qwen model reads the drawing, proposes the racks, and estimates the quotation.",
+      },
     ],
     about: {
       title: "Profile",
       text: "Full Stack developer focused on artificial intelligence applied to industrial processes. I fine-tuned Gemma 4 12B with QLoRA on CUDA and integrated a Qwen model to interpret drawings, define racks, estimate quotations, and deliver the drawing with the proposed layout. I also build operational systems in Flutter and Supabase.",
+      more: "That work sits alongside freelance: restaurant apps, staff control and the MAXIFUM website, and plant or approval systems in C# and SAP. The aim is the same: from the model or the process to the tool the team uses.",
       soft: ["Problem-solving", "Teamwork", "Adaptability"],
+      notes: [
+        {
+          title: "Right now",
+          text: "AI Engineer at PM since August 2025. In parallel, part-time freelance on restaurant operations and at MAXIFUM.",
+        },
+        {
+          title: "Before that",
+          text: "Internships at Mitsubishi Electric, on the Kaizen proposal flow, and at Enjo-it, on approvals and operations in SAP BTP.",
+        },
+        {
+          title: "Based in",
+          text: "La Piedad, Michoacán. B.S. in ICT at TecNM La Piedad Campus, expected graduation Jan–Feb 2027. Native Spanish and English B1.",
+        },
+      ],
     },
     projectsIntro: {
       title: "Projects",
@@ -349,11 +367,15 @@ export const copy = {
       },
       showShots: "View detail",
       hideShots: "Close",
+      closeShot: "Close image",
+      forCompany: "Company",
+      ownWork: "Own project",
     },
     projects: {
       ensamble: {
         plate: "Real parts, drawing, and quote",
         plateItems: ["Gemma 4 12B", "Qwen", "QLoRA · CUDA"],
+        client: "PM",
         meta: "AI Engineer · PM",
         when: "Aug 2025 – Present",
         title: "3D assembly, quotation, and drawings agent",
@@ -367,10 +389,24 @@ export const copy = {
         tags: ["Gemma 4 12B", "QLoRA", "CUDA", "Qwen"],
         resultStat: "99.6%–99.8%",
         result: "less time: from 40–80 working hours (1–2 weeks at 8 h/day) to 10 minutes.",
+        alongside: {
+          anchor: "ensamble-kanban",
+          kicker: "In parallel, over the same period",
+          title: "Kanban on the department platform",
+          lede: "I took part in an enterprise platform with modules by department. Inside it I built the kanban, with a Gantt chart, a calendar, and real dates set against the planned ones.",
+          points: [
+            "Modules are organized by department. The whole can be read as an ERP.",
+            "The board brings together kanban, Gantt, and calendar.",
+            "Each task compares the planned date with the real date.",
+          ],
+          tags: ["Flutter", "Supabase"],
+          delivery: "Built with Flutter and Supabase.",
+        },
       },
       restaurantes: {
         plate: "Three restaurants, one stack",
         plateItems: ["Zapata", "Sushi Lim", "Casa Lim"],
+        client: "Zapata, Sushi Lim, and Casa Lim",
         meta: "Freelance · part-time",
         when: "Dec 2025 – Present",
         title: "Restaurant management system",
@@ -382,6 +418,7 @@ export const copy = {
       maxifum: {
         plate: "Field work, GPS, and evidence",
         plateItems: ["Roles and tasks", "GPS", "Photos with AI"],
+        client: "MAXIFUM",
         meta: "Freelance · MAXIFUM",
         when: "Dec 2025 – Present",
         title: "Web platform and admin control",
@@ -398,6 +435,7 @@ export const copy = {
       kaizen: {
         plate: "Kaizen, end to end",
         plateItems: ["C#", "MySQL", "Angular"],
+        client: "Mitsubishi Electric",
         meta: "Intern · Mitsubishi Electric Automotive de México",
         when: "Aug 2025 – Dec 2025",
         title: "Digital Kaizen proposal workflow",
@@ -413,6 +451,7 @@ export const copy = {
       sap: {
         plate: "Approval through to SAP HANA",
         plateItems: ["SAP BTP", "SAP HANA", "Email"],
+        client: "Enjo-it",
         meta: "Intern · Enjo-it",
         when: "Sep 2023 – Feb 2025",
         title: "Approvals and operations on SAP BTP",
@@ -432,13 +471,14 @@ export const copy = {
         title: "Avocado state detector",
         lede: "A Flutter app with YOLO26n on the phone. It detects whether an avocado is present, whether it is Hass or other, and whether it is unripe, ripe, or rotten.",
         points: [
-          "Photo, gallery, live camera, and a history stored on the phone.",
-          "The phone model was trained on Hass and an “other” class.",
-          "Méndez, Fuerte, Criollo, Reed, and Bacon have no training photos.",
+          "Four screens: a one-frame photo, a live camera with stable IDs (ByteTrack), a history stored in SQLite on the phone, and a Science screen.",
+          "A picture can also be picked from the gallery. The TFLite model ships on the phone, so detection works without a network.",
+          "The phone model is a fine-tune of the Hass-only training run. The classes with photos are Hass and “other”, drawn from Mendeley, Agro227, Fruits-360, and Fruits-30.",
+          "The app can name Hass, Méndez, Fuerte, Criollo, Reed, Bacon, and other.",
         ],
         tags: ["Flutter", "YOLO26n", "TFLite"],
         resultStat: "97.65%",
-        result: "mAP50 on the validation set of the YOLO26n model that runs on the phone.",
+        result: "mAP50 on the validation set of the YOLO26n model that runs on the phone. On the same set, mAP50-95 is 96.88%.",
         shots: [
           {
             src: "proyectos/aguacate/camara.png",
@@ -475,62 +515,6 @@ export const copy = {
           },
         ],
       },
-      plataforma: {
-        plate: "Departments, board, and dates",
-        plateItems: ["Kanban", "Gantt", "Calendar"],
-        meta: "AI Engineer · PM",
-        when: "Aug 2025 – Present",
-        title: "Kanban on the department platform",
-        lede: "I took part in an enterprise platform with modules by department. Inside it I built the kanban, with a Gantt chart, a calendar, and real dates set against the planned ones.",
-        points: [
-          "Modules are organized by department. The whole can be read as an ERP.",
-          "The board brings together kanban, Gantt, and calendar.",
-          "Each task compares the planned date with the real date.",
-        ],
-        tags: ["Flutter", "Supabase"],
-        delivery: "Built with Flutter and Supabase.",
-      },
-    },
-    experience: {
-      title: "Experience",
-      lead: "Dates come from the CV. Several roles share the same months.",
-      note: "PM, Mitsubishi Electric, and the freelance work overlap on the calendar. The CV marks them as parallel roles.",
-      roles: [
-        {
-          role: "AI Engineer",
-          org: "PM",
-          when: "Aug 2025 – Present",
-          text: "Fine-tuned Gemma 4 12B with QLoRA on CUDA for 3D rack assembly with real parts, plus a Qwen model that reads drawings. I also took part in an enterprise platform organized by department, the kind of system that can be read as an ERP, and built the kanban there.",
-          links: [
-            { href: "#ensamble", label: "View project" },
-            { href: "#plataforma", label: "Kanban" },
-          ],
-        },
-        {
-          role: "Full Stack Developer",
-          org: "Freelance, part-time",
-          when: "Dec 2025 – Present",
-          text: "Custom software for restaurants and administrative control, in parallel with PM.",
-          links: [
-            { href: "#restaurantes", label: "Restaurants" },
-            { href: "#maxifum", label: "MAXIFUM" },
-          ],
-        },
-        {
-          role: "Intern",
-          org: "Mitsubishi Electric Automotive de México",
-          when: "Aug 2025 – Dec 2025",
-          text: "Digitized Kaizen proposal workflows on a modular C# and MySQL solution, and migrated modules to Angular.",
-          links: [{ href: "#kaizen", label: "View project" }],
-        },
-        {
-          role: "Intern",
-          org: "Enjo-it",
-          when: "Sep 2023 – Feb 2025",
-          text: "Automated processes in SAP BTP Cockpit, with SAP HANA as the system of record and operations moved to the cloud.",
-          links: [{ href: "#sap", label: "View project" }],
-        },
-      ],
     },
     stack: {
       title: "Stack",

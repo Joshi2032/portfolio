@@ -14,7 +14,7 @@ export function Resume() {
     <section className="section" id="cv">
       <div className="wrap">
         <header className="section-head">
-          <p className="num">05</p>
+          <p className="num">04</p>
           <h2>{cv.title}</h2>
           <p className="section-lead">{cv.lead}</p>
         </header>

@@ -3,18 +3,28 @@ import "./Profile.css";
 
 export function Profile() {
   const { text } = useLanguage();
+  const about = text.about;
 
   return (
     <section className="section" id="sobre">
-      <div className="wrap">
+      <div className="wrap profile-layout">
         <header className="section-head">
           <p className="num">00</p>
-          <h2>{text.about.title}</h2>
-          <p className="section-lead">{text.about.text}</p>
+          <h2>{about.title}</h2>
+          <p className="section-lead">{about.text}</p>
+          <p className="section-lead profile-more">{about.more}</p>
+          <ul className="soft">
+            {about.soft.map((skill) => <li key={skill}>{skill}</li>)}
+          </ul>
         </header>
-        <ul className="soft">
-          {text.about.soft.map((skill) => <li key={skill}>{skill}</li>)}
-        </ul>
+        <div className="profile-notes">
+          {about.notes.map((note) => (
+            <article key={note.title}>
+              <h3>{note.title}</h3>
+              <p>{note.text}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

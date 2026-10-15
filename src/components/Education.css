@@ -1,6 +1,6 @@
 .edu-grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.8fr;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
   gap: 1rem;
 }
 
@@ -45,10 +45,6 @@
 .lang-row h3 { font-size: 1.4rem; }
 
 .lang-row p { color: var(--muted); }
-
-@media (max-width: bp-tablet) {
-  .edu-grid { grid-template-columns: 1fr; }
-}
 
 @media (max-width: bp-compact) {
   .lang-row {
