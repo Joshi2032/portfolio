@@ -104,12 +104,14 @@ export function Projects() {
   const shotReturn = useRef(null);
   const closingFromCleanup = useRef(false);
   const shotCleanup = useRef(false);
-  const [shot, setShot] = useState(null);
+  const [shotIndex, setShotIndex] = useState(null);
   const intro = text.projectsIntro;
   const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const visibleCount = projectOrder.filter((project) => matchesFilter(project.tags, filter)).length;
   const openProject = projectOrder.find((project) => project.id === openId) ?? null;
   const openDetails = openProject ? text.projects[openProject.id] : null;
+  const shots = openDetails?.shots ?? [];
+  const shot = shotIndex == null ? null : shots[shotIndex] ?? null;
 
   useEffect(() => {
     if (previous.current.filter === filter && previous.current.lang === lang) return;
@@ -131,7 +133,7 @@ export function Projects() {
 
   useEffect(() => {
     const dialog = shotRef.current;
-    if (!dialog || !shot) return undefined;
+    if (!dialog || shotIndex == null) return undefined;
     dialog.showModal();
     return () => {
       if (!dialog.open) return;
@@ -139,7 +141,7 @@ export function Projects() {
       dialog.close();
       shotCleanup.current = false;
     };
-  }, [shot]);
+  }, [shotIndex == null]);
 
   function openCard(id, event) {
     returnFocus.current = event.currentTarget;
@@ -155,19 +157,27 @@ export function Projects() {
   function onDialogClose() {
     if (closingFromCleanup.current) return;
     setOpenId(null);
-    setShot(null);
+    setShotIndex(null);
     const target = returnFocus.current;
     if (target instanceof HTMLElement) target.focus({ preventScroll: true });
   }
 
   function openShot(next, event) {
+    const index = (openDetails?.shots ?? []).findIndex((item) => item.src === next.src);
     shotReturn.current = event.currentTarget;
-    setShot(next);
+    setShotIndex(index < 0 ? 0 : index);
+  }
+
+  function stepShot(delta) {
+    setShotIndex((index) => {
+      if (index == null || shots.length < 2) return index;
+      return (index + delta + shots.length) % shots.length;
+    });
   }
 
   function onShotDialogClose() {
     if (shotCleanup.current) return;
-    setShot(null);
+    setShotIndex(null);
     const target = shotReturn.current;
     if (target instanceof HTMLElement) target.focus({ preventScroll: true });
   }
@@ -314,8 +324,26 @@ export function Projects() {
           }}
           onKeyDown={(event) => {
             if (event.key === "Escape") event.currentTarget.close();
+            if (event.key === "ArrowRight") {
+              event.preventDefault();
+              stepShot(1);
+            }
+            if (event.key === "ArrowLeft") {
+              event.preventDefault();
+              stepShot(-1);
+            }
           }}
         >
+          {shots.length > 1 ? (
+            <button
+              type="button"
+              className="shot-nav prev"
+              aria-label={intro.prevShot}
+              onClick={() => stepShot(-1)}
+            >
+              ‹
+            </button>
+          ) : null}
           <button
             type="button"
             className="project-float-close"
@@ -324,6 +352,16 @@ export function Projects() {
           >
             ×
           </button>
+          {shots.length > 1 ? (
+            <button
+              type="button"
+              className="shot-nav next"
+              aria-label={intro.nextShot}
+              onClick={() => stepShot(1)}
+            >
+              ›
+            </button>
+          ) : null}
           <img
             src={`${import.meta.env.BASE_URL}${shot.src}`}
             alt={shot.alt}

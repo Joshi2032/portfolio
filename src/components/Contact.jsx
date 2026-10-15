@@ -5,6 +5,7 @@ import "./Contact.css";
 const MAIL = "joshi.jc2032@gmail.com";
 const WHATSAPP = "523521887541";
 const MAP_PLACE = "Nicolás Régules 63, La Piedad, Michoacán, México";
+const MAP_HREF = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_PLACE)}`;
 
 function mapSrc(place, lang) {
   const language = lang === "en" ? "en" : "es";
@@ -58,7 +59,11 @@ export function Contact() {
                 allowFullScreen
               />
             </div>
-            <strong>{contact.cityValue}</strong>
+            <a className="contact-map-link" href={MAP_HREF} target="_blank" rel="noreferrer">{contact.openMap}</a>
+            <div>
+              <strong>{contact.street}</strong>
+              <p>{contact.cityValue}</p>
+            </div>
           </div>
           <div className="contact-body">
             <p className="contact-destination">

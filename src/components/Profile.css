@@ -13,10 +13,6 @@
   max-width: none;
 }
 
-.profile-more {
-  margin-top: 0.85rem;
-}
-
 .profile-notes {
   display: grid;
   gap: 1.15rem;

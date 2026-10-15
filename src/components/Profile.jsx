@@ -12,7 +12,6 @@ export function Profile() {
           <p className="num">00</p>
           <h2>{about.title}</h2>
           <p className="section-lead">{about.text}</p>
-          <p className="section-lead profile-more">{about.more}</p>
           <ul className="soft">
             {about.soft.map((skill) => <li key={skill}>{skill}</li>)}
           </ul>

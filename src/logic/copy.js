@@ -34,40 +34,18 @@ export const copy = {
       foot: "Ingeniería en TIC · TecNM La Piedad · titulación estimada ene–feb 2027",
     },
     metrics: [
-      {
-        value: "40–80 h → 10 min",
-        label: "Preparar render, planos y cotización",
-        note: "En PM, el agente de ensamble hace en unos 10 minutos lo que antes tomaba una o dos semanas de jornada.",
-      },
-      {
-        value: "3 apps",
-        label: "Zapata, Sushi Lim y Casa Lim",
-        note: "Las construí y migré a Flutter y Supabase, en paralelo con PM. Comparten auth, storage y realtime.",
-      },
-      {
-        value: "Gemma 4 12B",
-        label: "Ajustado con QLoRA sobre CUDA",
-        note: "En PM, el modelo arma el ensamble 3D con piezas reales. Un Qwen lee el plano, propone los racks y estima la cotización.",
-      },
+      { value: "40–80 h → 10 min", label: "Preparar render, planos y cotización" },
+      { value: "3 apps", label: "Zapata, Sushi Lim y Casa Lim" },
+      { value: "Gemma 4 12B", label: "Ajustado con QLoRA sobre CUDA" },
     ],
     about: {
       title: "Perfil",
-      text: "Desarrollador Full Stack enfocado en inteligencia artificial aplicada a procesos industriales. Ajusté Gemma 4 12B con QLoRA sobre CUDA e integré un modelo Qwen para interpretar planos, definir racks, estimar la cotización y entregar el plano con el montaje. También desarrollo sistemas de operación en Flutter y Supabase.",
-      more: "Ese trabajo convive con el freelance: apps de restaurantes, el control de personal y la página de MAXIFUM, y sistemas de planta o de aprobaciones en C# y SAP. La idea es la misma: del modelo o del proceso a la herramienta que usa el equipo.",
+      text: "Desarrollador Full Stack. Aplico inteligencia artificial a procesos industriales y la llevo desde un modelo ajustado hasta la herramienta que usa el equipo.",
       soft: ["Resolución de problemas", "Trabajo en equipo", "Adaptabilidad"],
       notes: [
-        {
-          title: "En este momento",
-          text: "IA Engineer en PM desde agosto de 2025. En paralelo, freelance a tiempo parcial en la operación de restaurantes y en MAXIFUM.",
-        },
-        {
-          title: "Antes de eso",
-          text: "Prácticas en Mitsubishi Electric, con el flujo de propuestas Kaizen, y en Enjo-it, con aprobaciones y operación en SAP BTP.",
-        },
-        {
-          title: "Desde dónde",
-          text: "La Piedad, Michoacán. Ingeniería en TIC en el TecNM Campus La Piedad, titulación estimada ene–feb 2027. Español nativo e inglés B1.",
-        },
+        { title: "Lugar", text: "La Piedad, Michoacán." },
+        { title: "Formación", text: "Ingeniería en TIC en el TecNM Campus La Piedad, titulación estimada ene–feb 2027." },
+        { title: "Idiomas", text: "Español nativo e inglés B1." },
       ],
     },
     projectsIntro: {
@@ -84,6 +62,8 @@ export const copy = {
       showShots: "Ver detalle",
       hideShots: "Cerrar",
       closeShot: "Cerrar imagen",
+      prevShot: "Anterior",
+      nextShot: "Siguiente",
       forCompany: "Empresa",
       ownWork: "Proyecto propio",
     },
@@ -272,7 +252,9 @@ export const copy = {
       email: "Correo",
       phone: "Celular",
       city: "Ciudad",
+      street: "Nicolás Régules 63",
       cityValue: "La Piedad, Michoacán, México",
+      openMap: "Abrir en Maps",
       name: "Nombre",
       message: "Mensaje",
       messagePlaceholder: "Cuéntame del sistema, el agente o la app.",
@@ -318,40 +300,18 @@ export const copy = {
       foot: "B.S. in ICT · TecNM La Piedad · expected graduation Jan–Feb 2027",
     },
     metrics: [
-      {
-        value: "40–80 h → 10 min",
-        label: "Prepare the render, drawings, and quotation",
-        note: "At PM, the assembly agent does in about 10 minutes what used to take one or two work weeks.",
-      },
-      {
-        value: "3 apps",
-        label: "Zapata, Sushi Lim, and Casa Lim",
-        note: "I built and migrated them to Flutter and Supabase, alongside the work at PM. They share auth, storage, and realtime.",
-      },
-      {
-        value: "Gemma 4 12B",
-        label: "Fine-tuned with QLoRA on CUDA",
-        note: "At PM, the model builds the 3D assembly from real parts. A Qwen model reads the drawing, proposes the racks, and estimates the quotation.",
-      },
+      { value: "40–80 h → 10 min", label: "Prepare the render, drawings, and quotation" },
+      { value: "3 apps", label: "Zapata, Sushi Lim, and Casa Lim" },
+      { value: "Gemma 4 12B", label: "Fine-tuned with QLoRA on CUDA" },
     ],
     about: {
       title: "Profile",
-      text: "Full Stack developer focused on artificial intelligence applied to industrial processes. I fine-tuned Gemma 4 12B with QLoRA on CUDA and integrated a Qwen model to interpret drawings, define racks, estimate quotations, and deliver the drawing with the proposed layout. I also build operational systems in Flutter and Supabase.",
-      more: "That work sits alongside freelance: restaurant apps, staff control and the MAXIFUM website, and plant or approval systems in C# and SAP. The aim is the same: from the model or the process to the tool the team uses.",
+      text: "Full Stack developer. I apply artificial intelligence to industrial processes and take it from a fine-tuned model to the tool the team uses.",
       soft: ["Problem-solving", "Teamwork", "Adaptability"],
       notes: [
-        {
-          title: "Right now",
-          text: "AI Engineer at PM since August 2025. In parallel, part-time freelance on restaurant operations and at MAXIFUM.",
-        },
-        {
-          title: "Before that",
-          text: "Internships at Mitsubishi Electric, on the Kaizen proposal flow, and at Enjo-it, on approvals and operations in SAP BTP.",
-        },
-        {
-          title: "Based in",
-          text: "La Piedad, Michoacán. B.S. in ICT at TecNM La Piedad Campus, expected graduation Jan–Feb 2027. Native Spanish and English B1.",
-        },
+        { title: "Place", text: "La Piedad, Michoacán." },
+        { title: "Education", text: "B.S. in ICT at TecNM La Piedad Campus, expected graduation Jan–Feb 2027." },
+        { title: "Languages", text: "Native Spanish and English B1." },
       ],
     },
     projectsIntro: {
@@ -368,6 +328,8 @@ export const copy = {
       showShots: "View detail",
       hideShots: "Close",
       closeShot: "Close image",
+      prevShot: "Previous",
+      nextShot: "Next",
       forCompany: "Company",
       ownWork: "Own project",
     },
@@ -556,7 +518,9 @@ export const copy = {
       email: "Email",
       phone: "Phone",
       city: "City",
+      street: "Nicolás Régules 63",
       cityValue: "La Piedad, Michoacán, Mexico",
+      openMap: "Open in Maps",
       name: "Name",
       message: "Message",
       messagePlaceholder: "Tell me about the system, the agent, or the app.",
