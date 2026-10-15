@@ -93,12 +93,14 @@ export const copy = {
         meta: "Freelance · MAXIFUM",
         when: "Dic 2025 – Presente",
         title: "Plataforma web y control administrativo",
-        lede: "Control interno del personal y una aplicación de escritorio para seguir la operación en vivo.",
+        lede: "Control interno del personal, una aplicación de escritorio para seguir la operación en vivo y la página web de la empresa.",
         points: [
           "Roles, tareas, GPS y validación de evidencias fotográficas con IA.",
           "App de escritorio para monitorear al personal en tiempo real.",
+          "Desarrollé la página web de la empresa.",
         ],
         tags: ["Flutter", "GPS", "IA", "Escritorio"],
+        site: { href: "https://www.maxifumdelbajio.com/", label: "maxifumdelbajio.com" },
         delivery: "Supervisión en tiempo real con evidencia revisada por IA.",
       },
       kaizen: {
@@ -181,6 +183,21 @@ export const copy = {
           },
         ],
       },
+      plataforma: {
+        plate: "Departamentos, tablero y fechas",
+        plateItems: ["Kanban", "Gantt", "Calendario"],
+        meta: "IA Engineer · PM",
+        when: "Ago 2025 – Presente",
+        title: "Kanban en la plataforma por departamentos",
+        lede: "Participé en una plataforma empresarial con módulos por departamento. Dentro de ella desarrollé el kanban, con Gantt, calendario y fechas reales frente a las planeadas.",
+        points: [
+          "Los módulos se organizan por departamento. El conjunto se puede leer como un ERP.",
+          "El tablero junta kanban, Gantt y calendario.",
+          "Cada tarea compara la fecha planeada con la fecha real.",
+        ],
+        tags: ["Flutter", "Supabase"],
+        delivery: "Hecho en Flutter y Supabase.",
+      },
     },
     experience: {
       title: "Experiencia",
@@ -191,8 +208,11 @@ export const copy = {
           role: "IA Engineer",
           org: "PM",
           when: "Ago 2025 – Presente",
-          text: "Ajusté Gemma 4 12B con QLoRA sobre CUDA para el ensamble 3D de racks con piezas reales, y un Qwen que lee planos.",
-          links: [{ href: "#ensamble", label: "Ver el proyecto" }],
+          text: "Ajusté Gemma 4 12B con QLoRA sobre CUDA para el ensamble 3D de racks con piezas reales, y un Qwen que lee planos. También participé en una plataforma empresarial por departamentos, del tipo de un ERP, y ahí desarrollé el kanban.",
+          links: [
+            { href: "#ensamble", label: "Ver el proyecto" },
+            { href: "#plataforma", label: "Kanban" },
+          ],
         },
         {
           role: "Desarrollador Full Stack",
@@ -365,12 +385,14 @@ export const copy = {
         meta: "Freelance · MAXIFUM",
         when: "Dec 2025 – Present",
         title: "Web platform and admin control",
-        lede: "Internal staff control and a desktop app to follow the operation live.",
+        lede: "Internal staff control, a desktop app to follow the operation live, and the company's website.",
         points: [
           "Roles, tasks, GPS, and AI validation of photo evidence.",
           "Desktop app for real-time staff monitoring.",
+          "I built the company's website.",
         ],
         tags: ["Flutter", "GPS", "AI", "Desktop"],
+        site: { href: "https://www.maxifumdelbajio.com/", label: "maxifumdelbajio.com" },
         delivery: "Live supervision with evidence checked by AI.",
       },
       kaizen: {
@@ -453,6 +475,21 @@ export const copy = {
           },
         ],
       },
+      plataforma: {
+        plate: "Departments, board, and dates",
+        plateItems: ["Kanban", "Gantt", "Calendar"],
+        meta: "AI Engineer · PM",
+        when: "Aug 2025 – Present",
+        title: "Kanban on the department platform",
+        lede: "I took part in an enterprise platform with modules by department. Inside it I built the kanban, with a Gantt chart, a calendar, and real dates set against the planned ones.",
+        points: [
+          "Modules are organized by department. The whole can be read as an ERP.",
+          "The board brings together kanban, Gantt, and calendar.",
+          "Each task compares the planned date with the real date.",
+        ],
+        tags: ["Flutter", "Supabase"],
+        delivery: "Built with Flutter and Supabase.",
+      },
     },
     experience: {
       title: "Experience",
@@ -463,8 +500,11 @@ export const copy = {
           role: "AI Engineer",
           org: "PM",
           when: "Aug 2025 – Present",
-          text: "Fine-tuned Gemma 4 12B with QLoRA on CUDA for 3D rack assembly with real parts, plus a Qwen model that reads drawings.",
-          links: [{ href: "#ensamble", label: "View project" }],
+          text: "Fine-tuned Gemma 4 12B with QLoRA on CUDA for 3D rack assembly with real parts, plus a Qwen model that reads drawings. I also took part in an enterprise platform organized by department, the kind of system that can be read as an ERP, and built the kanban there.",
+          links: [
+            { href: "#ensamble", label: "View project" },
+            { href: "#plataforma", label: "Kanban" },
+          ],
         },
         {
           role: "Full Stack Developer",

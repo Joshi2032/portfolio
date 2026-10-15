@@ -8,6 +8,7 @@ export const projectOrder = [
   { id: "sap", tags: ["sap"], plate: "plate-cloud", index: "05", org: "Enjo-it" },
   { id: "aguacate", tags: ["ia", "flutter"], plate: "plate-avo", index: "06", org: "YOLO26n" },
   { id: "tienda", tags: ["flutter"], plate: "plate-shop", index: "07", org: "Flutter + NestJS" },
+  { id: "plataforma", tags: ["flutter"], plate: "plate-board", index: "08", org: "Flutter + Supabase" },
 ];
 
 export const filters = [

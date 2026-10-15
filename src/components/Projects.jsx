@@ -1,7 +1,23 @@
 import { useEffect, useRef, useState } from "react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { filters, matchesFilter, projectOrder } from "../logic/catalog.js";
 import { useLanguage } from "../logic/LanguageContext.jsx";
+import { useMediaQuery } from "../responsive/useMediaQuery.js";
 import "./Projects.css";
+
+function PlateMotion({ reduceMotion }) {
+  if (reduceMotion) return null;
+  return (
+    <div className="plate-lottie" aria-hidden="true">
+      <DotLottieReact
+        src={`${import.meta.env.BASE_URL}lottie/abstract.lottie`}
+        loop
+        autoplay
+        layout={{ fit: "cover", align: [0.5, 0.5] }}
+      />
+    </div>
+  );
+}
 
 function ProjectFacts({ details }) {
   return (
@@ -9,6 +25,11 @@ function ProjectFacts({ details }) {
       <ul className="points">
         {details.points.map((point) => <li key={point}>{point}</li>)}
       </ul>
+      {details.site ? (
+        <p className="project-site">
+          <a href={details.site.href} target="_blank" rel="noreferrer">{details.site.label}</a>
+        </p>
+      ) : null}
       <ul className="tags">
         {details.tags.map((tag) => <li key={tag}>{tag}</li>)}
       </ul>
@@ -48,6 +69,7 @@ export function Projects() {
   const returnFocus = useRef(null);
   const closingFromCleanup = useRef(false);
   const intro = text.projectsIntro;
+  const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const visibleCount = projectOrder.filter((project) => matchesFilter(project.tags, filter)).length;
   const openProject = projectOrder.find((project) => project.id === openId) ?? null;
   const openDetails = openProject ? text.projects[openProject.id] : null;
@@ -113,6 +135,7 @@ export function Projects() {
           ))}
         </div>
         <p className="sr-only" aria-live="polite">{announcement}</p>
+        <div className="project-list">
         {projectOrder.map((project) => {
           const details = text.projects[project.id];
           if (!matchesFilter(project.tags, filter)) return null;
@@ -134,6 +157,7 @@ export function Projects() {
                 : {})}
             >
               <div className={`plate ${project.plate}`}>
+                <PlateMotion reduceMotion={reduceMotion} />
                 <div>
                   <p className="plate-index">{project.index}</p>
                   <p className="plate-kicker">{details.plate}</p>
@@ -157,6 +181,7 @@ export function Projects() {
             </article>
           );
         })}
+        </div>
       </div>
       {openProject && openDetails ? (
         <dialog
@@ -179,6 +204,7 @@ export function Projects() {
           </button>
           <div className="project-float-layout">
             <div className={`plate ${openProject.plate}`}>
+              <PlateMotion reduceMotion={reduceMotion} />
               <div>
                 <p className="plate-index">{openProject.index}</p>
                 <p className="plate-kicker">{openDetails.plate}</p>

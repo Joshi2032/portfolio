@@ -20,10 +20,15 @@
   color: var(--ink-on-accent);
 }
 
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
 .project {
   display: grid;
   grid-template-columns: minmax(220px, 0.78fr) minmax(0, 1.35fr);
-  margin-bottom: 1rem;
   overflow: hidden;
   background: rgba(23, 26, 20, 0.72);
   border: 1px solid var(--line);
@@ -129,6 +134,20 @@
 .plate-cloud { --mark: #c8c6ff; background: #171923; }
 .plate-avo { --mark: #b6e37a; background: #142016; }
 .plate-shop { --mark: #f0d36a; background: #241e10; }
+.plate-board { --mark: #9fd4ff; background: #121820; }
+
+.plate-lottie {
+  height: 72px;
+  margin: -1.35rem -1.35rem 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.plate-lottie canvas {
+  display: block;
+  width: 100%;
+  height: 72px;
+}
 
 .plate-index {
   font-family: var(--serif);
@@ -217,6 +236,15 @@
   width: 6px;
   height: 6px;
   background: var(--accent);
+}
+
+.project-site {
+  margin: 0.85rem 0 0;
+}
+
+.project-site a {
+  color: var(--accent);
+  text-underline-offset: 0.2em;
 }
 
 .tags {
