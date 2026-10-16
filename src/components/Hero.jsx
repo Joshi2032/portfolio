@@ -1,4 +1,4 @@
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { LazyLottie } from "./LazyLottie.jsx";
 import { useLanguage } from "../logic/LanguageContext.jsx";
 import { useMediaQuery } from "../responsive/useMediaQuery.js";
 import "../styles/Hero.css";
@@ -25,7 +25,7 @@ export function Hero() {
         <aside className="dossier">
           {reduceMotion ? null : (
             <div className="hero-lottie" aria-hidden="true">
-              <DotLottieReact
+              <LazyLottie
                 src={`${import.meta.env.BASE_URL}lottie/waves.lottie`}
                 loop
                 autoplay

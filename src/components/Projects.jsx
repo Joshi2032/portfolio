@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { LazyLottie } from "./LazyLottie.jsx";
 import { filters, matchesFilter, projectOrder } from "../logic/catalog.js";
 import { useLanguage } from "../logic/LanguageContext.jsx";
 import { useMediaQuery } from "../responsive/useMediaQuery.js";
@@ -24,7 +24,7 @@ function PlateMotion({ reduceMotion }) {
   return (
     <div className="plate-lottie" aria-hidden="true" ref={ref}>
       {visible ? (
-        <DotLottieReact
+        <LazyLottie
           src={`${import.meta.env.BASE_URL}lottie/abstract.lottie`}
           loop
           autoplay
@@ -254,7 +254,6 @@ export function Projects() {
                     role: "button",
                     tabIndex: 0,
                     "aria-expanded": openId === project.id,
-                    "aria-labelledby": `${project.id}-title`,
                     onClick: (event) => openCard(project.id, event),
                     onKeyDown: (event) => onShotKeyDown(event, project.id),
                   }

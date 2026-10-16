@@ -21,7 +21,7 @@ export function Header({ menu }) {
   return (
     <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
       <div className="wrap bar">
-        <a className="brand" href="#inicio" aria-label={nav.home} inert={inert}>
+        <a className="brand" href="#inicio" aria-label={`Josué Isaí · ${nav.home}`} inert={inert}>
           <span className="mark" aria-hidden="true">JI</span>
           <span className="brand-text">Josué Isaí</span>
         </a>
