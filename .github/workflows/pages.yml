@@ -25,6 +25,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Check links and images
+        run: node scripts/ci-links.mjs
+      - name: Check accessibility (axe)
+        run: node scripts/ci-a11y.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

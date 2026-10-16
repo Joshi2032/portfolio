@@ -18,6 +18,7 @@ export const es = {
     contact: "Contacto",
   },
   hero: {
+    photoAlt: "Josué Isaí Salazar Castro",
     kicker: "La Piedad, Michoacán",
     role: "Full Stack Developer · Flutter · IA aplicada",
     lede: "Agentes de IA para procesos industriales y sistemas de operación en Flutter.",

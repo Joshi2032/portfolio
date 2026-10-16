@@ -75,10 +75,26 @@ export function Contact() {
           <div className="contact-body">
             <p className="contact-destination">
               <span>{contact.email}</span>
-              <strong>{MAIL}</strong>
-              <span className="contact-copy-row">
-                <button type="button" className="contact-copy" onClick={onCopyEmail}>
-                  {copied ? contact.copied : contact.copyEmail}
+              <span className="contact-mail-row">
+                <strong>{MAIL}</strong>
+                <button
+                  type="button"
+                  className={`contact-copy${copied ? " is-copied" : ""}`}
+                  aria-label={contact.copyEmail}
+                  title={copied ? contact.copied : contact.copyEmail}
+                  onClick={onCopyEmail}
+                >
+                  {copied ? (
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                      <path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  ) : (
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                      <rect x="8.5" y="8.5" width="11" height="12" rx="2.2" fill="none" stroke="currentColor" strokeWidth="1.8" />
+                      <path d="M15.5 8.5V6a2.2 2.2 0 0 0-2.2-2.2H6.7A2.2 2.2 0 0 0 4.5 6v8.3a2.2 2.2 0 0 0 2.2 2.2h1.8" fill="none" stroke="currentColor" strokeWidth="1.8" />
+                    </svg>
+                  )}
+                  <span className="contact-copy-tip" aria-hidden="true">{copied ? contact.copied : contact.copyEmail}</span>
                 </button>
                 <span className="sr-only" aria-live="polite">{copied ? contact.copiedLong : ""}</span>
               </span>
