@@ -13,6 +13,9 @@ const result = await checker.check({
   retry: true,
   retryErrors: true,
   retryErrorsCount: 2,
+  // Absolute links to the production site are checked against this build,
+  // so new pages and assets don't fail before they are deployed.
+  urlRewriteExpressions: [{ pattern: /^https:\/\/joshi2032\.github\.io\/portfolio\//, replacement: base }],
   linksToSkip: ["^mailto:", "^tel:", "^data:"],
 });
 server.close();
