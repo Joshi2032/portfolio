@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { cvFiles, cvHref } from "../logic/catalog.js";
 import { useLanguage } from "../logic/LanguageContext.jsx";
+import { trackEvent } from "../logic/analytics.js";
 import "../styles/Resume.css";
 
 export function Resume() {
@@ -10,8 +11,8 @@ export function Resume() {
   const dialogRef = useRef(null);
   const returnFocus = useRef(null);
   const cards = [
-    { href: cvHref(cvFiles.es), file: "Josue-Isai-Salazar-Castro-CV-ES.pdf", lang: cv.esLang, title: cv.esTitle },
-    { href: cvHref(cvFiles.en), file: "Josue-Isai-Salazar-Castro-CV-EN.pdf", lang: cv.enLang, title: cv.enTitle },
+    { id: "es", href: cvHref(cvFiles.es), file: "Josue-Isai-Salazar-Castro-CV-ES.pdf", lang: cv.esLang, title: cv.esTitle },
+    { id: "en", href: cvHref(cvFiles.en), file: "Josue-Isai-Salazar-Castro-CV-EN.pdf", lang: cv.enLang, title: cv.enTitle },
   ];
 
   useEffect(() => {
@@ -25,6 +26,7 @@ export function Resume() {
 
   function openViewer(card, event) {
     returnFocus.current = event.currentTarget;
+    trackEvent(`cv-view-${card.id}`);
     setViewing(card);
   }
 
@@ -51,7 +53,7 @@ export function Resume() {
                 <button type="button" className="btn btn-primary" onClick={(event) => openViewer(card, event)}>
                   {cv.view}
                 </button>
-                <a className="btn btn-ghost" href={card.href} download={card.file}>{cv.download}</a>
+                <a className="btn btn-ghost" href={card.href} download={card.file} onClick={() => trackEvent(`cv-download-${card.id}`)}>{cv.download}</a>
               </div>
             </div>
           ))}

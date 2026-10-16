@@ -1,6 +1,7 @@
 import { sectionIds } from "../logic/catalog.js";
 import { useActiveSection, useScrollHeader } from "../logic/hooks.js";
 import { useLanguage } from "../logic/LanguageContext.jsx";
+import { trackEvent } from "../logic/analytics.js";
 import "../styles/Header.css";
 
 const navItems = [
@@ -43,8 +44,8 @@ export function Header({ menu }) {
           ))}
         </nav>
         <div className="lang" role="group" aria-label={lang === "es" ? "Idioma" : "Language"} inert={inert}>
-          <button type="button" aria-pressed={lang === "es"} onClick={() => setLang("es")}>ES</button>
-          <button type="button" aria-pressed={lang === "en"} onClick={() => setLang("en")}>EN</button>
+          <button type="button" aria-pressed={lang === "es"} onClick={() => { if (lang !== "es") trackEvent("lang-es"); setLang("es"); }}>ES</button>
+          <button type="button" aria-pressed={lang === "en"} onClick={() => { if (lang !== "en") trackEvent("lang-en"); setLang("en"); }}>EN</button>
         </div>
         <button
           ref={menu.toggleRef}
