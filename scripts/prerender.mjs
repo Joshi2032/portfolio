@@ -101,24 +101,70 @@ const noteCss = `
 @font-face{font-family:"Fraunces";font-style:normal;font-weight:500 600;font-display:swap;src:url("${BASE}fonts/fraunces-latin.woff2") format("woff2")}
 @font-face{font-family:"Outfit";font-style:normal;font-weight:300 600;font-display:swap;src:url("${BASE}fonts/outfit-latin.woff2") format("woff2")}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "Outfit","Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:1.5rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "Outfit","Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
 a{color:var(--accent-ink);text-underline-offset:.2em}
 a:focus-visible{outline:2px solid var(--accent-ink);outline-offset:3px;border-radius:4px}
-.bar{max-width:760px;margin:0 auto;padding:1.4rem 1.25rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.92rem}
-main{max-width:760px;margin:0 auto;padding:1rem 1.25rem 4rem}
+.bar,main,footer{width:100%;max-width:1240px;margin:0 auto;padding-left:clamp(1.1rem,4vw,2.5rem);padding-right:clamp(1.1rem,4vw,2.5rem)}
+.bar{padding-top:1.4rem;padding-bottom:1.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.92rem}
+main{padding-top:1rem;padding-bottom:4rem}
+.note-head{max-width:860px;margin-bottom:2.2rem}
 .kicker{margin:0 0 .6rem;color:var(--accent-ink);font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
-h1{margin:0 0 1rem;font:500 clamp(2.1rem,6vw,3.4rem)/1.05 "Fraunces",Georgia,serif;letter-spacing:-.035em}
-.lede{margin:0 0 2rem;color:var(--muted);font-size:1.15rem}
-h2{margin:2.6rem 0 .8rem;font:500 clamp(1.45rem,3.4vw,1.9rem)/1.15 "Fraunces",Georgia,serif;letter-spacing:-.02em}
-p{margin:0 0 1rem}
-figure{margin:2rem 0;display:grid;justify-items:center;gap:.6rem}
-figure img{width:min(100%,340px);height:auto;border:1px solid var(--line);border-radius:18px;background:#0c0e0b}
-figcaption{color:var(--muted);font-size:.88rem;text-align:center}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin:0 0 1.3rem;padding:0;list-style:none}
-.stats li{padding:1rem 1.1rem;border:1px solid var(--line);border-radius:16px;background:var(--bg-2)}
-.stats strong{display:block;color:var(--accent-ink);font:500 1.9rem/1.1 "Fraunces",Georgia,serif;letter-spacing:-.03em}
+h1{margin:0 0 1rem;font:500 clamp(2.1rem,5.4vw,3.8rem)/1.04 "Fraunces",Georgia,serif;letter-spacing:-.035em}
+.lede{margin:0;color:var(--muted);font-size:clamp(1.05rem,1.6vw,1.2rem);max-width:62ch}
+.toc{margin:0 0 2rem}
+.toc h2{margin:0 0 .6rem;font:600 .75rem/1.2 "Outfit",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.toc ol{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0;list-style:none;counter-reset:toc}
+.toc li{counter-increment:toc}
+.toc a{display:inline-flex;gap:.45rem;padding:.4rem .8rem;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;font-size:.9rem;background:var(--bg-2)}
+.toc a::before{content:counter(toc,decimal-leading-zero);color:var(--accent-ink);font-weight:600;font-size:.8rem}
+.toc a:hover{border-color:var(--accent-ink)}
+section{padding-top:.4rem}
+h2{margin:2.6rem 0 .9rem;font:500 clamp(1.45rem,2.8vw,2rem)/1.15 "Fraunces",Georgia,serif;letter-spacing:-.02em}
+section:first-child h2{margin-top:0}
+p{margin:0 0 1rem;max-width:68ch}
+.split{display:grid;gap:1.5rem}
+figure{margin:1rem 0 0;display:grid;justify-items:center;gap:.6rem}
+figure img{width:min(100%,320px);height:auto;border:1px solid var(--line);border-radius:18px;background:#0c0e0b}
+figcaption{color:var(--muted);font-size:.88rem;text-align:center;max-width:32ch}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:.8rem;margin:0 0 1.4rem;padding:0;list-style:none}
+.stats li{padding:1.1rem 1.2rem;border:1px solid var(--line);border-radius:16px;background:var(--bg-2)}
+.stats strong{display:block;color:var(--accent-ink);font:500 clamp(1.7rem,3vw,2.2rem)/1.1 "Fraunces",Georgia,serif;letter-spacing:-.03em}
 .stats span{color:var(--muted);font-size:.9rem}
-footer{max-width:760px;margin:0 auto;padding:2rem 1.25rem 3rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.models{width:100%;margin:.6rem 0 1.6rem;border-collapse:separate;border-spacing:0;font-size:.95rem}
+.models caption{text-align:left;color:var(--muted);font-size:.85rem;padding-bottom:.6rem}
+.models th,.models td{text-align:left;vertical-align:top;padding:.85rem 1rem;border-bottom:1px solid var(--line)}
+.models thead th{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom-color:var(--accent-ink)}
+.models tbody th{font-weight:600;white-space:nowrap}
+.models td:last-child{color:var(--accent-ink);font-weight:500}
+.models tr.is-final{background:var(--bg-2)}
+.models tr.is-final th::after{content:" ●";color:var(--accent-ink);font-size:.7em}
+.final-note{color:var(--muted);font-size:.85rem}
+@media (max-width:819px){
+  .models,.models tbody,.models tr,.models th,.models td{display:block}
+  .models thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .models caption{display:block}
+  .models tbody{display:grid;gap:.8rem}
+  .models tr{border:1px solid var(--line);border-radius:16px;padding:.4rem 0;background:var(--bg-2)}
+  .models tr.is-final{border-color:var(--accent-ink)}
+  .models th,.models td{border:0;padding:.35rem 1.1rem}
+  .models tbody th{font:500 1.2rem/1.2 "Fraunces",Georgia,serif;white-space:normal;padding-top:.7rem}
+  .models td::before{content:attr(data-label);display:block;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+}
+@media (min-width:600px) and (max-width:819px){.models tbody{grid-template-columns:1fr 1fr}}
+@media (min-width:820px){
+  .split{grid-template-columns:minmax(0,1fr) 300px;align-items:start;gap:2.5rem}
+  .split figure{margin:0;position:sticky;top:1.5rem}
+}
+@media (min-width:1100px){
+  .layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:3.5rem;align-items:start}
+  .toc{position:sticky;top:1.5rem;margin:0}
+  .toc ol{flex-direction:column;gap:.15rem;border-left:1px solid var(--line)}
+  .toc a{border:0;background:none;border-radius:0;padding:.4rem .9rem;margin-left:-1px;border-left:2px solid transparent;color:var(--muted)}
+  .toc a:hover,.toc a:focus-visible{color:var(--ink);border-left-color:var(--accent-ink)}
+}
+footer{padding-top:2rem;padding-bottom:3rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 `;
 
 for (const lang of ["es", "en"]) {
@@ -126,18 +172,33 @@ for (const lang of ["es", "en"]) {
   const other = lang === "en" ? "es" : "en";
   const url = `${SITE}${notePath(lang)}`;
   const alternates = { es: `${SITE}${notePath("es")}`, en: `${SITE}${notePath("en")}` };
+  const finalNote = lang === "en" ? "● ships on the phone" : "● va en el teléfono";
   const sections = n.sections
-    .map((section, index) => {
+    .map((section) => {
       const stats = section.stats
         ? `<ul class="stats">${section.stats.map((s) => `<li><strong>${esc(s.value)}</strong><span>${esc(s.label)}</span></li>`).join("")}</ul>`
         : "";
-      const figure =
-        index === 3
-          ? `<figure><img src="${BASE}${note.image}" alt="${esc(n.imageAlt)}" width="540" height="1170" loading="lazy" /><figcaption>${esc(n.imageAlt)}</figcaption></figure>`
-          : "";
-      return `<section><h2>${esc(section.title)}</h2>${stats}${section.body.map((p) => `<p>${esc(p)}</p>`).join("")}${figure}</section>`;
+      const paras = (list) => (list || []).map((p) => `<p>${esc(p)}</p>`).join("");
+      const m = section.models;
+      const table = m
+        ? `<table class="models"><caption>${esc(m.caption)} · <span class="final-note">${finalNote}</span></caption><thead><tr>${m.head.map((h) => `<th scope="col">${esc(h)}</th>`).join("")}</tr></thead><tbody>${m.rows
+            .map(
+              (r, i) =>
+                `<tr${i === 1 ? ' class="is-final"' : ""}><th scope="row">${esc(r[0])}</th>${r
+                  .slice(1)
+                  .map((c, j) => `<td data-label="${esc(m.head[j + 1])}">${esc(c)}</td>`)
+                  .join("")}</tr>`,
+            )
+            .join("")}</tbody></table>`
+        : "";
+      const h = `<h2 id="${section.id}">${esc(section.title)}</h2>`;
+      if (section.id === "telefono" || section.id === "phone") {
+        return `<section aria-labelledby="${section.id}">${h}<div class="split"><div>${paras(section.body)}</div><figure><img src="${BASE}${note.image}" alt="${esc(n.imageAlt)}" width="540" height="1170" loading="lazy" /><figcaption>${esc(n.imageAlt)}</figcaption></figure></div></section>`;
+      }
+      return `<section aria-labelledby="${section.id}">${h}${stats}${paras(section.body)}${table}${paras(section.after)}</section>`;
     })
     .join("\n      ");
+  const toc = `<nav class="toc" aria-labelledby="toc-title"><h2 id="toc-title">${esc(n.toc)}</h2><ol>${n.sections.map((s) => `<li><a href="#${s.id}">${esc(s.title)}</a></li>`).join("")}</ol></nav>`;
   write(
     notePath(lang),
     `${head({
@@ -160,12 +221,17 @@ for (const lang of ["es", "en"]) {
       <a href="${BASE}${notePath(other)}" hreflang="${other}" lang="${other}">${esc(n.other)}</a>
     </nav>
     <main>
-      <article>
-      <p class="kicker">${esc(n.kicker)}</p>
-      <h1>${esc(n.title)}</h1>
-      <p class="lede">${esc(n.description)}</p>
+      <header class="note-head">
+        <p class="kicker">${esc(n.kicker)}</p>
+        <h1>${esc(n.title)}</h1>
+        <p class="lede">${esc(n.description)}</p>
+      </header>
+      <div class="layout">
+        ${toc}
+        <article>
       ${sections}
-      </article>
+        </article>
+      </div>
     </main>
     <footer>Josué Isaí Salazar Castro · <a href="${BASE}${projectPath(lang, "aguacate")}">${lang === "en" ? "See the project" : "Ver el proyecto"}</a></footer>
   </body>

@@ -7,15 +7,18 @@ export const note = {
     kicker: "Nota técnica",
     back: "Volver al portafolio",
     other: "Read in English",
+    toc: "En esta nota",
     imageAlt: "Cámara en vivo del detector, con cajas de madurez",
     sections: [
       {
+        id: "problema",
         title: "El problema",
         body: [
           "Saber, con la cámara del teléfono, si hay un aguacate, si es Hass u otro, y si está inmaduro, maduro o podrido. La detección tenía que correr en el propio teléfono, sin depender de la red.",
         ],
       },
       {
+        id: "datos",
         title: "Los datos",
         body: [
           "La base es el conjunto Hass de estudio de Xavier, Rodrigues y Silva (2024), “Hass” Avocado Ripening Photographic Dataset, en Mendeley Data (DOI 10.17632/3xd9n945v8). Se sumaron Mendeley Kamat, Agrocomputation 227 (Agro227), Fruits-360 y Fruits-30.",
@@ -23,14 +26,29 @@ export const note = {
         ],
       },
       {
+        id: "entrenamiento",
         title: "El entrenamiento",
         body: [
-          "Hubo dos corridas de YOLO26n. La primera, solo con Hass, llegó a un mAP50 de 96.35% en validación (mejor época: 60).",
-          "El modelo del teléfono es un ajuste fino de esa corrida con la mezcla de Hass y «otro», a 100 épocas. Ultralytics guarda como mejor peso el que maximiza su métrica de ajuste (pesa sobre todo mAP50-95); fue la época 72.",
-          "Se entrenó en una NVIDIA RTX PRO 4500 Blackwell con PyTorch.",
+          "No fue un solo modelo. Se entrenaron cinco: dos detectores YOLO26n pensados para el teléfono, un localizador YOLO26x de una sola clase y dos clasificadores de madurez para un contenedor de inferencia. Todo corrió en una NVIDIA RTX PRO 4500 Blackwell con PyTorch, a 640 px en el caso de los YOLO.",
+        ],
+        models: {
+          caption: "Modelos entrenados (métricas sobre validación)",
+          head: ["Modelo", "Para qué", "Datos y corrida", "Métrica clave"],
+          rows: [
+            ["YOLO26n Hass", "Primer detector para el teléfono", "Solo Hass de estudio: 9 899 fotos, separadas por fruto en 7 749 / 1 127 / 1 023. 100 épocas, lote 64.", "mAP50 96.35% (época 60)"],
+            ["YOLO26n mix", "Detector final del teléfono", "Ajuste fino del anterior con Hass + «otro»: 11 130 / 1 585 / 1 486. 100 épocas, lote 160.", "mAP50 97.65% · mAP50-95 96.88% (época 72)"],
+            ["YOLO26x localizador", "Encontrar el fruto (1 clase) en el contenedor", "Detector grande de una clase, lote 12. Se pausó tras 47 de 100 épocas (unas 3.3 h).", "mAP50 99.50% · mAP50-95 99.39% · recall 100%"],
+            ["ConvNeXt-Tiny", "Clasificar madurez en el recorte", "Recorte del fruto con CLAHE; dos cabezas (variedad y madurez).", "F1 de madurez 88.15% · acierto 88.96%"],
+            ["EfficientNet-B3", "Clasificar madurez en el recorte", "Mismo recorte y mismas dos cabezas; mejor peso en la época 24.", "F1 de madurez 94.45% · acierto 94.64%"],
+          ],
+        },
+        after: [
+          "El camino al teléfono: la corrida solo con Hass sirvió de punto de partida, y el ajuste fino con la mezcla subió el mAP50 de 96.35% a 97.65%. Ese YOLO26n mix es el que se exporta a TFLite (float32, 9.7 MB) y va dentro de la app. Ultralytics guarda como mejor peso el que maximiza su métrica de ajuste (pesa sobre todo mAP50-95); fue la época 72. El pico de mAP50 fue 97.67% en la época 29.",
+          "Para el contenedor ganó EfficientNet-B3 sobre ConvNeXt-Tiny (F1 de madurez 94.45% contra 88.15%). Ahí el detector es el mismo YOLO26n mix y no el YOLO26x, para que todo quepa en una GPU de 4 GB.",
         ],
       },
       {
+        id: "telefono",
         title: "En el teléfono",
         body: [
           "El modelo se exporta a TFLite y va dentro de la app Flutter, así que la detección funciona sin red. La app tiene cuatro pantallas: foto de un frame, cámara en vivo, historial y ciencia. También se puede elegir una imagen de la galería.",
@@ -39,6 +57,7 @@ export const note = {
         ],
       },
       {
+        id: "resultados",
         title: "Resultados",
         stats: [
           { value: "97.65%", label: "mAP50 en validación" },
@@ -51,6 +70,7 @@ export const note = {
         ],
       },
       {
+        id: "sigue",
         title: "Qué sigue",
         body: [
           "Mejorar la separación entre podrido y maduro.",
@@ -66,15 +86,18 @@ export const note = {
     kicker: "Technical note",
     back: "Back to the portfolio",
     other: "Leer en español",
+    toc: "In this note",
     imageAlt: "Live camera of the detector, with ripeness boxes",
     sections: [
       {
+        id: "problem",
         title: "The problem",
         body: [
           "Use the phone camera to tell whether an avocado is present, whether it is Hass or other, and whether it is unripe, ripe, or rotten. Detection had to run on the phone itself, without depending on a network.",
         ],
       },
       {
+        id: "data",
         title: "The data",
         body: [
           "The base is the Hass study dataset by Xavier, Rodrigues, and Silva (2024), “Hass” Avocado Ripening Photographic Dataset, on Mendeley Data (DOI 10.17632/3xd9n945v8). Mendeley Kamat, Agrocomputation 227 (Agro227), Fruits-360, and Fruits-30 were added.",
@@ -82,14 +105,29 @@ export const note = {
         ],
       },
       {
+        id: "training",
         title: "Training",
         body: [
-          "There were two YOLO26n runs. The first, Hass only, reached 96.35% mAP50 on validation (best epoch: 60).",
-          "The phone model is a fine-tune of that run on the Hass + “other” mix, for 100 epochs. Ultralytics keeps as best weights the epoch that maximizes its fitness metric (weighted mostly toward mAP50-95); that was epoch 72.",
-          "Training ran on an NVIDIA RTX PRO 4500 Blackwell with PyTorch.",
+          "It wasn't a single model. Five were trained: two YOLO26n detectors meant for the phone, a one-class YOLO26x locator, and two ripeness classifiers for an inference container. Everything ran on an NVIDIA RTX PRO 4500 Blackwell with PyTorch, at 640 px for the YOLO runs.",
+        ],
+        models: {
+          caption: "Models trained (validation metrics)",
+          head: ["Model", "Goal", "Data and run", "Key metric"],
+          rows: [
+            ["YOLO26n Hass", "First phone detector", "Hass study photos only: 9,899 images, split by fruit into 7,749 / 1,127 / 1,023. 100 epochs, batch 64.", "mAP50 96.35% (epoch 60)"],
+            ["YOLO26n mix", "Final phone detector", "Fine-tune of the previous run on Hass + “other”: 11,130 / 1,585 / 1,486. 100 epochs, batch 160.", "mAP50 97.65% · mAP50-95 96.88% (epoch 72)"],
+            ["YOLO26x locator", "Find the fruit (1 class) in the container", "Large one-class detector, batch 12. Paused after 47 of 100 epochs (about 3.3 h).", "mAP50 99.50% · mAP50-95 99.39% · 100% recall"],
+            ["ConvNeXt-Tiny", "Classify ripeness on the crop", "Fruit crop with CLAHE; two heads (variety and ripeness).", "Ripeness F1 88.15% · accuracy 88.96%"],
+            ["EfficientNet-B3", "Classify ripeness on the crop", "Same crop and same two heads; best weights at epoch 24.", "Ripeness F1 94.45% · accuracy 94.64%"],
+          ],
+        },
+        after: [
+          "The path to the phone: the Hass-only run was the starting point, and fine-tuning on the mix raised mAP50 from 96.35% to 97.65%. That YOLO26n mix is what gets exported to TFLite (float32, 9.7 MB) and ships inside the app. Ultralytics keeps as best weights the epoch that maximizes its fitness metric (weighted mostly toward mAP50-95); that was epoch 72. Peak mAP50 was 97.67% at epoch 29.",
+          "For the container, EfficientNet-B3 beat ConvNeXt-Tiny (ripeness F1 94.45% vs 88.15%). There the detector is the same YOLO26n mix rather than YOLO26x, so everything fits on a 4 GB GPU.",
         ],
       },
       {
+        id: "phone",
         title: "On the phone",
         body: [
           "The model is exported to TFLite and ships inside the Flutter app, so detection works without a network. The app has four screens: a one-frame photo, a live camera, history, and science. A picture can also be picked from the gallery.",
@@ -98,6 +136,7 @@ export const note = {
         ],
       },
       {
+        id: "results",
         title: "Results",
         stats: [
           { value: "97.65%", label: "mAP50 on validation" },
@@ -110,6 +149,7 @@ export const note = {
         ],
       },
       {
+        id: "next",
         title: "What's next",
         body: [
           "Better separation between rotten and ripe.",
