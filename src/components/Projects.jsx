@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { LazyLottie } from "./LazyLottie.jsx";
 import { filters, matchesFilter, projectOrder } from "../logic/catalog.js";
 import { useLanguage } from "../logic/LanguageContext.jsx";
@@ -35,24 +35,40 @@ function PlateMotion({ reduceMotion }) {
   );
 }
 
+function FlowCard({ step, className }) {
+  return (
+    <div className={className ? `pm-card ${className}` : "pm-card"}>
+      <strong>{step.title}</strong>
+      <em>{step.note}</em>
+    </div>
+  );
+}
+
 function ProjectFlow({ flow }) {
   return (
     <figure className="pm-flow" aria-label={flow.aria}>
       <figcaption>{flow.title}</figcaption>
-      <ol className="pm-steps">
-        {flow.steps.map((step, index) => (
-          <li
-            key={step.title}
-            className={[step.input ? "pm-engine" : "", index === flow.steps.length - 1 ? "pm-out" : ""].join(" ").trim() || undefined}
-          >
-            <span className="pm-n">{String(index + 1).padStart(2, "0")}</span>
-            <strong>{step.title}</strong>
-            <em>{step.note}</em>
-            {step.input ? <div className="pm-input"><span aria-hidden="true">+</span>{step.input}</div> : null}
-            {step.alt ? <div className="pm-input pm-alt"><span aria-hidden="true">{flow.altMark}</span>{step.alt}</div> : null}
-          </li>
-        ))}
-      </ol>
+      <div className="pm-graph">
+        <div className="pm-paths">
+          {flow.paths.map((path) => (
+            <section className="pm-path" key={path.label} aria-label={path.label}>
+              <p className="pm-path-label">{path.label}</p>
+              <div className="pm-path-steps">
+                {path.steps.map((step, index) => (
+                  <Fragment key={step.title}>
+                    {index > 0 ? <span className="pm-arrow" aria-hidden="true" /> : null}
+                    <FlowCard step={step} />
+                  </Fragment>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+        <span className="pm-arrow pm-merge" aria-hidden="true" />
+        <FlowCard step={flow.engine} className="pm-engine" />
+        <span className="pm-arrow" aria-hidden="true" />
+        <FlowCard step={flow.output} className="pm-out" />
+      </div>
       <p className="pm-stat"><strong>{flow.stat}</strong><span>{flow.statNote}</span></p>
     </figure>
   );

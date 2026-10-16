@@ -73,11 +73,11 @@ export const en = {
       meta: "AI Engineer · PM",
       when: "Aug 2025 – Present",
       title: "3D assembly, quotation, and drawings agent",
-      lede: "Gemma 4 12B, fine-tuned with QLoRA, builds the 3D assembly from real parts. A specialized Qwen model reads the floor plan of the site where the racks will go and passes that information to the engine so the assembly can continue. When there is no floor plan, a chatbot asks questions to gather that information.",
+      lede: "Gemma 4 12B, fine-tuned with QLoRA, builds the 3D assembly from real parts. When there is a floor plan, a specialized Qwen model reads it and passes that information to the engine so the assembly can continue. When there isn't, users interact with Gemma 4 12B through a chatbot that asks questions to build the configuration.",
       points: [
         "The fine-tuned model picks the layout that best uses the warehouse.",
         "Qwen reads the floor plans of the site where the racks will be installed and passes that information to the engine to continue the assembly.",
-        "When no floor plan is available, users interact with the model through a chatbot that gathers the information by asking questions to build the configuration.",
+        "When no floor plan is available, users interact with Gemma 4 12B through a chatbot that gathers the information by asking questions to build the configuration.",
         "A rendering engine produces the 3D render from dimensions, constraints, and installation conditions.",
         "The delivery includes the 3D render, the drawings, and the estimated quotation.",
       ],
@@ -85,13 +85,24 @@ export const en = {
       flow: {
         title: "How it works",
         aria: "3D assembly agent flow",
-        steps: [
-          { title: "Site floor plan", note: "Where the racks will go", alt: "No floor plan: a chatbot asks questions to gather the information" },
-          { title: "Qwen reads the plan", note: "Passes the information to the engine" },
-          { title: "Render engine", note: "Continues the assembly", input: "Gemma 4 12B (QLoRA) picks the layout with real parts" },
-          { title: "3D render, drawings, and quote", note: "The delivery" },
+        paths: [
+          {
+            label: "With floor plan",
+            steps: [
+              { title: "Site floor plan", note: "Where the racks will go" },
+              { title: "Qwen reads the plan", note: "Passes the information to the engine" },
+            ],
+          },
+          {
+            label: "Without floor plan",
+            steps: [
+              { title: "Chatbot", note: "Asks questions to build the configuration" },
+              { title: "Gemma 4 12B (QLoRA)", note: "Builds the configuration with real parts" },
+            ],
+          },
         ],
-        altMark: "or",
+        engine: { title: "Render engine", note: "Continues the assembly" },
+        output: { title: "3D render, drawings, and quote", note: "The delivery" },
         stat: "40–80 h → 10 min",
         statNote: "to prepare the render, drawings, and quote",
       },
