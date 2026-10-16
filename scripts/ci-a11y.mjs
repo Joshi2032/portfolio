@@ -8,7 +8,7 @@ const require = createRequire(import.meta.url);
 const axeSource = readFileSync(require.resolve("axe-core/axe.min.js"), "utf8");
 const server = await startServer();
 const base = `http://localhost:${server.address().port}/portfolio/`;
-const pages = ["", "?lang=en", "?p=aguacate", "?p=aguacate&lang=en", "?p=ensamble"];
+const pages = ["", "?lang=en", "?p=aguacate", "?p=aguacate&lang=en", "?p=ensamble", "?p=kaizen"];
 const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || "/usr/bin/google-chrome", args: ["--no-sandbox"] });
 let failures = 0;
 for (const scheme of ["dark", "light"]) {

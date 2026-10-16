@@ -688,3 +688,29 @@
 @media (min-width: 560px) and (max-width: bp-tablet) {
   .tech-models tbody { grid-template-columns: 1fr 1fr; }
 }
+
+/* Linear process diagram (e.g. Kaizen), same card language as the PM flow */
+.pm-linear { display: grid; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.pm-step { display: grid; gap: 0.5rem; justify-items: stretch; }
+.pm-step .pm-arrow { justify-self: center; }
+.pm-step .pm-arrow::before { content: "↓"; }
+.pm-loop { margin-top: 0.25rem; padding: 0.3rem 0.55rem; border: 1px dashed rgba(var(--accent-rgb), 0.55); border-radius: 999px; color: var(--accent-ink); font-size: 0.78rem; align-self: flex-start; }
+.pm-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.9rem; }
+.pm-compare-item { display: flex; flex-direction: column; gap: 0.15rem; margin: 0; padding: 0.8rem 0.9rem; border: 1px solid var(--line); border-radius: 14px; }
+.pm-compare-item span { color: var(--faint); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.pm-compare-item strong { font-family: var(--serif); font-weight: 500; font-size: 1.2rem; }
+.pm-compare-item em { color: var(--muted); font-style: normal; font-size: 0.85rem; }
+.pm-compare-item.is-now { border-color: rgba(var(--accent-rgb), 0.45); background: rgba(var(--accent-rgb), 0.08); }
+.pm-compare-item.is-now strong { color: var(--accent-ink); }
+
+@media (min-width: 1200px) {
+  .pm-linear { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; }
+  .pm-step { grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 0.45rem; padding-right: 0.45rem; }
+  .pm-step:first-child { grid-template-columns: minmax(0, 1fr); }
+  .pm-step .pm-arrow::before { content: "→"; }
+  .pm-step .pm-card { height: 100%; }
+}
+
+@media (max-width: 420px) {
+  .pm-compare { grid-template-columns: 1fr; }
+}

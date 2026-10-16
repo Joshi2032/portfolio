@@ -97,6 +97,36 @@ function TechNote({ lang }) {
 }
 
 function ProjectFlow({ flow }) {
+  if (flow.steps) {
+    return (
+      <figure className="pm-flow" aria-label={flow.aria}>
+        <figcaption>{flow.title}</figcaption>
+        <ol className="pm-linear">
+          {flow.steps.map((step, index) => (
+            <li key={step.title} className={index === flow.steps.length - 1 ? "pm-step is-last" : "pm-step"}>
+              {index > 0 ? <span className="pm-arrow" aria-hidden="true" /> : null}
+              <div className={`pm-card${index === flow.steps.length - 1 ? " pm-out" : step.loop ? " pm-engine" : ""}`}>
+                <strong>{step.title}</strong>
+                <em>{step.note}</em>
+                {step.loop ? <span className="pm-loop"><span aria-hidden="true">↺ </span>{step.loop}</span> : null}
+              </div>
+            </li>
+          ))}
+        </ol>
+        {flow.compare ? (
+          <div className="pm-compare">
+            {flow.compare.map((item, index) => (
+              <p key={item.label} className={index === 1 ? "pm-compare-item is-now" : "pm-compare-item"}>
+                <span>{item.label}</span>
+                <strong>{item.title}</strong>
+                <em>{item.note}</em>
+              </p>
+            ))}
+          </div>
+        ) : null}
+      </figure>
+    );
+  }
   return (
     <figure className="pm-flow" aria-label={flow.aria}>
       <figcaption>{flow.title}</figcaption>
@@ -402,7 +432,7 @@ export function Projects() {
           const details = text.projects[project.id];
           if (!matchesFilter(project.tags, filter)) return null;
           const hasShots = Boolean(details.shots?.length);
-          const opens = hasShots || Boolean(details.alongside);
+          const opens = hasShots || Boolean(details.alongside) || Boolean(details.flow);
           const kind = details.client ? "is-client" : "is-own";
           return (
             <article

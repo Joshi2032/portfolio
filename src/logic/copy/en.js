@@ -172,6 +172,45 @@ export const en = {
       tags: ["C#", "MySQL", "Angular", "PDF"],
       delivery: "Night-shift proposal response cut from 2 weeks to ~8 hours; form filling from 20 to 5 min.",
       metric: { value: "2 wk → 8 h", label: "Kaizen response, night shift" },
+      flow: {
+        title: "How it works",
+        aria: "Kaizen proposal flow",
+        steps: [
+          {
+            title: "Employee",
+            note: "Fills in the digital proposal: before and after, 5S, and category"
+          },
+          {
+            title: "MySQL database",
+            note: "Stores the proposal and its status"
+          },
+          {
+            title: "Reviewer",
+            note: "Approves, rejects, or requests changes",
+            loop: "Changes requested: back to the employee"
+          },
+          {
+            title: "Real-time tracking",
+            note: "Everyone sees where each proposal stands"
+          },
+          {
+            title: "Dynamic PDF",
+            note: "Generated from the proposal's data"
+          }
+        ],
+        compare: [
+          {
+            label: "Before",
+            title: "Paper",
+            note: "2-week response on the night shift"
+          },
+          {
+            label: "Now",
+            title: "Digital",
+            note: "~8 h response"
+          }
+        ]
+      },
     },
     sap: {
       plate: "Approval through to SAP HANA",

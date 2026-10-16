@@ -172,6 +172,45 @@ export const es = {
       tags: ["C#", "MySQL", "Angular", "PDF"],
       delivery: "Respuesta a propuestas del turno nocturno: de 2 semanas a ~8 horas; llenado de 20 a 5 min.",
       metric: { value: "2 sem → 8 h", label: "Respuesta Kaizen, turno nocturno" },
+      flow: {
+        title: "Cómo funciona",
+        aria: "Flujo de propuestas Kaizen",
+        steps: [
+          {
+            title: "Empleado",
+            note: "Llena la propuesta digital: antes y después, 5S y categoría"
+          },
+          {
+            title: "Base de datos MySQL",
+            note: "Guarda la propuesta y su estado"
+          },
+          {
+            title: "Revisor",
+            note: "Aprueba, rechaza o pide cambios",
+            loop: "Si pide cambios, vuelve al empleado"
+          },
+          {
+            title: "Seguimiento en tiempo real",
+            note: "Se ve en qué estado va cada propuesta"
+          },
+          {
+            title: "PDF dinámico",
+            note: "Se genera con los datos de la propuesta"
+          }
+        ],
+        compare: [
+          {
+            label: "Antes",
+            title: "Papel",
+            note: "2 semanas de respuesta en el turno nocturno"
+          },
+          {
+            label: "Ahora",
+            title: "Digital",
+            note: "~8 h de respuesta"
+          }
+        ]
+      },
     },
     sap: {
       plate: "Aprobación hasta SAP HANA",
