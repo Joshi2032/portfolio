@@ -52,7 +52,6 @@ export const en = {
     share: "Share",
     copyLink: "Copy link",
     linkCopied: "Link copied",
-    readNote: "Read the technical note",
     title: "Projects",
     lead: "Cases from the CV: an agent for racks and drawings, restaurant operations, staff control, and two enterprise systems.",
     filters: {
@@ -303,6 +302,5 @@ export const en = {
     whatsapp: "WhatsApp",
     call: "Call",
   },
-  notes: "Notes",
   footer: "Full Stack Developer · La Piedad, Michoacán, Mexico",
 };

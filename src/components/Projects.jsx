@@ -5,6 +5,7 @@ import { useLanguage } from "../logic/LanguageContext.jsx";
 import { copyText } from "../logic/clipboard.js";
 import { trackEvent } from "../logic/analytics.js";
 import { useMediaQuery } from "../responsive/useMediaQuery.js";
+import { note as techNote } from "../notes/detectorAguacate.js";
 import "../styles/Projects.css";
 
 function PlateMotion({ reduceMotion }) {
@@ -43,6 +44,55 @@ function FlowCard({ step, className }) {
       <strong>{step.title}</strong>
       <em>{step.note}</em>
     </div>
+  );
+}
+
+function TechNote({ lang }) {
+  const n = techNote[lang];
+  return (
+    <section className="tech-note" aria-labelledby="tech-note-title">
+      <h4 id="tech-note-title">{n.title}</h4>
+      <p className="tech-note-summary">{n.summary}</p>
+      {n.sections.map((section) => (
+        <details key={section.id} className="tech-note-item">
+          <summary>{section.title}</summary>
+          <div className="tech-note-body">
+            {section.stats ? (
+              <ul className="tech-stats">
+                {section.stats.map((stat) => (
+                  <li key={stat.label}>
+                    <strong>{stat.value}</strong>
+                    <span>{stat.label}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+            {section.body.map((text) => <p key={text}>{text}</p>)}
+            {section.models ? (
+              <table className="tech-models">
+                <caption>
+                  {section.models.caption} · <span className="tech-final-key">● {n.finalLabel}</span>
+                </caption>
+                <thead>
+                  <tr>{section.models.head.map((h) => <th key={h} scope="col">{h}</th>)}</tr>
+                </thead>
+                <tbody>
+                  {section.models.rows.map((row, i) => (
+                    <tr key={row[0]} className={i === 1 ? "is-final" : undefined}>
+                      <th scope="row">{row[0]}</th>
+                      {row.slice(1).map((cell, j) => (
+                        <td key={cell} data-label={section.models.head[j + 1]}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : null}
+            {(section.after ?? []).map((text) => <p key={text}>{text}</p>)}
+          </div>
+        </details>
+      ))}
+    </section>
   );
 }
 
@@ -441,14 +491,10 @@ export function Projects() {
                 {openDetails.alongside ? <ProjectAlongside work={openDetails.alongside} /> : null}
               </div>
               <div className="project-float-actions">
-                {openProject.note ? (
-                  <a className="btn btn-primary" href={`${import.meta.env.BASE_URL}${lang === "en" ? "en/" : ""}notas/${openProject.note}/`}>
-                    {intro.readNote}
-                  </a>
-                ) : null}
                 <ShareButton lang={lang} id={openProject.id} title={openDetails.title} intro={intro} />
               </div>
               {openDetails.flow ? <ProjectFlow flow={openDetails.flow} /> : null}
+              {openProject.id === "aguacate" ? <TechNote lang={lang} /> : null}
             </div>
           </div>
         </dialog>

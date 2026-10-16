@@ -52,7 +52,6 @@ export const es = {
     share: "Compartir",
     copyLink: "Copiar enlace",
     linkCopied: "Enlace copiado",
-    readNote: "Leer la nota técnica",
     title: "Proyectos",
     lead: "Casos tomados del CV: un agente para racks y planos, operación de restaurantes, control de personal y dos sistemas empresariales.",
     filters: {
@@ -303,6 +302,5 @@ export const es = {
     whatsapp: "WhatsApp",
     call: "Llamar",
   },
-  notes: "Notas",
   footer: "Full Stack Developer · La Piedad, Michoacán",
 };

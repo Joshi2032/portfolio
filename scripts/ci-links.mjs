@@ -7,7 +7,7 @@ const base = `http://localhost:${server.address().port}/portfolio/`;
 const checker = new LinkChecker();
 const tolerant = /linkedin\.com|wa\.me|mail\.google\.com|goatcounter\.com|zgo\.at|doi\.org/;
 const result = await checker.check({
-  path: [base, `${base}?lang=en`, `${base}notas/detector-aguacate/`, `${base}en/notas/detector-aguacate/`, `${base}404.html`],
+  path: [base, `${base}?lang=en`, `${base}notas/detector-aguacate/`, `${base}404.html`],
   recurse: true,
   timeout: 20000,
   retry: true,
