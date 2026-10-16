@@ -4,34 +4,51 @@ import "../styles/Contact.css";
 
 const MAIL = "joshi.jc2032@gmail.com";
 const WHATSAPP = "523521887541";
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export function Contact() {
   const { text } = useLanguage();
   const contact = text.contact;
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const [missing, setMissing] = useState(false);
+  const [errors, setErrors] = useState({});
   const nameId = useId();
+  const emailId = useId();
+  const subjectId = useId();
   const messageId = useId();
-  const draft = [
+  const mailSubject = subject.trim() || contact.subject;
+  const body = [
     name.trim() ? `${contact.name}: ${name.trim()}` : "",
+    email.trim() ? `${contact.yourEmail}: ${email.trim()}` : "",
     message.trim(),
   ].filter(Boolean).join("\n\n");
-  const mailHref = `mailto:${MAIL}?subject=${encodeURIComponent(contact.subject)}&body=${encodeURIComponent(draft)}`;
+  const mailHref = `mailto:${MAIL}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(body)}`;
+  const gmailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(MAIL)}&su=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(body)}`;
+  const draft = [name.trim() ? `${contact.name}: ${name.trim()}` : "", message.trim()].filter(Boolean).join("\n\n");
   const whatsappHref = draft
     ? `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(draft)}`
     : `https://wa.me/${WHATSAPP}`;
 
-  function onSend(event) {
-    if (message.trim()) return;
-    event.preventDefault();
-    setMissing(true);
-    document.getElementById(messageId)?.focus();
+  function validate() {
+    const next = {};
+    if (!email.trim()) next.email = contact.emailMissing;
+    else if (!EMAIL_RE.test(email.trim())) next.email = contact.emailInvalid;
+    if (!message.trim()) next.message = contact.messageMissing;
+    return next;
   }
 
-  function onMessage(event) {
-    const value = event.target.value;
-    setMessage(value);
-    if (value.trim()) setMissing(false);
+  function onSend(event) {
+    const next = validate();
+    setErrors(next);
+    if (!next.email && !next.message) return;
+    event.preventDefault();
+    document.getElementById(next.email ? emailId : messageId)?.focus();
+  }
+
+  function clearError(key) {
+    setErrors((current) => (current[key] ? { ...current, [key]: undefined } : current));
   }
 
   return (
@@ -48,7 +65,7 @@ export function Contact() {
               <span>{contact.email}</span>
               <strong>{MAIL}</strong>
             </p>
-            <form className="contact-form">
+            <form className="contact-form" noValidate onSubmit={(event) => event.preventDefault()}>
               <label htmlFor={nameId}>{contact.name}</label>
               <input
                 id={nameId}
@@ -56,6 +73,29 @@ export function Contact() {
                 autoComplete="name"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
+              />
+              <label htmlFor={emailId}>{contact.yourEmail}</label>
+              <input
+                id={emailId}
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+                value={email}
+                aria-invalid={errors.email ? true : undefined}
+                aria-describedby={errors.email ? `${emailId}-error` : undefined}
+                onChange={(event) => { setEmail(event.target.value); clearError("email"); }}
+              />
+              {errors.email ? (
+                <p className="contact-error" id={`${emailId}-error`} role="alert">{errors.email}</p>
+              ) : null}
+              <label htmlFor={subjectId}>{contact.subjectLabel}</label>
+              <input
+                id={subjectId}
+                name="subject"
+                placeholder={contact.subject}
+                value={subject}
+                onChange={(event) => setSubject(event.target.value)}
               />
               <label htmlFor={messageId}>{contact.message}</label>
               <textarea
@@ -65,15 +105,16 @@ export function Contact() {
                 rows={5}
                 placeholder={contact.messagePlaceholder}
                 value={message}
-                aria-invalid={missing || undefined}
-                aria-describedby={missing ? `${messageId}-error` : undefined}
-                onChange={onMessage}
+                aria-invalid={errors.message ? true : undefined}
+                aria-describedby={errors.message ? `${messageId}-error` : undefined}
+                onChange={(event) => { setMessage(event.target.value); clearError("message"); }}
               />
-              {missing ? (
-                <p className="contact-error" id={`${messageId}-error`} role="alert">{contact.messageMissing}</p>
+              {errors.message ? (
+                <p className="contact-error" id={`${messageId}-error`} role="alert">{errors.message}</p>
               ) : null}
               <div className="contact-actions">
                 <a className="btn btn-primary" href={mailHref} onClick={onSend}>{contact.send}</a>
+                <a className="btn btn-ghost" href={gmailHref} target="_blank" rel="noreferrer" onClick={onSend}>{contact.gmail}</a>
                 <a className="btn btn-ghost" href={whatsappHref} target="_blank" rel="noreferrer">{contact.whatsapp}</a>
               </div>
             </form>
