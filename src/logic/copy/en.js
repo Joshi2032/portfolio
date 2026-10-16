@@ -91,6 +91,7 @@ export const en = {
           { title: "Render engine", note: "Continues the assembly", input: "Gemma 4 12B (QLoRA) picks the layout with real parts" },
           { title: "3D render, drawings, and quote", note: "The delivery" },
         ],
+        altMark: "or",
         stat: "40–80 h → 10 min",
         statNote: "to prepare the render, drawings, and quote",
       },

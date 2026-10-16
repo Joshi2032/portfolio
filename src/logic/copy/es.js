@@ -91,6 +91,7 @@ export const es = {
           { title: "Motor de render", note: "Continúa con el armado", input: "Gemma 4 12B (QLoRA) elige la configuración con piezas reales" },
           { title: "Render 3D, planos y cotización", note: "La entrega" },
         ],
+        altMark: "o",
         stat: "40–80 h → 10 min",
         statNote: "para preparar render, planos y cotización",
       },
