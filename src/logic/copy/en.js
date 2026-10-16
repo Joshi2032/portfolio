@@ -49,6 +49,10 @@ export const en = {
     ],
   },
   projectsIntro: {
+    share: "Share",
+    copyLink: "Copy link",
+    linkCopied: "Link copied",
+    readNote: "Read the technical note",
     title: "Projects",
     lead: "Cases from the CV: an agent for racks and drawings, restaurant operations, staff control, and two enterprise systems.",
     filters: {
@@ -278,6 +282,9 @@ export const en = {
     openTab: "Open in new tab",
   },
   contact: {
+    copyEmail: "Copy email",
+    copied: "Copied",
+    copiedLong: "Email copied to the clipboard",
     title: "Contact",
     lead: "Write to me if you want to talk about a system, an AI agent, or a Flutter app.",
     email: "Email",
@@ -296,5 +303,6 @@ export const en = {
     whatsapp: "WhatsApp",
     call: "Call",
   },
+  notes: "Notes",
   footer: "Full Stack Developer · La Piedad, Michoacán, Mexico",
 };

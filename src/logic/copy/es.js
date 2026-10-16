@@ -49,6 +49,10 @@ export const es = {
     ],
   },
   projectsIntro: {
+    share: "Compartir",
+    copyLink: "Copiar enlace",
+    linkCopied: "Enlace copiado",
+    readNote: "Leer la nota técnica",
     title: "Proyectos",
     lead: "Casos tomados del CV: un agente para racks y planos, operación de restaurantes, control de personal y dos sistemas empresariales.",
     filters: {
@@ -278,6 +282,9 @@ export const es = {
     openTab: "Abrir en pestaña nueva",
   },
   contact: {
+    copyEmail: "Copiar correo",
+    copied: "Copiado",
+    copiedLong: "Correo copiado al portapapeles",
     title: "Contacto",
     lead: "Escríbeme si quieres hablar de un sistema, un agente de IA o una app en Flutter.",
     email: "Correo",
@@ -296,5 +303,6 @@ export const es = {
     whatsapp: "WhatsApp",
     call: "Llamar",
   },
+  notes: "Notas",
   footer: "Full Stack Developer · La Piedad, Michoacán",
 };

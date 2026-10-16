@@ -2,6 +2,8 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { LazyLottie } from "./LazyLottie.jsx";
 import { filters, matchesFilter, projectOrder } from "../logic/catalog.js";
 import { useLanguage } from "../logic/LanguageContext.jsx";
+import { copyText } from "../logic/clipboard.js";
+import { trackEvent } from "../logic/analytics.js";
 import { useMediaQuery } from "../responsive/useMediaQuery.js";
 import "../styles/Projects.css";
 
@@ -71,6 +73,47 @@ function ProjectFlow({ flow }) {
       </div>
       <p className="pm-stat"><strong>{flow.stat}</strong><span>{flow.statNote}</span></p>
     </figure>
+  );
+}
+
+const SITE = "https://joshi2032.github.io/portfolio/";
+
+function shareUrl(lang, id) {
+  return `${SITE}${lang === "en" ? "en/" : ""}proyectos/${id}/`;
+}
+
+function ShareButton({ lang, id, title, intro }) {
+  const [copied, setCopied] = useState(false);
+  const canShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
+
+  async function onShare() {
+    const url = shareUrl(lang, id);
+    if (canShare) {
+      try {
+        await navigator.share({ title, url });
+        trackEvent(`share-${id}`);
+        return;
+      } catch (error) {
+        if (error?.name === "AbortError") return;
+      }
+    }
+    if (await copyText(url)) {
+      trackEvent(`share-copy-${id}`);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2500);
+    }
+  }
+
+  return (
+    <div className="project-share">
+      <button type="button" className="btn btn-ghost project-share-btn" onClick={onShare}>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <path d="M10 14a4.5 4.5 0 0 0 6.4 0l3.2-3.2a4.5 4.5 0 0 0-6.4-6.4L12 5.6M14 10a4.5 4.5 0 0 0-6.4 0l-3.2 3.2a4.5 4.5 0 0 0 6.4 6.4L12 18.4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        </svg>
+        {copied ? intro.linkCopied : canShare ? intro.share : intro.copyLink}
+      </button>
+      <span className="sr-only" aria-live="polite">{copied ? intro.linkCopied : ""}</span>
+    </div>
   );
 }
 
@@ -180,6 +223,26 @@ export function Projects() {
   const openDetails = openProject ? text.projects[openProject.id] : null;
   const shots = openDetails?.shots ?? [];
   const shot = shotIndex == null ? null : shots[shotIndex] ?? null;
+
+  useEffect(() => {
+    const id = new URLSearchParams(window.location.search).get("p");
+    if (!id) return;
+    const url = new URL(window.location.href);
+    url.searchParams.delete("p");
+    history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+    const project = projectOrder.find((item) => item.id === id);
+    if (!project) return;
+    const details = text.projects[id];
+    const opens = Boolean(details.shots?.length) || Boolean(details.alongside) || Boolean(details.flow);
+    const card = document.getElementById(id);
+    if (opens) {
+      returnFocus.current = card;
+      setOpenId(id);
+    } else if (card) {
+      requestAnimationFrame(() => card.scrollIntoView({ block: "center" }));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (previous.current.filter === filter && previous.current.lang === lang) return;
@@ -376,6 +439,14 @@ export function Projects() {
                   {openDetails.shots?.length ? <ProjectShots details={openDetails} onOpen={openShot} /> : null}
                 </div>
                 {openDetails.alongside ? <ProjectAlongside work={openDetails.alongside} /> : null}
+              </div>
+              <div className="project-float-actions">
+                {openProject.note ? (
+                  <a className="btn btn-primary" href={`${import.meta.env.BASE_URL}${lang === "en" ? "en/" : ""}notas/${openProject.note}/`}>
+                    {intro.readNote}
+                  </a>
+                ) : null}
+                <ShareButton lang={lang} id={openProject.id} title={openDetails.title} intro={intro} />
               </div>
               {openDetails.flow ? <ProjectFlow flow={openDetails.flow} /> : null}
             </div>

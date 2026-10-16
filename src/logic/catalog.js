@@ -6,7 +6,7 @@ export const projectOrder = [
   { id: "maxifum", tags: ["flutter", "ia"], plate: "plate-ops", index: "03", org: "MAXIFUM" },
   { id: "kaizen", tags: ["csharp"], plate: "plate-plant", index: "04", org: "Mitsubishi Electric" },
   { id: "sap", tags: ["sap"], plate: "plate-cloud", index: "05", org: "Enjo-it" },
-  { id: "aguacate", tags: ["ia", "flutter"], plate: "plate-avo", index: "06", org: "YOLO26n" },
+  { id: "aguacate", tags: ["ia", "flutter"], plate: "plate-avo", index: "06", org: "YOLO26n", note: "detector-aguacate" },
   { id: "tienda", tags: ["flutter"], plate: "plate-shop", index: "07", org: "Flutter + NestJS" },
 ];
 

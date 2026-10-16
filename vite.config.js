@@ -50,9 +50,10 @@ export default defineConfig(({ command }) => ({
       },
       workbox: {
         globPatterns: ["**/*.{html,js,css,woff2,png,ico,svg,lottie,pdf,xml,txt}"],
+        globIgnores: ["og/**", "og.png"],
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
         navigateFallback: "index.html",
-        navigateFallbackDenylist: [/\/404\.html$/],
+        navigateFallbackDenylist: [/\/404\.html$/, /\/proyectos\/[^/.]+\/?$/, /\/notas\//, /\/en\//],
         cleanupOutdatedCaches: true,
         clientsClaim: true,
         skipWaiting: true,

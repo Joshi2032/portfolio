@@ -1,5 +1,7 @@
 import { useId, useState } from "react";
 import { useLanguage } from "../logic/LanguageContext.jsx";
+import { copyText } from "../logic/clipboard.js";
+import { trackEvent } from "../logic/analytics.js";
 import "../styles/Contact.css";
 
 const MAIL = "joshi.jc2032@gmail.com";
@@ -14,6 +16,7 @@ export function Contact() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
+  const [copied, setCopied] = useState(false);
   const nameId = useId();
   const emailId = useId();
   const subjectId = useId();
@@ -30,6 +33,15 @@ export function Contact() {
   const whatsappHref = draft
     ? `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(draft)}`
     : `https://wa.me/${WHATSAPP}`;
+
+  async function onCopyEmail() {
+    const ok = await copyText(MAIL);
+    if (!ok) return;
+    trackEvent("email-copy");
+    setCopied(true);
+    window.clearTimeout(onCopyEmail.timer);
+    onCopyEmail.timer = window.setTimeout(() => setCopied(false), 2500);
+  }
 
   function validate() {
     const next = {};
@@ -64,6 +76,12 @@ export function Contact() {
             <p className="contact-destination">
               <span>{contact.email}</span>
               <strong>{MAIL}</strong>
+              <span className="contact-copy-row">
+                <button type="button" className="contact-copy" onClick={onCopyEmail}>
+                  {copied ? contact.copied : contact.copyEmail}
+                </button>
+                <span className="sr-only" aria-live="polite">{copied ? contact.copiedLong : ""}</span>
+              </span>
             </p>
             <form className="contact-form" noValidate onSubmit={(event) => event.preventDefault()}>
               <label htmlFor={nameId}>{contact.name}</label>

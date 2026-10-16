@@ -523,3 +523,6 @@
   .pm-arrow { justify-self: center; }
   .pm-arrow::before { content: "↓"; }
 }
+
+.project-float-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.7rem; margin-top: 1.3rem; }
+.project-share-btn { display: inline-flex; align-items: center; gap: 0.5rem; }
