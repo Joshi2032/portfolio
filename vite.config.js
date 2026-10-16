@@ -50,7 +50,7 @@ export default defineConfig(({ command }) => ({
       },
       workbox: {
         globPatterns: ["**/*.{html,js,css,woff2,png,jpg,avif,webp,ico,svg,lottie,pdf,xml,txt}"],
-        globIgnores: ["og/**", "og.png", "foto/josue-600.jpg", "foto/*.jpg", "foto/*.webp", "foto/josue-432.*"],
+        globIgnores: ["og/**", "og.png", "foto/josue-600.jpg", "foto/*.jpg", "foto/*.webp", "foto/josue-432.*", "foto/josue-288.*"],
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
         navigateFallback: "index.html",
         navigateFallbackDenylist: [/\/404\.html$/, /\/proyectos\/[^/.]+\/?$/, /\/notas\//, /\/en\//],

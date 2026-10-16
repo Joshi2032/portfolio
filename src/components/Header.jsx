@@ -24,7 +24,11 @@ export function Header({ menu }) {
     <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
       <div className="wrap bar">
         <a className="brand" href="#inicio" inert={inert}>
-          <span className="mark" aria-hidden="true">JI</span>
+          <picture className="mark">
+            <source type="image/avif" srcSet={`${import.meta.env.BASE_URL}foto/josue-144.avif`} />
+            <source type="image/webp" srcSet={`${import.meta.env.BASE_URL}foto/josue-144.webp`} />
+            <img src={`${import.meta.env.BASE_URL}foto/josue-144.jpg`} width="40" height="40" alt="" decoding="async" fetchPriority="high" />
+          </picture>
           <span className="brand-text">Josué Isaí</span>
         </a>
         <nav

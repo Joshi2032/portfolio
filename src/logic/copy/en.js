@@ -18,7 +18,6 @@ export const en = {
     contact: "Contact",
   },
   hero: {
-    photoAlt: "Josué Isaí Salazar Castro",
     kicker: "La Piedad, Michoacán, Mexico",
     role: "Full Stack Developer · Flutter · Applied AI",
     lede: "AI agents for industrial processes and operational systems in Flutter.",

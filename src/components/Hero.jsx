@@ -12,20 +12,6 @@ export function Hero() {
     <section className="hero" id="inicio">
       <div className="wrap hero-grid">
         <div className="hero-copy">
-          <picture className="portrait">
-            <source type="image/avif" srcSet={`${import.meta.env.BASE_URL}foto/josue-144.avif 144w, ${import.meta.env.BASE_URL}foto/josue-288.avif 288w, ${import.meta.env.BASE_URL}foto/josue-432.avif 432w`} sizes="(max-width: 640px) 88px, 120px" />
-            <source type="image/webp" srcSet={`${import.meta.env.BASE_URL}foto/josue-144.webp 144w, ${import.meta.env.BASE_URL}foto/josue-288.webp 288w, ${import.meta.env.BASE_URL}foto/josue-432.webp 432w`} sizes="(max-width: 640px) 88px, 120px" />
-            <img
-              src={`${import.meta.env.BASE_URL}foto/josue-288.jpg`}
-              srcSet={`${import.meta.env.BASE_URL}foto/josue-144.jpg 144w, ${import.meta.env.BASE_URL}foto/josue-288.jpg 288w, ${import.meta.env.BASE_URL}foto/josue-432.jpg 432w`}
-              sizes="(max-width: 640px) 88px, 120px"
-              width="120"
-              height="120"
-              alt={hero.photoAlt}
-              fetchPriority="high"
-              decoding="async"
-            />
-          </picture>
           <p className="kicker">{hero.kicker}</p>
           <p className="role">{hero.role}</p>
           <h1>Josué Isaí<br /><em>Salazar Castro</em></h1>

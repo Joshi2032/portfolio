@@ -31,16 +31,21 @@ body.menu-open {
 }
 
 .mark {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: var(--accent);
-  color: var(--ink-on-accent);
-  font-size: 0.78rem;
-  font-weight: 650;
-  letter-spacing: -0.04em;
+  display: block;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-2);
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px rgba(var(--accent-rgb), 0.6);
+}
+
+.mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .brand-text { letter-spacing: -0.03em; }
