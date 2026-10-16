@@ -212,7 +212,7 @@ export function useMobileMenu(isCompactNav) {
 }
 
 const THEME_KEY = "portfolio-theme";
-const THEME_COLORS = { dark: "#10120e", light: "#f5f3ec" };
+const THEME_COLORS = { dark: "#10120e", light: "#f3efe4" };
 
 function readTheme() {
   const current = document.documentElement.dataset.theme;

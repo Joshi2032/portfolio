@@ -280,7 +280,7 @@
   top: 0.55em;
   width: 6px;
   height: 6px;
-  background: var(--accent);
+  background: var(--mark-dot);
 }
 
 .project-site {

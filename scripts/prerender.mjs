@@ -97,7 +97,7 @@ for (const project of projectOrder) {
 
 const noteCss = `
 :root{--bg:#10120e;--bg-2:#171a14;--ink:#f4f0e6;--muted:#b7b2a6;--line:rgba(244,240,230,.14);--accent:#e2ff57;--accent-ink:#e2ff57;--on-accent:#15170f;color-scheme:dark}
-:root[data-theme="light"]{--bg:#f4f1e8;--bg-2:#fffdf7;--ink:#1c1d16;--muted:#4b4c41;--line:rgba(28,29,22,.14);--accent:#d9f24a;--accent-ink:#4a5800;--on-accent:#15170f;color-scheme:light}
+:root[data-theme="light"]{--bg:#f3efe4;--bg-2:#fbf9f3;--ink:#1d1e17;--muted:#4a4b40;--line:rgba(64,56,32,.15);--accent:#d6f03f;--accent-ink:#4c5a04;--on-accent:#15170f;color-scheme:light}
 @font-face{font-family:"Fraunces";font-style:normal;font-weight:500 600;font-display:swap;src:url("${BASE}fonts/fraunces-latin.woff2") format("woff2")}
 @font-face{font-family:"Outfit";font-style:normal;font-weight:300 600;font-display:swap;src:url("${BASE}fonts/outfit-latin.woff2") format("woff2")}
 *{box-sizing:border-box}
@@ -148,7 +148,7 @@ for (const lang of ["es", "en"]) {
       image: `${SITE}og/nota-${note.slug}-${lang}.png`,
       alternates,
       extra: `    <meta name="theme-color" content="#10120e" />
-    <script>(function(){var t;try{t=localStorage.getItem("portfolio-theme")}catch(e){}if(t!=="light"&&t!=="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=t==="light"?"#f4f1e8":"#10120e"})();</script>
+    <script>(function(){var t;try{t=localStorage.getItem("portfolio-theme")}catch(e){}if(t!=="light"&&t!=="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=t==="light"?"#f3efe4":"#10120e"})();</script>
     <link rel="preload" href="${BASE}fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
     <style>${noteCss}</style>
     <script data-goatcounter="https://joshi2032.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

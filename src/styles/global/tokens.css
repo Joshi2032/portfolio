@@ -13,6 +13,8 @@
   --bg2-rgb: 23, 26, 20;
   --ink-rgb: 244, 240, 230;
   --accent-rgb: 226, 255, 87;
+  --mark-dot: #e2ff57;
+  --card-shadow: none;
   --serif: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif;
   --sans: "Outfit", "Segoe UI", sans-serif;
   --header: 76px;
@@ -20,26 +22,46 @@
 }
 
 :root[data-theme="light"] {
-  --bg: #f5f3ec;
-  --bg-2: #ffffff;
-  --ink: #181a13;
-  --muted: #4b4d42;
-  --faint: #5f6156;
-  --line: rgba(24, 26, 19, 0.16);
-  --accent: #e2ff57;
-  --accent-ink: #4a5800;
-  --focus: #4a5800;
-  --ink-on-accent: #15170f;
-  --bg-rgb: 245, 243, 236;
-  --bg2-rgb: 255, 255, 255;
-  --ink-rgb: 24, 26, 19;
-  --accent-rgb: 92, 110, 0;
+  --bg: #f3efe4;
+  --bg-2: #fbf9f3;
+  --ink: #1d1e17;
+  --muted: #4a4b40;
+  --faint: #5c5d52;
+  --line: rgba(64, 56, 32, 0.15);
+  --accent: #d6f03f;
+  --accent-ink: #4c5a04;
+  --focus: #4c5a04;
+  --ink-on-accent: #16180f;
+  --bg-rgb: 243, 239, 228;
+  --bg2-rgb: 251, 249, 243;
+  --ink-rgb: 64, 56, 32;
+  --accent-rgb: 104, 124, 8;
+  --mark-dot: #7a8f0e;
+  --card-shadow: 0 1px 2px rgba(64, 56, 32, 0.05), 0 8px 24px -12px rgba(64, 56, 32, 0.18);
   color-scheme: light;
 }
 
-/* Project plates stay dark in both themes. */
+/* Project plates: dark in dark mode, soft tints in light mode. */
 .plate {
-  --ink: #f4f0e6;
-  --muted: #b7b2a6;
   color: var(--ink);
+}
+
+:root[data-theme="light"] .plate::before {
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 9px, rgba(64, 56, 32, 0.045) 9px, rgba(64, 56, 32, 0.045) 10px);
+}
+:root[data-theme="light"] .plate-ia { --mark: #4c5a04; background: #e8f1c2; }
+:root[data-theme="light"] .project-float .plate-ia { background: linear-gradient(165deg, rgba(214, 240, 63, 0.5), transparent 52%), #e3eec0; }
+:root[data-theme="light"] .plate-food { --mark: #9a4416; background: #f6e2d4; }
+:root[data-theme="light"] .plate-ops { --mark: #1f5c82; background: #dceaf3; }
+:root[data-theme="light"] .plate-plant { --mark: #973a2e; background: #f4dfda; }
+:root[data-theme="light"] .plate-cloud { --mark: #4a46a0; background: #e5e3f5; }
+:root[data-theme="light"] .plate-avo { --mark: #3d681b; background: #e0edd1; }
+:root[data-theme="light"] .plate-shop { --mark: #765707; background: #f3e8c6; }
+
+.project,
+.cv-card,
+.edu-card,
+.contact-panel,
+.dossier {
+  box-shadow: var(--card-shadow);
 }
