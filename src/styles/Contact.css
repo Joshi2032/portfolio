@@ -7,7 +7,7 @@
   border-radius: 24px;
 }
 
-.contact-destination > span,
+.contact-destination > span:not(.contact-mail-row),
 .contact-form label,
 .contact-phone span {
   color: var(--faint);
