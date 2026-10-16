@@ -35,6 +35,28 @@ function PlateMotion({ reduceMotion }) {
   );
 }
 
+function ProjectFlow({ flow }) {
+  return (
+    <figure className="pm-flow" aria-label={flow.aria}>
+      <figcaption>{flow.title}</figcaption>
+      <ol className="pm-steps">
+        {flow.steps.map((step, index) => (
+          <li
+            key={step.title}
+            className={[step.input ? "pm-engine" : "", index === flow.steps.length - 1 ? "pm-out" : ""].join(" ").trim() || undefined}
+          >
+            <span className="pm-n">{String(index + 1).padStart(2, "0")}</span>
+            <strong>{step.title}</strong>
+            <em>{step.note}</em>
+            {step.input ? <div className="pm-input"><span aria-hidden="true">+</span>{step.input}</div> : null}
+          </li>
+        ))}
+      </ol>
+      <p className="pm-stat"><strong>{flow.stat}</strong><span>{flow.statNote}</span></p>
+    </figure>
+  );
+}
+
 function ProjectKind({ details, intro }) {
   if (details.client) {
     return (
@@ -338,6 +360,7 @@ export function Projects() {
                 </div>
                 {openDetails.alongside ? <ProjectAlongside work={openDetails.alongside} /> : null}
               </div>
+              {openDetails.flow ? <ProjectFlow flow={openDetails.flow} /> : null}
             </div>
           </div>
         </dialog>
