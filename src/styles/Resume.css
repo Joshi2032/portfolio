@@ -1,0 +1,112 @@
+.cv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 1rem;
+}
+
+.cv-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem 1.3rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(23, 26, 20, 0.65);
+  text-decoration: none;
+}
+
+.cv-card span {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cv-card strong {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.45rem, 2vw, 1.9rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+.cv-card:hover { border-color: rgba(226, 255, 87, 0.45); }
+
+.cv-viewer {
+  width: min(1000px, calc(100vw - clamp(1rem, 4vw, 4rem)));
+  height: min(92vh, 1100px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #171a14;
+  color: inherit;
+}
+
+.cv-viewer[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-viewer::backdrop { background: rgba(16, 18, 14, 0.72); }
+
+.cv-viewer-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0.85rem 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.cv-viewer-head strong {
+  flex: 1 1 auto;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.cv-viewer-head a {
+  color: var(--accent);
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+
+.cv-viewer-head a:hover { text-decoration: underline; }
+
+.cv-viewer-close {
+  width: 2.1rem;
+  height: 2.1rem;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  padding: 0;
+  cursor: pointer;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.cv-viewer-close:hover,
+.cv-viewer-close:focus-visible { color: var(--accent); }
+
+.cv-viewer-frame {
+  flex: 1 1 auto;
+  width: 100%;
+  border: 0;
+  background: #fff;
+}
+
+@media (max-width: bp-tablet) {
+  .cv-grid { grid-template-columns: 1fr; }
+}

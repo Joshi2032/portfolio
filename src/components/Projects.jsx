@@ -3,18 +3,34 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { filters, matchesFilter, projectOrder } from "../logic/catalog.js";
 import { useLanguage } from "../logic/LanguageContext.jsx";
 import { useMediaQuery } from "../responsive/useMediaQuery.js";
-import "./Projects.css";
+import "../styles/Projects.css";
 
 function PlateMotion({ reduceMotion }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (reduceMotion || !node || typeof IntersectionObserver === "undefined") return undefined;
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { rootMargin: "120px 0px" },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [reduceMotion]);
+
   if (reduceMotion) return null;
   return (
-    <div className="plate-lottie" aria-hidden="true">
-      <DotLottieReact
-        src={`${import.meta.env.BASE_URL}lottie/abstract.lottie`}
-        loop
-        autoplay
-        layout={{ fit: "cover", align: [0.5, 0.5] }}
-      />
+    <div className="plate-lottie" aria-hidden="true" ref={ref}>
+      {visible ? (
+        <DotLottieReact
+          src={`${import.meta.env.BASE_URL}lottie/abstract.lottie`}
+          loop
+          autoplay
+          layout={{ fit: "cover", align: [0.5, 0.5] }}
+        />
+      ) : null}
     </div>
   );
 }
@@ -176,6 +192,7 @@ export function Projects() {
   }
 
   function openShot(next, event) {
+    event.stopPropagation();
     const index = (openDetails?.shots ?? []).findIndex((item) => item.src === next.src);
     shotReturn.current = event.currentTarget;
     setShotIndex(index < 0 ? 0 : index);

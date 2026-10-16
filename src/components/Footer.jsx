@@ -1,5 +1,5 @@
 import { useLanguage } from "../logic/LanguageContext.jsx";
-import "./Footer.css";
+import "../styles/Footer.css";
 
 export function Footer({ inert }) {
   const { text } = useLanguage();

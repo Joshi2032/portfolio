@@ -1,5 +1,5 @@
 import { useLanguage } from "../logic/LanguageContext.jsx";
-import "./Education.css";
+import "../styles/Education.css";
 
 export function Education() {
   const { text } = useLanguage();

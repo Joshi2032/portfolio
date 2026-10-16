@@ -1,13 +1,12 @@
 .contact-panel {
   display: grid;
-  grid-template-columns: minmax(200px, 0.62fr) minmax(0, 1.5fr);
+  grid-template-columns: 1fr;
   overflow: hidden;
   background: rgba(23, 26, 20, 0.72);
   border: 1px solid var(--line);
   border-radius: 24px;
 }
 
-.contact-place span,
 .contact-destination span,
 .contact-form label,
 .contact-phone span {
@@ -17,55 +16,6 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-
-.contact-place {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 100%;
-  padding: 1.35rem;
-  background: #10120e;
-}
-
-.contact-map {
-  position: relative;
-  flex: 1 1 auto;
-  min-height: 240px;
-  overflow: hidden;
-  border-radius: 16px;
-}
-
-.contact-map iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.contact-place strong {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(1.7rem, 2.4vw, 2.2rem);
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  color: var(--ink);
-}
-
-.contact-place p {
-  margin: 0.35rem 0 0;
-  color: var(--muted);
-}
-
-.contact-map-link {
-  align-self: flex-start;
-  color: var(--accent);
-  font-size: 0.92rem;
-  text-decoration: none;
-}
-
-.contact-map-link:hover { text-decoration: underline; }
 
 .contact-body {
   display: flex;
@@ -164,8 +114,3 @@
 .contact-phone:hover strong,
 .contact-phone:hover em { color: var(--accent); }
 
-@media (max-width: bp-tablet) {
-  .contact-panel { grid-template-columns: 1fr; }
-
-  .contact-place { min-height: 180px; }
-}

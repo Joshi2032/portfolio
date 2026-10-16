@@ -1,24 +1,11 @@
 import { useId, useState } from "react";
 import { useLanguage } from "../logic/LanguageContext.jsx";
-import "./Contact.css";
+import "../styles/Contact.css";
 
 const MAIL = "joshi.jc2032@gmail.com";
 const WHATSAPP = "523521887541";
-const MAP_PLACE = "Nicolás Régules 63, La Piedad, Michoacán, México";
-const MAP_HREF = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_PLACE)}`;
-
-function mapSrc(place, lang) {
-  const language = lang === "en" ? "en" : "es";
-  const query = encodeURIComponent(place);
-  const key = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-  if (key) {
-    return `https://www.google.com/maps/embed/v1/place?key=${encodeURIComponent(key)}&q=${query}&zoom=17&language=${language}`;
-  }
-  return `https://maps.google.com/maps?q=${query}&z=17&hl=${language}&output=embed`;
-}
-
 export function Contact() {
-  const { lang, text } = useLanguage();
+  const { text } = useLanguage();
   const contact = text.contact;
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
@@ -56,23 +43,6 @@ export function Contact() {
           <p className="section-lead">{contact.lead}</p>
         </header>
         <div className="contact-panel">
-          <div className="contact-place">
-            <span>{contact.city}</span>
-            <div className="contact-map">
-              <iframe
-                title={MAP_PLACE}
-                src={mapSrc(MAP_PLACE, lang)}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
-            </div>
-            <a className="contact-map-link" href={MAP_HREF} target="_blank" rel="noreferrer">{contact.openMap}</a>
-            <div>
-              <strong>{contact.street}</strong>
-              <p>{contact.cityValue}</p>
-            </div>
-          </div>
           <div className="contact-body">
             <p className="contact-destination">
               <span>{contact.email}</span>

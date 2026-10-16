@@ -1,7 +1,7 @@
 import { sectionIds } from "../logic/catalog.js";
 import { useActiveSection, useScrollHeader } from "../logic/hooks.js";
 import { useLanguage } from "../logic/LanguageContext.jsx";
-import "./Header.css";
+import "../styles/Header.css";
 
 const navItems = [
   ["proyectos", "projects"],

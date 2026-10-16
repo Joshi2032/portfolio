@@ -1,5 +1,5 @@
 import { useLanguage } from "../logic/LanguageContext.jsx";
-import "./Profile.css";
+import "../styles/Profile.css";
 
 export function Profile() {
   const { text } = useLanguage();

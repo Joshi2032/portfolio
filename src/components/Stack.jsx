@@ -1,6 +1,6 @@
 import { stackGroups } from "../logic/catalog.js";
 import { useLanguage } from "../logic/LanguageContext.jsx";
-import "./Stack.css";
+import "../styles/Stack.css";
 
 export function Stack() {
   const { text } = useLanguage();

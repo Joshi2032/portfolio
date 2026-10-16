@@ -388,7 +388,13 @@
 }
 
 .shots:has(.shot:only-child) {
-  grid-template-columns: minmax(0, 280px);
+  grid-template-columns: minmax(0, 320px);
+}
+
+.shots:has(.shot:only-child) img {
+  height: auto;
+  max-height: min(70vh, 640px);
+  object-fit: contain;
 }
 
 .shots img {

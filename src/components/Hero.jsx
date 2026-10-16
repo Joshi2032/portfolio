@@ -1,7 +1,7 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { useLanguage } from "../logic/LanguageContext.jsx";
 import { useMediaQuery } from "../responsive/useMediaQuery.js";
-import "./Hero.css";
+import "../styles/Hero.css";
 
 export function Hero() {
   const { text } = useLanguage();
