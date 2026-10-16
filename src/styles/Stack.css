@@ -38,3 +38,15 @@
   color: var(--faint);
   font-size: 0.92rem;
 }
+
+.stack-lead {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0;
+  list-style: none;
+}
+
+.stack-lead strong {
+  color: var(--ink);
+  font-weight: 600;
+}

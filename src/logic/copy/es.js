@@ -212,7 +212,10 @@ export const es = {
   },
   stack: {
     title: "Stack",
-    lead: "Principal: lo que uso a diario en proyectos reales. Bases: tecnologías con las que he trabajado y con las que puedo apoyar un proyecto.",
+    lead: [
+      { term: "Principal", text: "lo que uso a diario en proyectos reales." },
+      { term: "Bases", text: "tecnologías con las que he trabajado y con las que puedo apoyar un proyecto." },
+    ],
     groups: { core: "Principal", base: "Bases", cloud: "Cloud", tools: "Herramientas" },
     scope: "Las bases no son especialidades: las conozco lo suficiente para sumarme a un proyecto que las use.",
   },

@@ -212,7 +212,10 @@ export const en = {
   },
   stack: {
     title: "Stack",
-    lead: "Core: what I use every day on real projects. Working knowledge: technologies I have worked with and can use to support a project.",
+    lead: [
+      { term: "Core", text: "what I use every day on real projects." },
+      { term: "Working knowledge", text: "technologies I have worked with and can use to support a project." },
+    ],
     groups: { core: "Core", base: "Working knowledge", cloud: "Cloud", tools: "Tools" },
     scope: "Working knowledge isn't a specialty: I know these well enough to join a project that uses them.",
   },

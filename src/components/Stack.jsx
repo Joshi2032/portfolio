@@ -11,7 +11,11 @@ export function Stack() {
         <header className="section-head">
           <p className="num">02</p>
           <h2>{text.stack.title}</h2>
-          <p className="section-lead">{text.stack.lead}</p>
+          <ul className="section-lead stack-lead">
+            {text.stack.lead.map((line) => (
+              <li key={line.term}><strong>{line.term}:</strong> {line.text}</li>
+            ))}
+          </ul>
         </header>
         <div className="stack-grid">
           {stackGroups.map((group) => (
