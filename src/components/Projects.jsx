@@ -517,7 +517,13 @@ export function Projects() {
             if (event.target === event.currentTarget) event.currentTarget.close();
           }}
           onKeyDown={(event) => {
-            if (event.key === "Escape") event.currentTarget.close();
+            if (event.key === "Escape") {
+              // Close only the viewer; without preventDefault the browser's own
+              // cancel action would then also close the project dialog beneath.
+              event.preventDefault();
+              event.stopPropagation();
+              event.currentTarget.close();
+            }
             if (event.key === "ArrowRight") {
               event.preventDefault();
               stepShot(1);
