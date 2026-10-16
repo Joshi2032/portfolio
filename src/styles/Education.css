@@ -8,7 +8,7 @@
   padding: 1.2rem;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: rgba(23, 26, 20, 0.65);
+  background: rgba(var(--bg2-rgb), 0.65);
 }
 
 .edu-card .when,

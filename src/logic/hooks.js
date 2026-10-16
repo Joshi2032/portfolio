@@ -210,3 +210,55 @@ export function useMobileMenu(isCompactNav) {
 
   return { open, toggleRef, navRef, toggle, close };
 }
+
+const THEME_KEY = "portfolio-theme";
+const THEME_COLORS = { dark: "#10120e", light: "#f5f3ec" };
+
+function readTheme() {
+  const current = document.documentElement.dataset.theme;
+  if (current === "light" || current === "dark") return current;
+  return window.matchMedia?.("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
+function storedTheme() {
+  try {
+    const value = localStorage.getItem(THEME_KEY);
+    return value === "light" || value === "dark" ? value : null;
+  } catch {
+    return null;
+  }
+}
+
+export function useTheme() {
+  const [theme, setThemeState] = useState(readTheme);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", THEME_COLORS[theme]);
+  }, [theme]);
+
+  useEffect(() => {
+    const query = window.matchMedia?.("(prefers-color-scheme: light)");
+    if (!query) return undefined;
+    const onChange = (event) => {
+      if (!storedTheme()) setThemeState(event.matches ? "light" : "dark");
+    };
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, []);
+
+  const toggleTheme = () => {
+    setThemeState((current) => {
+      const next = current === "light" ? "dark" : "light";
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch {
+        /* private mode */
+      }
+      return next;
+    });
+  };
+
+  return { theme, toggleTheme };
+}

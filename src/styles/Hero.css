@@ -11,7 +11,7 @@
 }
 
 .kicker {
-  color: var(--accent);
+  color: var(--accent-ink);
   font-size: 0.75rem;
 }
 
@@ -59,7 +59,7 @@ h1 em {
 .btn-primary {
   background: var(--accent);
   color: var(--ink-on-accent);
-  border-color: var(--accent);
+  border-color: var(--accent-ink);
 }
 
 .btn-primary:hover { filter: brightness(1.06); }
@@ -70,7 +70,7 @@ h1 em {
   border: 1px solid var(--line);
   border-radius: 22px;
   padding: 1.15rem 1.15rem 0.9rem;
-  background: rgba(23, 26, 20, 0.88);
+  background: rgba(var(--bg2-rgb), 0.88);
 }
 
 .hero-lottie {

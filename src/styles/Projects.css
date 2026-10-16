@@ -16,7 +16,7 @@
 
 .filters button[aria-pressed="true"] {
   background: var(--accent);
-  border-color: var(--accent);
+  border-color: var(--accent-ink);
   color: var(--ink-on-accent);
 }
 
@@ -30,17 +30,17 @@
   display: grid;
   grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.45fr);
   overflow: hidden;
-  background: rgba(23, 26, 20, 0.72);
+  background: rgba(var(--bg2-rgb), 0.72);
   border: 1px solid var(--line);
   border-radius: 24px;
   scroll-margin-top: calc(var(--header) + 0.6rem);
 }
 
-.project.is-client { border-color: rgba(226, 255, 87, 0.55); }
+.project.is-client { border-color: rgba(var(--accent-rgb), 0.55); }
 
-.project:hover { border-color: rgba(226, 255, 87, 0.4); }
+.project:hover { border-color: rgba(var(--accent-rgb), 0.4); }
 
-.project.is-client:hover { border-color: var(--accent); }
+.project.is-client:hover { border-color: var(--accent-ink); }
 
 .project.has-shots { cursor: pointer; }
 
@@ -52,12 +52,12 @@
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 24px;
-  background: #171a14;
+  background: var(--bg-2);
   color: inherit;
 }
 
 .project-float::backdrop {
-  background: rgba(16, 18, 14, 0.72);
+  background: rgba(var(--bg-rgb), 0.72);
 }
 
 .project-float-layout {
@@ -69,7 +69,7 @@
 
 .project-float .plate-ia {
   background:
-    linear-gradient(165deg, rgba(226, 255, 87, 0.22), transparent 46%),
+    linear-gradient(165deg, rgba(var(--accent-rgb), 0.22), transparent 46%),
     #1a4a32;
 }
 
@@ -94,7 +94,7 @@
 
 .project-float-close:hover,
 .project-float-close:focus-visible {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .project-float .project-body {
@@ -103,7 +103,7 @@
 
 .shots-hint {
   margin: 1rem 0 0;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -288,7 +288,7 @@
 }
 
 .project-site a {
-  color: var(--accent);
+  color: var(--accent-ink);
   text-underline-offset: 0.2em;
 }
 
@@ -325,7 +325,7 @@
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 1;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .result span,
@@ -355,7 +355,7 @@
 
 .work-kicker {
   margin-bottom: 0.45rem;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -416,16 +416,16 @@
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: #10120e;
+  background: var(--bg);
   color: inherit;
 }
 
 .shot-zoom::backdrop {
-  background: rgba(16, 18, 14, 0.84);
+  background: rgba(var(--bg-rgb), 0.84);
 }
 
 .shot-zoom .project-float-close {
-  background: rgba(16, 18, 14, 0.88);
+  background: rgba(var(--bg-rgb), 0.88);
 }
 
 .shot-nav {
@@ -438,7 +438,7 @@
   place-items: center;
   border: 0;
   border-radius: 999px;
-  background: rgba(16, 18, 14, 0.88);
+  background: rgba(var(--bg-rgb), 0.88);
   color: var(--ink);
   cursor: pointer;
   font-size: 1.4rem;
@@ -450,7 +450,7 @@
 .shot-nav.next { right: 1rem; }
 
 .shot-nav:hover,
-.shot-nav:focus-visible { color: var(--accent); }
+.shot-nav:focus-visible { color: var(--accent-ink); }
 
 .shot-zoom img {
   display: block;
@@ -499,26 +499,26 @@
   }
 }
 
-.pm-flow { margin: 1.3rem 0 0; padding: 1.1rem; border: 1px solid var(--line); border-radius: 20px; background: #10120e; }
+.pm-flow { margin: 1.3rem 0 0; padding: 1.1rem; border: 1px solid var(--line); border-radius: 20px; background: var(--bg); }
 .pm-flow figcaption { margin-bottom: 0.9rem; color: var(--faint); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
 .pm-graph { display: grid; grid-template-columns: minmax(0, 2.2fr) auto minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 0.8rem; }
-.pm-paths { display: grid; gap: 0.8rem; padding-right: 0.9rem; border-right: 2px solid rgba(226, 255, 87, 0.45); border-radius: 0 16px 16px 0; }
+.pm-paths { display: grid; gap: 0.8rem; padding-right: 0.9rem; border-right: 2px solid rgba(var(--accent-rgb), 0.45); border-radius: 0 16px 16px 0; }
 .pm-path { padding: 0.75rem; border: 1px solid var(--line); border-radius: 16px; }
-.pm-path-label { margin: 0 0 0.6rem; color: var(--accent); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.pm-path-label { margin: 0 0 0.6rem; color: var(--accent-ink); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
 .pm-path-steps { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: stretch; gap: 0.6rem; }
-.pm-card { display: flex; flex-direction: column; gap: 0.3rem; padding: 0.85rem 0.9rem; border: 1px solid var(--line); border-radius: 14px; background: #171a14; }
+.pm-card { display: flex; flex-direction: column; gap: 0.3rem; padding: 0.85rem 0.9rem; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-2); }
 .pm-card strong { font-family: var(--serif); font-weight: 500; font-size: 1.08rem; line-height: 1.15; letter-spacing: -0.02em; }
 .pm-card em { color: var(--muted); font-style: normal; font-size: 0.84rem; line-height: 1.35; }
-.pm-arrow { align-self: center; color: var(--accent); font-size: 1.05rem; line-height: 1; }
+.pm-arrow { align-self: center; color: var(--accent-ink); font-size: 1.05rem; line-height: 1; }
 .pm-arrow::before { content: "→"; }
-.pm-engine { border-color: rgba(226, 255, 87, 0.45); }
-.pm-out { background: rgba(226, 255, 87, 0.08); border-color: rgba(226, 255, 87, 0.35); }
+.pm-engine { border-color: rgba(var(--accent-rgb), 0.45); }
+.pm-out { background: rgba(var(--accent-rgb), 0.08); border-color: rgba(var(--accent-rgb), 0.35); }
 .pm-stat { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.7rem; margin: 1rem 0 0; }
-.pm-stat strong { color: var(--accent); font-family: var(--serif); font-weight: 500; font-size: clamp(1.6rem, 3vw, 2.2rem); letter-spacing: -0.03em; }
+.pm-stat strong { color: var(--accent-ink); font-family: var(--serif); font-weight: 500; font-size: clamp(1.6rem, 3vw, 2.2rem); letter-spacing: -0.03em; }
 .pm-stat span { color: var(--muted); font-size: 0.9rem; }
 @media (max-width: 900px) {
   .pm-graph { grid-template-columns: 1fr; gap: 0.7rem; }
-  .pm-paths { padding: 0 0 0.9rem; border-right: 0; border-bottom: 2px solid rgba(226, 255, 87, 0.45); border-radius: 0 0 16px 16px; }
+  .pm-paths { padding: 0 0 0.9rem; border-right: 0; border-bottom: 2px solid rgba(var(--accent-rgb), 0.45); border-radius: 0 0 16px 16px; }
   .pm-path-steps { grid-template-columns: 1fr; gap: 0.5rem; }
   .pm-arrow { justify-self: center; }
   .pm-arrow::before { content: "↓"; }

@@ -7,7 +7,7 @@ body.menu-open {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(16, 18, 14, 0.94);
+  background: rgba(var(--bg-rgb), 0.94);
   border-bottom: 1px solid transparent;
 }
 
@@ -83,6 +83,22 @@ body.menu-open {
   color: var(--ink-on-accent);
 }
 
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-left: 0.6rem;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.theme-toggle:hover { color: var(--accent-ink); border-color: rgba(var(--accent-rgb), 0.5); }
+
 .nav-toggle {
   display: none;
   position: relative;
@@ -130,7 +146,7 @@ body.menu-open {
     margin: 0;
     padding: 1.5rem 1.25rem;
     overflow: auto;
-    background: #10120e;
+    background: var(--bg);
   }
 
   .nav.is-open { display: flex; }

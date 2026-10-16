@@ -4,6 +4,8 @@ export const en = {
     description: "Portfolio of Josué Isaí Salazar Castro, a Full Stack developer focused on Flutter and artificial intelligence applied to industrial processes.",
   },
   nav: {
+    themeLight: "Switch to light theme",
+    themeDark: "Switch to dark theme",
     skip: "Skip to content",
     home: "Home",
     label: "Sections",

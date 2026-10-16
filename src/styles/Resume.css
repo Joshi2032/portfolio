@@ -11,12 +11,12 @@
   padding: 1.25rem 1.3rem 1.15rem;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: rgba(23, 26, 20, 0.65);
+  background: rgba(var(--bg2-rgb), 0.65);
   text-decoration: none;
 }
 
 .cv-card span {
-  color: var(--accent);
+  color: var(--accent-ink);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -38,7 +38,7 @@
   margin-top: 0.9rem;
 }
 
-.cv-card:hover { border-color: rgba(226, 255, 87, 0.45); }
+.cv-card:hover { border-color: rgba(var(--accent-rgb), 0.45); }
 
 .cv-viewer {
   width: min(1000px, calc(100vw - clamp(1rem, 4vw, 4rem)));
@@ -48,7 +48,7 @@
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 24px;
-  background: #171a14;
+  background: var(--bg-2);
   color: inherit;
 }
 
@@ -57,7 +57,7 @@
   flex-direction: column;
 }
 
-.cv-viewer::backdrop { background: rgba(16, 18, 14, 0.72); }
+.cv-viewer::backdrop { background: rgba(var(--bg-rgb), 0.72); }
 
 .cv-viewer-head {
   display: flex;
@@ -75,7 +75,7 @@
 }
 
 .cv-viewer-head a {
-  color: var(--accent);
+  color: var(--accent-ink);
   font-size: 0.92rem;
   text-decoration: none;
 }
@@ -98,7 +98,7 @@
 }
 
 .cv-viewer-close:hover,
-.cv-viewer-close:focus-visible { color: var(--accent); }
+.cv-viewer-close:focus-visible { color: var(--accent-ink); }
 
 .cv-viewer-frame {
   flex: 1 1 auto;

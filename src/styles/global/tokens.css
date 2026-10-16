@@ -6,10 +6,40 @@
   --faint: #8f8a7e;
   --line: rgba(244, 240, 230, 0.14);
   --accent: #e2ff57;
+  --accent-ink: #e2ff57;
+  --focus: #e2ff57;
   --ink-on-accent: #15170f;
+  --bg-rgb: 16, 18, 14;
+  --bg2-rgb: 23, 26, 20;
+  --ink-rgb: 244, 240, 230;
+  --accent-rgb: 226, 255, 87;
   --serif: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif;
   --sans: "Outfit", "Segoe UI", sans-serif;
   --header: 76px;
   color-scheme: dark;
 }
 
+:root[data-theme="light"] {
+  --bg: #f5f3ec;
+  --bg-2: #ffffff;
+  --ink: #181a13;
+  --muted: #4b4d42;
+  --faint: #5f6156;
+  --line: rgba(24, 26, 19, 0.16);
+  --accent: #e2ff57;
+  --accent-ink: #4a5800;
+  --focus: #4a5800;
+  --ink-on-accent: #15170f;
+  --bg-rgb: 245, 243, 236;
+  --bg2-rgb: 255, 255, 255;
+  --ink-rgb: 24, 26, 19;
+  --accent-rgb: 92, 110, 0;
+  color-scheme: light;
+}
+
+/* Project plates stay dark in both themes. */
+.plate {
+  --ink: #f4f0e6;
+  --muted: #b7b2a6;
+  color: var(--ink);
+}
