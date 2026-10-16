@@ -42,7 +42,12 @@ export function Header({ menu }) {
               key={id}
               href={`#${id}`}
               className={current === id ? "is-current" : undefined}
-              onClick={() => menu.close({ followLink: true })}
+              onClick={(event) => {
+                if (!menu.open) return;
+                // Replace the menu's history entry with the section link, then close.
+                event.preventDefault();
+                menu.close({ followLink: true, href: `#${id}` });
+              }}
             >
               {nav[key]}
             </a>

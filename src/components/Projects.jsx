@@ -1,11 +1,12 @@
-import { Fragment, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { LazyLottie } from "./LazyLottie.jsx";
 import { filters, matchesFilter, projectOrder } from "../logic/catalog.js";
 import { useLanguage } from "../logic/LanguageContext.jsx";
 import { copyText } from "../logic/clipboard.js";
 import { trackEvent } from "../logic/analytics.js";
 import { useMediaQuery } from "../responsive/useMediaQuery.js";
-import { note as techNote } from "../notes/detectorAguacate.js";
+import { showWithoutScroll } from "./showWithoutScroll.js";
+import { loadExtras, loadViewer, needsExtras, prefetchProject } from "./projectChunks.js";
 import "../styles/Projects.css";
 
 function PlateMotion({ reduceMotion }) {
@@ -35,124 +36,6 @@ function PlateMotion({ reduceMotion }) {
         />
       ) : null}
     </div>
-  );
-}
-
-function FlowCard({ step, className }) {
-  return (
-    <div className={className ? `pm-card ${className}` : "pm-card"}>
-      <strong>{step.title}</strong>
-      <em>{step.note}</em>
-    </div>
-  );
-}
-
-function TechNote({ lang }) {
-  const n = techNote[lang];
-  return (
-    <section className="tech-note" aria-labelledby="tech-note-title">
-      <h4 id="tech-note-title">{n.title}</h4>
-      <p className="tech-note-summary">{n.summary}</p>
-      {n.sections.map((section) => (
-        <details key={section.id} className="tech-note-item">
-          <summary>{section.title}</summary>
-          <div className="tech-note-body">
-            {section.stats ? (
-              <ul className="tech-stats">
-                {section.stats.map((stat) => (
-                  <li key={stat.label}>
-                    <strong>{stat.value}</strong>
-                    <span>{stat.label}</span>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-            {section.body.map((text) => <p key={text}>{text}</p>)}
-            {section.models ? (
-              <table className="tech-models">
-                <caption>
-                  {section.models.caption} · <span className="tech-final-key">● {n.finalLabel}</span>
-                </caption>
-                <thead>
-                  <tr>{section.models.head.map((h) => <th key={h} scope="col">{h}</th>)}</tr>
-                </thead>
-                <tbody>
-                  {section.models.rows.map((row, i) => (
-                    <tr key={row[0]} className={i === 1 ? "is-final" : undefined}>
-                      <th scope="row">{row[0]}</th>
-                      {row.slice(1).map((cell, j) => (
-                        <td key={cell} data-label={section.models.head[j + 1]}>{cell}</td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            ) : null}
-            {(section.after ?? []).map((text) => <p key={text}>{text}</p>)}
-          </div>
-        </details>
-      ))}
-    </section>
-  );
-}
-
-function ProjectFlow({ flow }) {
-  if (flow.steps) {
-    return (
-      <figure className="pm-flow" aria-label={flow.aria}>
-        <figcaption>{flow.title}</figcaption>
-        <ol className="pm-linear">
-          {flow.steps.map((step, index) => (
-            <li key={step.title} className={index === flow.steps.length - 1 ? "pm-step is-last" : "pm-step"}>
-              {index > 0 ? <span className="pm-arrow" aria-hidden="true" /> : null}
-              <div className={`pm-card${index === flow.steps.length - 1 ? " pm-out" : step.loop ? " pm-engine" : ""}`}>
-                <strong>{step.title}</strong>
-                <em>{step.note}</em>
-                {step.loop ? <span className="pm-loop"><span aria-hidden="true">↺ </span>{step.loop}</span> : null}
-              </div>
-            </li>
-          ))}
-        </ol>
-        {flow.compare ? (
-          <div className="pm-compare">
-            {flow.compare.map((item, index) => (
-              <p key={item.label} className={index === 1 ? "pm-compare-item is-now" : "pm-compare-item"}>
-                <span>{item.label}</span>
-                <strong>{item.title}</strong>
-                <em>{item.note}</em>
-              </p>
-            ))}
-          </div>
-        ) : null}
-      </figure>
-    );
-  }
-  return (
-    <figure className="pm-flow" aria-label={flow.aria}>
-      <figcaption>{flow.title}</figcaption>
-      <div className="pm-graph">
-        <div className="pm-paths">
-          {flow.paths.map((path) => (
-            <section className="pm-path" key={path.label} aria-label={path.label}>
-              <p className="pm-path-label">{path.label}</p>
-              <div className="pm-path-steps">
-                {path.steps.map((step, index) => (
-                  <Fragment key={step.title}>
-                    {index > 0 ? <span className="pm-arrow" aria-hidden="true" /> : null}
-                    <FlowCard step={step} />
-                  </Fragment>
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
-        <span className="pm-arrow pm-merge" aria-hidden="true" />
-        <FlowCard step={flow.engine} className="pm-engine" />
-        <span className="pm-arrow" aria-hidden="true" />
-        <FlowCard step={flow.output} className="pm-out" />
-      </div>
-      <p className="pm-stat"><strong>{flow.stat}</strong><span>{flow.statNote}</span></p>
-    </figure>
   );
 }
 
@@ -258,19 +141,6 @@ function ProjectAlongside({ work }) {
   );
 }
 
-function showWithoutScroll(dialog) {
-  const top = window.scrollY;
-  const root = document.documentElement;
-  const previous = root.style.scrollBehavior;
-  root.style.scrollBehavior = "auto";
-  dialog.showModal();
-  window.scrollTo(0, top);
-  requestAnimationFrame(() => {
-    window.scrollTo(0, top);
-    root.style.scrollBehavior = previous;
-  });
-}
-
 function ProjectShots({ details, onOpen }) {
   return (
     <figure className="shots">
@@ -298,11 +168,15 @@ export function Projects() {
   const [openId, setOpenId] = useState(null);
   const previous = useRef({ filter, lang });
   const dialogRef = useRef(null);
-  const shotRef = useRef(null);
   const returnFocus = useRef(null);
   const shotReturn = useRef(null);
   const closingFromCleanup = useRef(false);
-  const shotCleanup = useRef(false);
+  const [extrasMod, setExtrasMod] = useState(null);
+  const [viewerMod, setViewerMod] = useState(null);
+  // Back-button support: each open layer (project dialog, image viewer) owns one history entry.
+  const ignorePops = useRef(0);
+  const depth = useRef(0);
+  const layers = useRef({ openId: null, shotIndex: null });
   const [shotIndex, setShotIndex] = useState(null);
   const intro = text.projectsIntro;
   const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
@@ -311,6 +185,43 @@ export function Projects() {
   const openDetails = openProject ? text.projects[openProject.id] : null;
   const shots = openDetails?.shots ?? [];
   const shot = shotIndex == null ? null : shots[shotIndex] ?? null;
+  layers.current = { openId, shotIndex };
+
+  async function openProjectLayer(id) {
+    const details = text.projects[id];
+    if (needsExtras(id, details)) setExtrasMod(await loadExtras());
+    setOpenId(id);
+    history.pushState({ pfLayer: "project", id }, "");
+    depth.current = 1;
+  }
+
+  function popOwnLayers(count) {
+    if (count <= 0) return;
+    ignorePops.current += 1;
+    history.go(-count);
+  }
+
+  useEffect(() => {
+    function onPop() {
+      if (ignorePops.current > 0) {
+        ignorePops.current -= 1;
+        return;
+      }
+      depth.current = Math.max(0, depth.current - 1);
+      const { openId: current, shotIndex: currentShot } = layers.current;
+      if (currentShot != null) {
+        setShotIndex(null);
+        const target = shotReturn.current;
+        if (target instanceof HTMLElement) target.focus({ preventScroll: true });
+      } else if (current) {
+        setOpenId(null);
+        const target = returnFocus.current;
+        if (target instanceof HTMLElement) target.focus({ preventScroll: true });
+      }
+    }
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
 
   useEffect(() => {
     const id = new URLSearchParams(window.location.search).get("p");
@@ -325,7 +236,7 @@ export function Projects() {
     const card = document.getElementById(id);
     if (opens) {
       returnFocus.current = card;
-      setOpenId(id);
+      openProjectLayer(id);
     } else if (card) {
       requestAnimationFrame(() => card.scrollIntoView({ block: "center" }));
     }
@@ -350,21 +261,9 @@ export function Projects() {
     };
   }, [openId]);
 
-  useEffect(() => {
-    const dialog = shotRef.current;
-    if (!dialog || shotIndex == null) return undefined;
-    showWithoutScroll(dialog);
-    return () => {
-      if (!dialog.open) return;
-      shotCleanup.current = true;
-      dialog.close();
-      shotCleanup.current = false;
-    };
-  }, [shotIndex == null]);
-
   function openCard(id, event) {
     returnFocus.current = event.currentTarget;
-    setOpenId(id);
+    openProjectLayer(id);
   }
 
   function onShotKeyDown(event, id) {
@@ -375,6 +274,8 @@ export function Projects() {
 
   function onDialogClose() {
     if (closingFromCleanup.current) return;
+    popOwnLayers(depth.current);
+    depth.current = 0;
     setOpenId(null);
     setShotIndex(null);
     const target = returnFocus.current;
@@ -385,7 +286,12 @@ export function Projects() {
     event.stopPropagation();
     const index = (openDetails?.shots ?? []).findIndex((item) => item.src === next.src);
     shotReturn.current = event.currentTarget;
-    setShotIndex(index < 0 ? 0 : index);
+    loadViewer().then((mod) => {
+      setViewerMod(mod);
+      setShotIndex(index < 0 ? 0 : index);
+      history.pushState({ pfLayer: "shot" }, "");
+      depth.current = 2;
+    });
   }
 
   function stepShot(delta) {
@@ -396,7 +302,10 @@ export function Projects() {
   }
 
   function onShotDialogClose() {
-    if (shotCleanup.current) return;
+    if (depth.current === 2) {
+      depth.current = 1;
+      popOwnLayers(1);
+    }
     setShotIndex(null);
     const target = shotReturn.current;
     if (target instanceof HTMLElement) target.focus({ preventScroll: true });
@@ -446,6 +355,9 @@ export function Projects() {
                     "aria-expanded": openId === project.id,
                     onClick: (event) => openCard(project.id, event),
                     onKeyDown: (event) => onShotKeyDown(event, project.id),
+                    onPointerEnter: () => prefetchProject(project.id, details),
+                    onFocus: () => prefetchProject(project.id, details),
+                    onTouchStart: () => prefetchProject(project.id, details),
                   }
                 : {})}
             >
@@ -531,72 +443,20 @@ export function Projects() {
               <div className="project-float-actions">
                 <ShareButton lang={lang} id={openProject.id} title={openDetails.title} intro={intro} />
               </div>
-              {openDetails.flow ? <ProjectFlow flow={openDetails.flow} /> : null}
-              {openProject.id === "aguacate" ? <TechNote lang={lang} /> : null}
+              {openDetails.flow && extrasMod ? <extrasMod.ProjectFlow flow={openDetails.flow} /> : null}
+              {openProject.id === "aguacate" && extrasMod ? <extrasMod.TechNote lang={lang} /> : null}
             </div>
           </div>
         </dialog>
       ) : null}
-      {shot ? (
-        <dialog
-          ref={shotRef}
-          className="shot-zoom"
-          aria-label={shot.alt}
+      {shot && viewerMod ? (
+        <viewerMod.ShotViewer
+          shot={shot}
+          count={shots.length}
+          intro={intro}
+          onStep={stepShot}
           onClose={onShotDialogClose}
-          onClick={(event) => {
-            if (event.target === event.currentTarget) event.currentTarget.close();
-          }}
-          onKeyDown={(event) => {
-            if (event.key === "Escape") {
-              // Close only the viewer; without preventDefault the browser's own
-              // cancel action would then also close the project dialog beneath.
-              event.preventDefault();
-              event.stopPropagation();
-              event.currentTarget.close();
-            }
-            if (event.key === "ArrowRight") {
-              event.preventDefault();
-              stepShot(1);
-            }
-            if (event.key === "ArrowLeft") {
-              event.preventDefault();
-              stepShot(-1);
-            }
-          }}
-        >
-          {shots.length > 1 ? (
-            <button
-              type="button"
-              className="shot-nav prev"
-              aria-label={intro.prevShot}
-              onClick={() => stepShot(-1)}
-            >
-              ‹
-            </button>
-          ) : null}
-          <button
-            type="button"
-            className="project-float-close"
-            aria-label={intro.closeShot}
-            onClick={() => shotRef.current?.close()}
-          >
-            ×
-          </button>
-          {shots.length > 1 ? (
-            <button
-              type="button"
-              className="shot-nav next"
-              aria-label={intro.nextShot}
-              onClick={() => stepShot(1)}
-            >
-              ›
-            </button>
-          ) : null}
-          <img
-            src={`${import.meta.env.BASE_URL}${shot.src}`}
-            alt={shot.alt}
-          />
-        </dialog>
+        />
       ) : null}
     </section>
   );

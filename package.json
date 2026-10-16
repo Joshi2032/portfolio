@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/prerender.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:e2e": "node scripts/ci-e2e.mjs",
+    "test:a11y": "node scripts/ci-a11y.mjs",
+    "test:links": "node scripts/ci-links.mjs"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.20.0",

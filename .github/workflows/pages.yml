@@ -29,6 +29,8 @@ jobs:
         run: node scripts/ci-links.mjs
       - name: Check accessibility (axe)
         run: node scripts/ci-a11y.mjs
+      - name: End-to-end dialogs and navigation
+        run: node scripts/ci-e2e.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

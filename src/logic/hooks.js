@@ -18,7 +18,7 @@ function writeLangUrl(value) {
   else url.searchParams.delete("lang");
   const next = `${url.pathname}${url.search}${url.hash}`;
   const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
-  if (next !== current) history.replaceState(null, "", next);
+  if (next !== current) history.replaceState(history.state, "", next);
 }
 
 export function useLanguageState() {
@@ -119,23 +119,61 @@ export function useMobileMenu(isCompactNav) {
   const navRef = useRef(null);
   const restoreFocus = useRef(false);
   const keepScroll = useRef(false);
+  // The open menu owns one history entry so Back closes it.
+  const ownsEntry = useRef(false);
+  const ignorePop = useRef(0);
 
-  const close = ({ followLink = false } = {}) => {
+  const releaseEntry = (href) => {
+    if (!ownsEntry.current) return;
+    ownsEntry.current = false;
+    if (href) {
+      // Turn the menu entry into the link's entry instead of stacking a new one.
+      history.replaceState(null, "", href);
+    } else {
+      ignorePop.current += 1;
+      history.back();
+    }
+  };
+
+  const close = ({ followLink = false, href } = {}) => {
     keepScroll.current = followLink;
     restoreFocus.current = true;
+    releaseEntry(followLink ? href : undefined);
     setOpen(false);
   };
 
   const toggle = () => {
-    if (open) restoreFocus.current = true;
-    setOpen((value) => !value);
+    if (open) {
+      close();
+      return;
+    }
+    history.pushState({ pfLayer: "menu" }, "");
+    ownsEntry.current = true;
+    setOpen(true);
   };
+
+  useEffect(() => {
+    const onPop = () => {
+      if (ignorePop.current > 0) {
+        ignorePop.current -= 1;
+        return;
+      }
+      if (!ownsEntry.current) return;
+      ownsEntry.current = false;
+      restoreFocus.current = true;
+      setOpen(false);
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
 
   useEffect(() => {
     if (isCompactNav) return;
     restoreFocus.current = false;
     keepScroll.current = false;
+    releaseEntry();
     setOpen(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isCompactNav]);
 
   useEffect(() => {

@@ -3,6 +3,18 @@ body.menu-open {
   overflow: hidden;
 }
 
+/* The body is pinned (position: fixed) while the menu is open, which would carry the
+   sticky header off-screen; pin the header to the viewport and make it opaque. */
+html.menu-open .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background: var(--bg);
+  border-bottom-color: var(--line);
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -144,6 +156,7 @@ body.menu-open {
     display: none;
     position: fixed;
     inset: var(--header) 0 0 0;
+    height: calc(100dvh - var(--header));
     z-index: 25;
     flex-direction: column;
     align-items: flex-start;
