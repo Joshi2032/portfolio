@@ -203,7 +203,15 @@ function ProjectFacts({ details }) {
           <span>{details.result}</span>
         </p>
       ) : (
-        <p className="delivery">{details.delivery}</p>
+        <>
+          {details.metric ? (
+            <p className="result">
+              <strong>{details.metric.value}</strong>
+              <span>{details.metric.label}</span>
+            </p>
+          ) : null}
+          <p className="delivery">{details.delivery}</p>
+        </>
       )}
     </>
   );
