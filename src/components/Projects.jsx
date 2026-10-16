@@ -49,6 +49,7 @@ function ProjectFlow({ flow }) {
             <strong>{step.title}</strong>
             <em>{step.note}</em>
             {step.input ? <div className="pm-input"><span aria-hidden="true">+</span>{step.input}</div> : null}
+            {step.alt ? <div className="pm-input pm-alt"><span aria-hidden="true">o</span>{step.alt}</div> : null}
           </li>
         ))}
       </ol>

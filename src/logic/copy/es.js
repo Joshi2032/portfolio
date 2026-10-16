@@ -73,11 +73,11 @@ export const es = {
       meta: "IA Engineer · PM",
       when: "Ago 2025 – Presente",
       title: "Agente de ensamble 3D, cotización y planos",
-      lede: "Se trabaja con el modelo desde un chatbot que hace preguntas para armar la configuración. Gemma 4 12B, ajustado con QLoRA, arma el ensamble 3D con piezas reales. Un Qwen especializado lee el plano del lugar donde irán los racks y pasa esa información al motor para continuar con el armado.",
+      lede: "Gemma 4 12B, ajustado con QLoRA, arma el ensamble 3D con piezas reales. Un Qwen especializado lee el plano del lugar donde irán los racks y pasa esa información al motor para continuar con el armado. Si no hay plano, un chatbot hace preguntas para recopilar esa información.",
       points: [
-        "Se interactúa con el modelo mediante un chatbot que recopila información a través de preguntas para armar la configuración.",
         "El modelo ajustado elige la configuración que mejor aprovecha la bodega.",
         "Qwen lee los planos del lugar donde se instalarán los racks y le pasa esa información al motor para proseguir con el armado.",
+        "Si no se cuenta con el plano, se interactúa con el modelo mediante un chatbot que recopila la información a través de preguntas para armar la configuración.",
         "Un motor de render produce el 3D a partir de dimensiones, restricciones y condiciones de montaje.",
         "La entrega incluye el render 3D, los planos y la estimación de cotización.",
       ],
@@ -86,8 +86,7 @@ export const es = {
         title: "Cómo funciona",
         aria: "Flujo del agente de ensamble 3D",
         steps: [
-          { title: "Chatbot", note: "Preguntas para armar la configuración" },
-          { title: "Plano del lugar", note: "Donde irán los racks" },
+          { title: "Plano del lugar", note: "Donde irán los racks", alt: "Sin plano: un chatbot hace preguntas para recopilar la información" },
           { title: "Qwen lee el plano", note: "Pasa la información al motor" },
           { title: "Motor de render", note: "Continúa con el armado", input: "Gemma 4 12B (QLoRA) elige la configuración con piezas reales" },
           { title: "Render 3D, planos y cotización", note: "La entrega" },

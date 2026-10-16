@@ -501,7 +501,7 @@
 
 .pm-flow { margin: 1.3rem 0 0; padding: 1.1rem; border: 1px solid var(--line); border-radius: 20px; background: #10120e; }
 .pm-flow figcaption { margin-bottom: 0.9rem; color: var(--faint); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
-.pm-steps { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 1.6rem; margin: 0; padding: 0; list-style: none; }
+.pm-steps { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1.6rem; margin: 0; padding: 0; list-style: none; }
 .pm-steps li { position: relative; display: flex; flex-direction: column; gap: 0.3rem; padding: 0.9rem 0.95rem; border: 1px solid var(--line); border-radius: 16px; background: #171a14; }
 .pm-steps li + li::before { content: "→"; position: absolute; left: -1.25rem; top: 1.1rem; color: var(--accent); font-size: 1.05rem; }
 .pm-n { color: var(--accent); font-size: 0.72rem; letter-spacing: 0.12em; }
@@ -518,3 +518,5 @@
   .pm-steps { grid-template-columns: 1fr; gap: 1.5rem; }
   .pm-steps li + li::before { content: "↓"; left: 1rem; top: -1.35rem; }
 }
+.pm-alt { border-color: rgba(244, 240, 230, 0.28); color: var(--muted); }
+.pm-alt span { color: var(--muted); font-style: italic; }
