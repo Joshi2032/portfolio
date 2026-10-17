@@ -301,7 +301,7 @@ export const es = {
     lead: "Ingeniería en TICs y técnico en informática. Español nativo e inglés B1.",
     items: [
       {
-        when: "2021 – en curso",
+        when: "2021 – 2026",
         title: "Ingeniería en Tecnologías de la Información y Comunicaciones (TICs)",
         place: "Tecnológico Nacional de México (TecNM) Campus La Piedad",
       },

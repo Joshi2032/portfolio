@@ -301,7 +301,7 @@ export const en = {
     lead: "ICT Engineering and a technical high school diploma. Native Spanish and English B1.",
     items: [
       {
-        when: "2021 – Present",
+        when: "2021 – 2026",
         title: "Information and Communication Technologies Engineering (ICT)",
         place: "Tecnológico Nacional de México (TecNM), La Piedad Campus",
       },
