@@ -72,20 +72,19 @@ export const en = {
   },
   projects: {
     ensamble: {
-      card: { summary: "An agent with Gemma 4 12B (QLoRA) and Qwen that builds 3D racks from real parts and delivers the render, drawings, and quotation.", stat: "40–80 h → 10 min", label: "to prepare the render, drawings, and quotation" },
+      card: { summary: "An AI agent that turns a warehouse floor plan into a 3D render, drawings, and a rack quotation in 10 minutes instead of 40–80 hours.", stat: "99.6–99.8%", label: "less turnaround time" },
       plate: "Real parts, drawing, and quote",
       plateItems: ["Gemma 4 12B", "Qwen", "QLoRA · CUDA"],
       client: "PM",
       meta: "AI Engineer · PM",
       when: "Aug 2025 – Present",
       title: "3D assembly, quotation, and drawings agent",
-      lede: "Gemma 4 12B, fine-tuned with QLoRA, builds the 3D assembly from real parts. When there is a floor plan, a specialized Qwen model reads it and passes that information to the engine so the assembly can continue. When there isn't, users interact with Gemma 4 12B through a chatbot that asks questions to build the configuration.",
+      lede: "An AI agent that turns a warehouse floor plan into a 3D render, drawings, and a rack quotation in 10 minutes instead of 40–80 hours.",
       points: [
-        "The fine-tuned model picks the layout that best uses the warehouse.",
-        "Qwen reads the floor plans of the site where the racks will be installed and passes that information to the engine to continue the assembly.",
-        "When no floor plan is available, users interact with Gemma 4 12B through a chatbot that gathers the information by asking questions to build the configuration.",
-        "A rendering engine produces the 3D render from dimensions, constraints, and installation conditions.",
-        "The delivery includes the 3D render, the drawings, and the estimated quotation.",
+        "Qwen, specialized in floor plans, reads the site plan and extracts its dimensions and constraints.",
+        "Gemma 4 12B, fine-tuned with QLoRA (CUDA), builds the assembly from real parts and picks the layout that makes the best use of the space; when there is no floor plan, a Gemma chatbot gathers the information by asking questions.",
+        "A rendering engine produces the 3D render, the drawing with the racks, and the estimated quotation.",
+        "Turnaround dropped from 40–80 working hours (1–2 weeks) to 10 minutes, a 99.6–99.8% time saving.",
       ],
       tags: ["Gemma 4 12B", "QLoRA", "CUDA", "Qwen"],
       flow: {
@@ -112,8 +111,6 @@ export const en = {
         stat: "40–80 h → 10 min",
         statNote: "to prepare the render, drawings, and quote",
       },
-      resultStat: "99.6%–99.8%",
-      result: "less time: from 40–80 working hours (1–2 weeks at 8 h/day) to 10 minutes.",
       alongside: {
         anchor: "ensamble-kanban",
         kicker: "In parallel, over the same period",

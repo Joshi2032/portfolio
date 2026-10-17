@@ -123,7 +123,7 @@ function ProjectFacts({ details }) {
               <span>{details.metric.label}</span>
             </p>
           ) : null}
-          <p className="delivery">{details.delivery}</p>
+          {details.delivery ? <p className="delivery">{details.delivery}</p> : null}
         </>
       )}
     </>

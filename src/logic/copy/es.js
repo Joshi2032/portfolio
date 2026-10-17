@@ -72,20 +72,19 @@ export const es = {
   },
   projects: {
     ensamble: {
-      card: { summary: "Agente con Gemma 4 12B (QLoRA) y Qwen que arma racks en 3D con piezas reales y entrega render, planos y cotización.", stat: "40–80 h → 10 min", label: "para preparar render, planos y cotización" },
+      card: { summary: "Agente de IA que convierte el plano de una bodega en un render 3D, planos y cotización de racks en 10 min, en lugar de 40–80 h.", stat: "99.6–99.8%", label: "menos tiempo de respuesta" },
       plate: "Piezas reales, plano y cotización",
       plateItems: ["Gemma 4 12B", "Qwen", "QLoRA · CUDA"],
       client: "PM",
       meta: "IA Engineer · PM",
       when: "Ago 2025 – Presente",
       title: "Agente de ensamble 3D, cotización y planos",
-      lede: "Gemma 4 12B, ajustado con QLoRA, arma el ensamble 3D con piezas reales. Si hay plano, un Qwen especializado lo lee y pasa esa información al motor para continuar con el armado. Si no lo hay, se interactúa con Gemma 4 12B mediante un chatbot que hace preguntas para armar la configuración.",
+      lede: "Agente de IA que convierte el plano de una bodega en un render 3D, planos y cotización de racks en 10 min, en lugar de 40–80 h.",
       points: [
-        "El modelo ajustado elige la configuración que mejor aprovecha la bodega.",
-        "Qwen lee los planos del lugar donde se instalarán los racks y le pasa esa información al motor para proseguir con el armado.",
-        "Si no se cuenta con el plano, se interactúa con Gemma 4 12B mediante un chatbot que recopila la información a través de preguntas para armar la configuración.",
-        "Un motor de render produce el 3D a partir de dimensiones, restricciones y condiciones de montaje.",
-        "La entrega incluye el render 3D, los planos y la estimación de cotización.",
+        "Qwen, especializado en planos, lee el plano del sitio y extrae dimensiones y restricciones.",
+        "Gemma 4 12B, ajustado con QLoRA (CUDA), arma el ensamble con piezas reales y elige la configuración que mejor aprovecha el espacio; si no hay plano, un chatbot con Gemma recaba la información con preguntas.",
+        "Un motor de render genera el render 3D, el plano con los racks y la cotización estimada.",
+        "El tiempo de respuesta bajó de 40–80 h laborales (1–2 semanas) a 10 min: un ahorro del 99.6–99.8%.",
       ],
       tags: ["Gemma 4 12B", "QLoRA", "CUDA", "Qwen"],
       flow: {
@@ -112,8 +111,6 @@ export const es = {
         stat: "40–80 h → 10 min",
         statNote: "para preparar render, planos y cotización",
       },
-      resultStat: "99.6%–99.8%",
-      result: "menos tiempo: de 40–80 horas laborales (1–2 semanas, jornadas de 8 h) a 10 minutos.",
       alongside: {
         anchor: "ensamble-kanban",
         kicker: "En paralelo, en el mismo periodo",
