@@ -166,6 +166,18 @@
   color: var(--mark);
 }
 
+.plate-kicker {
+  max-width: 14ch;
+  margin-top: 0.85rem;
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
 .plate-list {
   list-style: none;
   margin: 0 0 0.85rem;
@@ -732,14 +744,3 @@
 
 .card-tags { margin-top: 0.85rem; }
 
-.project-sub {
-  margin-top: 0.3rem;
-  color: var(--accent-ink);
-  font-family: var(--serif);
-  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
-  font-style: italic;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-.project-sub + p { margin-top: 0.55rem; }

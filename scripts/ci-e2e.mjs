@@ -105,7 +105,7 @@ for (const device of viewports) {
 
   await test(`${device.name}: ?p= deep links open the dialog and Back shows home`, async () => {
     const page = await newPage(device);
-    for (const [path, title] of [["?p=aguacate", /aguacate/i], ["?p=kaizen&lang=en", /Kaizen/], ["proyectos/tienda/", /tienda|store/i]]) {
+    for (const [path, title] of [["?p=aguacate", /Hass/], ["?p=kaizen&lang=en", /Kaizen/], ["proyectos/tienda/", /ventas|sales/i]]) {
       await page.goto(base + path, { waitUntil: "load" });
       await projectOpen(page).waitFor();
       assert.match(await page.locator("#project-float-title").textContent(), title);
