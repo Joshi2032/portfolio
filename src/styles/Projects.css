@@ -717,7 +717,6 @@
   .pm-compare { grid-template-columns: 1fr; }
 }
 
-.plate-org.is-raw { text-transform: none; letter-spacing: 0.02em; }
 
 .card-summary { margin-top: 0.5rem; color: var(--muted); }
 

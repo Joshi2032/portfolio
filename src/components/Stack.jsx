@@ -27,7 +27,6 @@ export function Stack() {
             </section>
           ))}
         </div>
-        <p className="scope">{text.stack.scope}</p>
       </div>
     </section>
   );

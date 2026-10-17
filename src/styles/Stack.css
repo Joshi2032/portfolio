@@ -33,12 +33,6 @@
   color: var(--muted);
 }
 
-.scope {
-  margin-top: 1.2rem;
-  color: var(--faint);
-  font-size: 0.92rem;
-}
-
 .stack-lead {
   display: grid;
   gap: 0.35rem;

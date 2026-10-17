@@ -11,7 +11,6 @@ export function Education() {
         <header className="section-head">
           <p className="num">04</p>
           <h2>{education.title}</h2>
-          <p className="section-lead">{education.lead}</p>
         </header>
         <div className="edu-grid">
           {education.items.map((item) => (

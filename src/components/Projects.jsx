@@ -363,7 +363,7 @@ export function Projects() {
                   <ul className="plate-list">
                     {details.plateItems.map((item) => <li key={item}>{item}</li>)}
                   </ul>
-                  <p className={`plate-org${project.orgRaw ? " is-raw" : ""}`}>{project.org}</p>
+                  <p className="plate-org">{details.category}</p>
                 </div>
               </div>
               <div className="project-body">
@@ -418,7 +418,7 @@ export function Projects() {
                 <ul className="plate-list">
                   {openDetails.plateItems.map((item) => <li key={item}>{item}</li>)}
                 </ul>
-                <p className={`plate-org${openProject.orgRaw ? " is-raw" : ""}`}>{openProject.org}</p>
+                <p className="plate-org">{openDetails.category}</p>
               </div>
             </div>
             <div className="project-body">

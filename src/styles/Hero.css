@@ -10,13 +10,8 @@
   padding-top: clamp(1.4rem, 3vw, 2.2rem);
 }
 
-.kicker {
-  color: var(--accent-ink);
-  font-size: 0.75rem;
-}
-
 .role {
-  margin-top: 0.7rem;
+  margin-top: 0;
   color: var(--muted);
   font-size: 0.82rem;
   letter-spacing: 0.08em;

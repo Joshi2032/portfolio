@@ -12,7 +12,6 @@ export function Hero() {
     <section className="hero" id="inicio">
       <div className="wrap hero-grid">
         <div className="hero-copy">
-          <p className="kicker">{hero.kicker}</p>
           <p className="role">{hero.role}</p>
           <h1>Josué Isaí<br /><em>Salazar Castro</em></h1>
           <p className="hero-title">{hero.title}</p>
