@@ -18,6 +18,20 @@
     <meta name="theme-color" content="#10120e" />
     <script>
       (function () {
+        // Language before first paint: ?lang=, then the saved toggle choice, then the browser.
+        var lang = new URLSearchParams(location.search).get("lang"), saved;
+        if (lang !== "en" && lang !== "es") {
+          try { saved = localStorage.getItem("portfolio-lang-choice"); } catch (e) {}
+          if (saved === "en" || saved === "es") lang = saved;
+          else {
+            var bot = /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent);
+            var first = bot ? "es" : (navigator.languages && navigator.languages[0]) || navigator.language || "es";
+            lang = /^es\b/i.test(first) ? "es" : "en";
+          }
+        }
+        document.documentElement.lang = lang;
+      })();
+      (function () {
         var theme;
         try { theme = localStorage.getItem("portfolio-theme"); } catch (e) {}
         if (theme !== "light" && theme !== "dark") {
@@ -52,7 +66,7 @@
   <body>
     <div id="root">
       <main class="boot-shell" style="min-height:100vh;padding:7rem 1.5rem 2rem;background:var(--bg,#10120e);color:var(--ink,#f4f0e6);font-family:Outfit,system-ui,sans-serif">
-        <p style="margin:0 0 .75rem;color:var(--accent-ink,#e2ff57);letter-spacing:.14em;text-transform:uppercase;font-size:.78rem">Full Stack Developer · Flutter · IA aplicada</p>
+        <p style="margin:0 0 .75rem;color:var(--accent-ink,#e2ff57);letter-spacing:.14em;text-transform:uppercase;font-size:.78rem">Full Stack Developer · Flutter</p>
         <h1 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:500;font-size:clamp(2.6rem,9vw,5.5rem);line-height:1;letter-spacing:-.04em">Josué Isaí<br /><em>Salazar Castro</em></h1>
       </main>
     </div>

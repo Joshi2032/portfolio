@@ -64,3 +64,17 @@
     gap: 1.75rem;
   }
 }
+
+.soft-title {
+  margin: 1.4rem 0 0;
+  color: var(--faint);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.soft-title + .soft { margin-top: 0.6rem; }
+
+.note-list { margin: 0.4rem 0 0; padding: 0; list-style: none; color: var(--muted); font-size: 1.02rem; }
+.note-list li + li { margin-top: 0.15rem; }

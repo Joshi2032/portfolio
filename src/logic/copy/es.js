@@ -18,6 +18,7 @@ export const es = {
     contact: "Contacto",
   },
   hero: {
+    title: "Ingeniero en TICs",
     kicker: "La Piedad, Michoacán",
     role: "Full Stack Developer · Flutter · IA aplicada",
     lede: "Agentes de IA para procesos industriales y sistemas de operación en Flutter.",
@@ -26,26 +27,30 @@ export const es = {
     secondary: "Contactar",
   },
   dossier: {
-    kicker: "En este momento",
+    kicker: "Experiencia actual",
     items: [
       { title: "IA Engineer · PM", detail: "Ago 2025 – Presente" },
       { title: "Full Stack freelance", detail: "Dic 2025 – Presente · tiempo parcial" },
       { title: "Prácticas concluidas", detail: "Mitsubishi Electric · Enjo-it" },
     ],
   },
+  metricsTitle: "Resultados destacados",
+  metricsLead: "Lo más medible de mis proyectos.",
+  metricsProject: "Proyecto",
   metrics: [
-    { value: "40–80 h → 10 min", label: "Preparar render, planos y cotización" },
-    { value: "3 apps", label: "Zapata, Sushi Lim y Casa Lim" },
-    { value: "Gemma 4 12B", label: "Ajustado con QLoRA sobre CUDA" },
+    { value: "40–80 h → 10 min", label: "Preparar render, planos y cotización", project: "ensamble", projectName: "Agente de ensamble 3D" },
+    { value: "3 apps", label: "Zapata, Sushi Lim y Casa Lim", project: "restaurantes", projectName: "Gestión para restaurantes" },
+    { value: "Gemma 4 12B", label: "Ajustado con QLoRA sobre CUDA", project: "ensamble", projectName: "Agente de ensamble 3D" },
   ],
   about: {
     title: "Perfil",
     text: "Desarrollador Full Stack. Aplico inteligencia artificial a procesos industriales y la llevo desde un modelo ajustado hasta la herramienta que usa el equipo.",
+    softTitle: "Habilidades blandas",
     soft: ["Resolución de problemas", "Trabajo en equipo", "Adaptabilidad"],
     notes: [
       { title: "Lugar", text: "La Piedad, Michoacán." },
-      { title: "Formación", text: "Ingeniería en TIC en el TecNM Campus La Piedad, titulación estimada ene–feb 2027." },
-      { title: "Idiomas", text: "Español nativo e inglés B1." },
+      { title: "Formación", text: "Ingeniería en Tecnologías de la Información y Comunicaciones (TICs), Tecnológico Nacional de México (TecNM) Campus La Piedad, titulación estimada ene–feb 2027." },
+      { title: "Idiomas", list: ["Español — nativo", "Inglés — B1"] },
     ],
   },
   projectsIntro: {
@@ -53,7 +58,7 @@ export const es = {
     copyLink: "Copiar enlace",
     linkCopied: "Enlace copiado",
     title: "Proyectos",
-    lead: "Casos tomados del CV: un agente para racks y planos, operación de restaurantes, control de personal y dos sistemas empresariales.",
+    lead: "Un agente para racks y planos, operación de restaurantes, control de personal y dos sistemas empresariales.",
     filters: {
       all: "Todos",
       ia: "IA",
@@ -295,8 +300,8 @@ export const es = {
     items: [
       {
         when: "2021 – en curso",
-        title: "Ingeniería en Tecnologías de la Información y Comunicación",
-        place: "Instituto Tecnológico Nacional de México, Campus La Piedad",
+        title: "Ingeniería en Tecnologías de la Información y Comunicaciones (TICs)",
+        place: "Tecnológico Nacional de México (TecNM) Campus La Piedad",
         note: "Titulación estimada: ene–feb 2027",
       },
       {
@@ -306,7 +311,7 @@ export const es = {
       },
     ],
     languagesTitle: "Idiomas",
-    languages: "Español: nativo · Inglés: B1",
+    languages: ["Español — nativo", "Inglés — B1"],
   },
   cv: {
     title: "Currículum",
@@ -327,7 +332,6 @@ export const es = {
     title: "Contacto",
     lead: "Escríbeme si quieres hablar de un sistema, un agente de IA o una app en Flutter.",
     email: "Correo",
-    phone: "Celular",
     name: "Nombre",
     message: "Mensaje",
     messagePlaceholder: "Cuéntame del sistema, el agente o la app.",
@@ -337,10 +341,9 @@ export const es = {
     emailInvalid: "Revisa tu correo: no parece válido.",
     subjectLabel: "Asunto (opcional)",
     gmail: "Abrir en Gmail",
+    whatsapp: "WhatsApp",
     subject: "Contacto desde el portafolio",
     send: "Enviar correo",
-    whatsapp: "WhatsApp",
-    call: "Llamar",
   },
   footer: "Full Stack Developer · La Piedad, Michoacán",
 };

@@ -64,7 +64,7 @@ for (const project of projectOrder) {
     const details = copy[lang].projects[project.id];
     const title = `${details.title} · Josué Isaí Salazar Castro`;
     const url = `${SITE}${projectPath(lang, project.id)}`;
-    const target = `${BASE}?p=${project.id}${lang === "en" ? "&lang=en" : ""}`;
+    const target = `${BASE}?p=${project.id}${lang === "en" ? "&lang=en" : "&lang=es"}`;
     const alternates = { es: `${SITE}${projectPath("es", project.id)}`, en: `${SITE}${projectPath("en", project.id)}` };
     write(
       projectPath(lang, project.id),
@@ -97,7 +97,7 @@ for (const project of projectOrder) {
 // The technical note now lives inside the avocado project dialog.
 // Old note URLs redirect there so shared links keep working.
 for (const lang of ["es", "en"]) {
-  const target = `${BASE}?p=aguacate${lang === "en" ? "&lang=en" : ""}`;
+  const target = `${BASE}?p=aguacate${lang === "en" ? "&lang=en" : "&lang=es"}`;
   const label = lang === "en" ? "Open the avocado project" : "Abrir el proyecto del aguacate";
   write(
     notePath(lang),

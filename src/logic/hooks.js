@@ -1,15 +1,29 @@
 import { useEffect, useRef, useState } from "react";
 
-const STORAGE_KEY = "portfolio-lang";
+// Saved only when the visitor picks a language with the ES/EN toggle.
+const STORAGE_KEY = "portfolio-lang-choice";
+
+// Same rules as the inline script in index.html (which sets <html lang> before paint):
+// ?lang= wins, then the saved choice, then the browser's first preferred language.
+export function detectLang({ search, saved, languages }) {
+  const param = new URLSearchParams(search).get("lang");
+  if (param === "en" || param === "es") return param;
+  if (saved === "en" || saved === "es") return saved;
+  const first = (languages ?? []).find(Boolean);
+  return first && /^es\b/i.test(first) ? "es" : first ? "en" : "es";
+}
 
 function readLang() {
-  const param = new URLSearchParams(window.location.search).get("lang");
-  if (param === "en" || param === "es") return param;
+  let saved = null;
   try {
-    return localStorage.getItem(STORAGE_KEY) === "en" ? "en" : "es";
+    saved = localStorage.getItem(STORAGE_KEY);
   } catch {
-    return "es";
+    /* private mode */
   }
+  // Crawlers keep the canonical Spanish home so hreflang (es = /, en = ?lang=en) stays truthful.
+  const bot = /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent);
+  const languages = bot ? ["es"] : navigator.languages?.length ? navigator.languages : [navigator.language];
+  return detectLang({ search: window.location.search, saved, languages });
 }
 
 function writeLangUrl(value) {
@@ -25,16 +39,16 @@ export function useLanguageState() {
   const [lang, setLangState] = useState(readLang);
 
   useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, lang);
-    } catch {
-      /* private mode */
-    }
     if (lang === "en") writeLangUrl("en");
   }, [lang]);
 
   const setLang = (next) => {
     const value = next === "en" ? "en" : "es";
+    try {
+      localStorage.setItem(STORAGE_KEY, value);
+    } catch {
+      /* private mode */
+    }
     if (value === "es") writeLangUrl("es");
     setLangState(value);
   };

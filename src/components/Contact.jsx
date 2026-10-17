@@ -152,11 +152,6 @@ export function Contact() {
                 <a className="btn btn-ghost" href={whatsappHref} target="_blank" rel="noreferrer">{contact.whatsapp}</a>
               </div>
             </form>
-            <a className="contact-phone" href="tel:+523521887541">
-              <span>{contact.phone}</span>
-              <strong>352 188 7541</strong>
-              <em>{contact.call}</em>
-            </a>
           </div>
         </div>
       </div>

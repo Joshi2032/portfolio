@@ -15,6 +15,7 @@ export function Hero() {
           <p className="kicker">{hero.kicker}</p>
           <p className="role">{hero.role}</p>
           <h1>Josué Isaí<br /><em>Salazar Castro</em></h1>
+          <p className="hero-title">{hero.title}</p>
           <p className="lede">{hero.lede}</p>
           <div className="actions">
             <a className="btn btn-primary" href="#proyectos">{hero.primary}</a>
@@ -45,14 +46,25 @@ export function Hero() {
         </aside>
       </div>
       <div className="wrap">
-        <dl className="metrics">
-          {text.metrics.map((metric) => (
-            <div key={metric.label}>
-              <dt>{metric.label}</dt>
-              <dd>{metric.value}</dd>
-            </div>
-          ))}
-        </dl>
+        <section className="highlights" aria-labelledby="highlights-title">
+          <div className="highlights-head">
+            <h2 id="highlights-title">{text.metricsTitle}</h2>
+            <p>{text.metricsLead}</p>
+          </div>
+          <dl className="metrics">
+            {text.metrics.map((metric) => (
+              <div key={metric.label}>
+                <dt>
+                  {metric.label}
+                  <a className="metric-project" href={`#${metric.project}`}>
+                    {text.metricsProject}: {metric.projectName}
+                  </a>
+                </dt>
+                <dd>{metric.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       </div>
     </section>
   );

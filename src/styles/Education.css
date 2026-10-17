@@ -53,3 +53,10 @@
     gap: 0.25rem;
   }
 }
+
+.lang-list { margin: 0; padding: 0; list-style: none; color: var(--muted); text-align: right; }
+.lang-list li + li { margin-top: 0.15rem; }
+
+@media (max-width: bp-compact) {
+  .lang-list { text-align: left; }
+}

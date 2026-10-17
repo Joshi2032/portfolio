@@ -23,8 +23,8 @@ async function test(name, fn) {
   }
 }
 
-async function newPage(device) {
-  const context = await browser.newContext({ ...device, reducedMotion: "reduce" });
+async function newPage(device, locale = "es-MX") {
+  const context = await browser.newContext({ ...device, locale, reducedMotion: "reduce" });
   const page = await context.newPage();
   await page.route(/goatcounter|zgo\.at/, (route) => route.abort());
   return page;
@@ -168,6 +168,30 @@ await test("mobile: menu is an opaque full-height overlay; Back, Esc and links c
   assert.ok(page.url().endsWith("#stack"), `link did not navigate: ${page.url()}`);
   assert.notEqual(await page.evaluate(() => history.state?.pfLayer ?? null), "menu", "stale menu history entry");
   await page.context().close();
+});
+
+await test("language: browser detection, ?lang override and saved toggle choice", async () => {
+  const navText = (page) => page.locator("#site-nav a").first().textContent();
+  const es = await newPage(viewports[0], "es-MX");
+  await es.goto(base, { waitUntil: "load" });
+  assert.equal(await es.evaluate(() => document.documentElement.lang), "es");
+  assert.equal(await navText(es), "Proyectos");
+  await es.context().close();
+
+  const en = await newPage(viewports[0], "en-US");
+  await en.goto(base, { waitUntil: "load" });
+  assert.equal(await en.evaluate(() => document.documentElement.lang), "en");
+  assert.equal(await navText(en), "Projects");
+  await en.goto(`${base}?lang=es`, { waitUntil: "load" });
+  assert.equal(await navText(en), "Proyectos", "?lang=es should override the browser language");
+  await en.goto(base, { waitUntil: "load" });
+  assert.equal(await navText(en), "Projects", "?lang alone must not be saved as a choice");
+  await en.locator(".lang button", { hasText: "ES" }).click();
+  assert.equal(await navText(en), "Proyectos");
+  await en.goto(base, { waitUntil: "load" });
+  assert.equal(await navText(en), "Proyectos", "toggle choice did not persist");
+  assert.equal(await en.evaluate(() => document.documentElement.lang), "es");
+  await en.context().close();
 });
 
 await browser.close();

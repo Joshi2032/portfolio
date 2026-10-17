@@ -25,7 +25,9 @@ export function Education() {
         </div>
         <div className="lang-row">
           <h3>{education.languagesTitle}</h3>
-          <p>{education.languages}</p>
+          <ul className="lang-list">
+            {education.languages.map((item) => <li key={item}>{item}</li>)}
+          </ul>
         </div>
       </div>
     </section>

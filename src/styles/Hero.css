@@ -168,3 +168,46 @@ h1 em {
   h1 { font-size: clamp(2.8rem, 14vw, 4.2rem); }
 }
 
+
+.hero-title {
+  margin: 0.7rem 0 0;
+  color: var(--accent-ink);
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.highlights { margin: 2.4rem 0 0.4rem; }
+
+.highlights-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 1rem;
+}
+
+.highlights-head h2 {
+  margin: 0;
+  color: var(--accent-ink);
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.highlights-head p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+.highlights .metrics { margin: 1rem 0 0; }
+
+.metrics dt { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.metric-project {
+  color: var(--faint);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.metric-project:hover,
+.metric-project:focus-visible { color: var(--accent-ink); text-decoration: underline; }

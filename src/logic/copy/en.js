@@ -18,7 +18,8 @@ export const en = {
     contact: "Contact",
   },
   hero: {
-    kicker: "La Piedad, Michoacán, Mexico",
+    title: "ICT Engineer",
+    kicker: "La Piedad, Michoacan, Mexico",
     role: "Full Stack Developer · Flutter · Applied AI",
     lede: "AI agents for industrial processes and operational systems in Flutter.",
     primary: "View projects",
@@ -26,26 +27,30 @@ export const en = {
     secondary: "Contact",
   },
   dossier: {
-    kicker: "Right now",
+    kicker: "Current experience",
     items: [
       { title: "AI Engineer · PM", detail: "Aug 2025 – Present" },
       { title: "Full Stack freelance", detail: "Dec 2025 – Present · part-time" },
       { title: "Completed internships", detail: "Mitsubishi Electric · Enjo-it" },
     ],
   },
+  metricsTitle: "Highlights",
+  metricsLead: "The most measurable results from my projects.",
+  metricsProject: "Project",
   metrics: [
-    { value: "40–80 h → 10 min", label: "Prepare the render, drawings, and quotation" },
-    { value: "3 apps", label: "Zapata, Sushi Lim, and Casa Lim" },
-    { value: "Gemma 4 12B", label: "Fine-tuned with QLoRA on CUDA" },
+    { value: "40–80 h → 10 min", label: "Prepare the render, drawings, and quotation", project: "ensamble", projectName: "3D assembly agent" },
+    { value: "3 apps", label: "Zapata, Sushi Lim, and Casa Lim", project: "restaurantes", projectName: "Restaurant management" },
+    { value: "Gemma 4 12B", label: "Fine-tuned with QLoRA on CUDA", project: "ensamble", projectName: "3D assembly agent" },
   ],
   about: {
     title: "Profile",
     text: "Full Stack developer. I apply artificial intelligence to industrial processes and take it from a fine-tuned model to the tool the team uses.",
+    softTitle: "Soft skills",
     soft: ["Problem-solving", "Teamwork", "Adaptability"],
     notes: [
-      { title: "Place", text: "La Piedad, Michoacán." },
-      { title: "Education", text: "B.S. in ICT at TecNM La Piedad Campus, expected graduation Jan–Feb 2027." },
-      { title: "Languages", text: "Native Spanish and English B1." },
+      { title: "Place", text: "La Piedad, Michoacan, Mexico." },
+      { title: "Education", text: "Information and Communication Technologies Engineering (ICT), Tecnológico Nacional de México (TecNM), La Piedad Campus, expected graduation Jan–Feb 2027." },
+      { title: "Languages", list: ["Spanish — native", "English — B1"] },
     ],
   },
   projectsIntro: {
@@ -53,7 +58,7 @@ export const en = {
     copyLink: "Copy link",
     linkCopied: "Link copied",
     title: "Projects",
-    lead: "Cases from the CV: an agent for racks and drawings, restaurant operations, staff control, and two enterprise systems.",
+    lead: "An agent for racks and drawings, restaurant operations, staff control, and two enterprise systems.",
     filters: {
       all: "All",
       ia: "AI",
@@ -295,8 +300,8 @@ export const en = {
     items: [
       {
         when: "2021 – Present",
-        title: "B.S. in Information and Communication Technologies",
-        place: "National Technological Institute of Mexico, La Piedad Campus",
+        title: "Information and Communication Technologies Engineering (ICT)",
+        place: "Tecnológico Nacional de México (TecNM), La Piedad Campus",
         note: "Expected graduation: Jan–Feb 2027",
       },
       {
@@ -306,7 +311,7 @@ export const en = {
       },
     ],
     languagesTitle: "Languages",
-    languages: "Spanish: Native · English: B1",
+    languages: ["Spanish — native", "English — B1"],
   },
   cv: {
     title: "CV",
@@ -327,7 +332,6 @@ export const en = {
     title: "Contact",
     lead: "Write to me if you want to talk about a system, an AI agent, or a Flutter app.",
     email: "Email",
-    phone: "Phone",
     name: "Name",
     message: "Message",
     messagePlaceholder: "Tell me about the system, the agent, or the app.",
@@ -337,10 +341,9 @@ export const en = {
     emailInvalid: "Check your email: it doesn't look valid.",
     subjectLabel: "Subject (optional)",
     gmail: "Open in Gmail",
+    whatsapp: "WhatsApp",
     subject: "Contact from the portfolio",
     send: "Send email",
-    whatsapp: "WhatsApp",
-    call: "Call",
   },
-  footer: "Full Stack Developer · La Piedad, Michoacán, Mexico",
+  footer: "Full Stack Developer · La Piedad, Michoacan, Mexico",
 };
