@@ -1,5 +1,5 @@
 import { sectionIds } from "../logic/catalog.js";
-import { useActiveSection, useScrolledPast, useScrollHeader, useTheme } from "../logic/hooks.js";
+import { useActiveSection, useScrollHeader, useTheme } from "../logic/hooks.js";
 import { useLanguage } from "../logic/LanguageContext.jsx";
 import { trackEvent } from "../logic/analytics.js";
 import "../styles/Header.css";
@@ -15,21 +15,19 @@ const navItems = [
 export function Header({ menu }) {
   const { lang, setLang, text } = useLanguage();
   const scrolled = useScrollHeader();
-  // The hero already shows the photo and the name; the header brand appears once they scroll away.
-  const pastHero = useScrolledPast(".hero h1");
   const current = useActiveSection(sectionIds);
   const nav = text.nav;
   const { theme, toggleTheme } = useTheme();
   const inert = menu.open || undefined;
 
   return (
-    <header className={`site-header${scrolled ? " is-scrolled" : ""}${pastHero ? "" : " is-at-hero"}`}>
+    <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
       <div className="wrap bar">
         <a className="brand" href="#inicio" inert={inert}>
           <picture className="mark">
             <source type="image/avif" srcSet={`${import.meta.env.BASE_URL}foto/josue-144.avif`} />
             <source type="image/webp" srcSet={`${import.meta.env.BASE_URL}foto/josue-144.webp`} />
-            <img src={`${import.meta.env.BASE_URL}foto/josue-144.jpg`} width="40" height="40" alt="" decoding="async" />
+            <img src={`${import.meta.env.BASE_URL}foto/josue-144.jpg`} width="40" height="40" alt="" decoding="async" fetchPriority="high" />
           </picture>
           <span className="brand-text">
             <span className="brand-name">Josué Isaí Salazar Castro</span>

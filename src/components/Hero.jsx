@@ -3,10 +3,6 @@ import { useLanguage } from "../logic/LanguageContext.jsx";
 import { useMediaQuery } from "../responsive/useMediaQuery.js";
 import "../styles/Hero.css";
 
-const base = import.meta.env.BASE_URL;
-// Matches .hero-photo in Hero.css: 280px beside the copy on desktop, up to 150px above it on narrow screens.
-const photoSizes = "(max-width: 980px) 150px, 280px";
-
 export function Hero() {
   const { text } = useLanguage();
   const hero = text.hero;
@@ -15,20 +11,6 @@ export function Hero() {
   return (
     <section className="hero" id="inicio">
       <div className="wrap hero-grid">
-        {/* Same photo as the header mark, large; the name is right next to it, so it stays decorative. */}
-        <picture className="hero-photo">
-          <source type="image/avif" srcSet={`${base}foto/josue-288.avif 288w, ${base}foto/josue-432.avif 432w`} sizes={photoSizes} />
-          <source type="image/webp" srcSet={`${base}foto/josue-288.webp 288w, ${base}foto/josue-432.webp 432w`} sizes={photoSizes} />
-          <img
-            src={`${base}foto/josue-432.jpg`}
-            srcSet={`${base}foto/josue-288.jpg 288w, ${base}foto/josue-432.jpg 432w, ${base}foto/josue-600.jpg 600w`}
-            sizes={photoSizes}
-            width="432"
-            height="432"
-            alt=""
-            fetchPriority="high"
-          />
-        </picture>
         <div className="hero-copy">
           <p className="role">{hero.role}</p>
           <h1>Josué Isaí<br /><em>Salazar Castro</em></h1>

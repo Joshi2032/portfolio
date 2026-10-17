@@ -348,5 +348,5 @@ export const es = {
     subject: "Contacto desde el portafolio",
     send: "Enviar correo",
   },
-  brandRole: "La Piedad, Michoacán",
+  brandRole: "Full Stack Developer · La Piedad, Michoacán",
 };

@@ -114,27 +114,6 @@ export function useScrollHeader() {
   return scrolled;
 }
 
-// True once the element has scrolled up behind the fixed header (or is missing).
-export function useScrolledPast(selector, headerOffset = 72) {
-  const [past, setPast] = useState(false);
-
-  useEffect(() => {
-    const target = document.querySelector(selector);
-    if (!target) {
-      setPast(true);
-      return undefined;
-    }
-    const observer = new IntersectionObserver(
-      ([entry]) => setPast(!entry.isIntersecting && entry.boundingClientRect.top < headerOffset),
-      { rootMargin: `-${headerOffset}px 0px 0px 0px` },
-    );
-    observer.observe(target);
-    return () => observer.disconnect();
-  }, [selector, headerOffset]);
-
-  return past;
-}
-
 export function useActiveSection(ids) {
   const [current, setCurrent] = useState(ids[0]);
 

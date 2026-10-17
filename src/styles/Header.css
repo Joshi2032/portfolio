@@ -196,13 +196,3 @@ html.menu-open .site-header {
 
   .nav a { font-size: 1.35rem; color: var(--ink); }
 }
-
-/* While the hero name and photo are on screen, the header brand stays out of the way. */
-.site-header.is-at-hero .brand {
-  opacity: 0;
-  visibility: hidden;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .brand { transition: opacity 0.25s ease, visibility 0.25s ease; }
-}
