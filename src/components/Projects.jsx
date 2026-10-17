@@ -231,15 +231,8 @@ export function Projects() {
     history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
     const project = projectOrder.find((item) => item.id === id);
     if (!project) return;
-    const details = text.projects[id];
-    const opens = Boolean(details.shots?.length) || Boolean(details.alongside) || Boolean(details.flow);
-    const card = document.getElementById(id);
-    if (opens) {
-      returnFocus.current = card;
-      openProjectLayer(id);
-    } else if (card) {
-      requestAnimationFrame(() => card.scrollIntoView({ block: "center" }));
-    }
+    returnFocus.current = document.getElementById(id);
+    openProjectLayer(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -319,7 +312,7 @@ export function Projects() {
     <section className="section" id="proyectos">
       <div className="wrap">
         <header className="section-head">
-          <p className="num">01</p>
+          <p className="num">02</p>
           <h2>{intro.title}</h2>
           <p className="section-lead">{intro.lead}</p>
         </header>
@@ -340,8 +333,7 @@ export function Projects() {
         {projectOrder.map((project) => {
           const details = text.projects[project.id];
           if (!matchesFilter(project.tags, filter)) return null;
-          const hasShots = Boolean(details.shots?.length);
-          const opens = hasShots || Boolean(details.alongside) || Boolean(details.flow);
+          const opens = true;
           const kind = details.client ? "is-client" : "is-own";
           return (
             <article
@@ -371,7 +363,7 @@ export function Projects() {
                   <ul className="plate-list">
                     {details.plateItems.map((item) => <li key={item}>{item}</li>)}
                   </ul>
-                  <p className="plate-org">{project.org}</p>
+                  <p className={`plate-org${project.orgRaw ? " is-raw" : ""}`}>{project.org}</p>
                 </div>
               </div>
               <div className="project-body">
@@ -380,13 +372,16 @@ export function Projects() {
                   <p>{details.meta}</p>
                   <p className="when">{details.when}</p>
                 </div>
-                <h3 id={opens ? `${project.id}-title` : undefined}>{details.title}</h3>
-                {details.alongside ? (
-                  <p className="alongside-name" id={details.alongside.anchor}>{details.alongside.title}</p>
-                ) : (
-                  <p>{details.lede}</p>
-                )}
-                {opens ? <p className="shots-hint">{intro.showShots}</p> : <ProjectFacts details={details} />}
+                <h3 id={`${project.id}-title`}>{details.title}</h3>
+                <p className="card-summary">{details.card.summary}</p>
+                <p className="card-result">
+                  <strong>{details.card.stat}</strong>
+                  <span>{details.card.label}</span>
+                </p>
+                <ul className="tags card-tags">
+                  {details.tags.slice(0, 4).map((tag) => <li key={tag}>{tag}</li>)}
+                </ul>
+                <p className="shots-hint">{intro.showShots}</p>
               </div>
             </article>
           );
@@ -423,7 +418,7 @@ export function Projects() {
                 <ul className="plate-list">
                   {openDetails.plateItems.map((item) => <li key={item}>{item}</li>)}
                 </ul>
-                <p className="plate-org">{openProject.org}</p>
+                <p className={`plate-org${openProject.orgRaw ? " is-raw" : ""}`}>{openProject.org}</p>
               </div>
             </div>
             <div className="project-body">

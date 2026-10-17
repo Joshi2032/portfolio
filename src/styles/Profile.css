@@ -78,3 +78,17 @@
 
 .note-list { margin: 0.4rem 0 0; padding: 0; list-style: none; color: var(--muted); font-size: 1.02rem; }
 .note-list li + li { margin-top: 0.15rem; }
+
+.profile-soft {
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  align-self: end;
+}
+
+.profile-soft .soft-title { margin-top: 0; }
+
+.profile-soft .soft {
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.02rem;
+}

@@ -9,7 +9,7 @@ export function Education() {
     <section className="section" id="formacion">
       <div className="wrap">
         <header className="section-head">
-          <p className="num">03</p>
+          <p className="num">04</p>
           <h2>{education.title}</h2>
           <p className="section-lead">{education.lead}</p>
         </header>

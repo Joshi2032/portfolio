@@ -39,19 +39,14 @@ export const es = {
   metricsProject: "Proyecto",
   metrics: [
     { value: "40–80 h → 10 min", label: "Preparar render, planos y cotización", project: "ensamble", projectName: "Agente de ensamble 3D" },
-    { value: "3 apps", label: "Zapata, Sushi Lim y Casa Lim", project: "restaurantes", projectName: "Gestión para restaurantes" },
-    { value: "Gemma 4 12B", label: "Ajustado con QLoRA sobre CUDA", project: "ensamble", projectName: "Agente de ensamble 3D" },
+    { value: "3 restaurantes", label: "En una sola base Flutter + Supabase", project: "restaurantes", projectName: "Gestión para restaurantes" },
+    { value: "97.65% mAP50", label: "Detector en el teléfono, sin red", project: "aguacate", projectName: "Detector del estado del aguacate" },
   ],
   about: {
     title: "Perfil",
     text: "Desarrollador Full Stack. Aplico inteligencia artificial a procesos industriales y la llevo desde un modelo ajustado hasta la herramienta que usa el equipo.",
     softTitle: "Habilidades blandas",
     soft: ["Resolución de problemas", "Trabajo en equipo", "Adaptabilidad"],
-    notes: [
-      { title: "Lugar", text: "La Piedad, Michoacán." },
-      { title: "Formación", text: "Ingeniería en Tecnologías de la Información y Comunicaciones (TICs), Tecnológico Nacional de México (TecNM) Campus La Piedad, titulación estimada ene–feb 2027." },
-      { title: "Idiomas", list: ["Español — nativo", "Inglés — B1"] },
-    ],
   },
   projectsIntro: {
     share: "Compartir",
@@ -77,6 +72,7 @@ export const es = {
   },
   projects: {
     ensamble: {
+      card: { summary: "Agente con Gemma 4 12B (QLoRA) y Qwen que arma racks en 3D con piezas reales y entrega render, planos y cotización.", stat: "40–80 h → 10 min", label: "para preparar render, planos y cotización" },
       plate: "Piezas reales, plano y cotización",
       plateItems: ["Gemma 4 12B", "Qwen", "QLoRA · CUDA"],
       client: "PM",
@@ -133,6 +129,7 @@ export const es = {
       },
     },
     restaurantes: {
+      card: { summary: "Construí y migré las apps de tres operaciones a Flutter y Supabase, en paralelo con el trabajo en PM.", stat: "3 restaurantes", label: "en una sola base: auth, storage y realtime compartidos" },
       plate: "Tres restaurantes, una base",
       plateItems: ["Zapata", "Sushi Lim", "Casa Lim"],
       client: "Zapata, Sushi Lim y Casa Lim",
@@ -145,6 +142,7 @@ export const es = {
       delivery: "Tres apps construidas y migradas sobre la misma base.",
     },
     maxifum: {
+      card: { summary: "Control interno del personal, una aplicación de escritorio para seguir la operación en vivo y la página web de la empresa.", stat: "En vivo", label: "supervisión con evidencia fotográfica revisada por IA" },
       plate: "Campo, GPS y evidencia",
       plateItems: ["Roles y tareas", "GPS", "Fotos con IA"],
       client: "MAXIFUM",
@@ -162,6 +160,7 @@ export const es = {
       delivery: "Supervisión en tiempo real con evidencia revisada por IA.",
     },
     kaizen: {
+      card: { summary: "Digitalicé el proceso de propuestas de mejora Kaizen de la planta: del papel a un sistema web con aprobación por rol.", stat: "2 sem → 8 h", label: "respuesta a propuestas del turno nocturno" },
       plate: "Kaizen, de punta a punta",
       plateItems: ["C#", "MySQL", "Angular"],
       client: "Mitsubishi Electric",
@@ -218,6 +217,7 @@ export const es = {
       },
     },
     sap: {
+      card: { summary: "Automaticé procesos de negocio en SAP BTP Cockpit, con SAP HANA como repositorio y la operación migrada a la nube.", stat: "Un solo flujo", label: "solicitud, aprobación y registro hasta SAP HANA" },
       plate: "Aprobación hasta SAP HANA",
       plateItems: ["SAP BTP", "SAP HANA", "Correo"],
       client: "Enjo-it",
@@ -233,6 +233,7 @@ export const es = {
       delivery: "Solicitud, aprobación y registro quedan en un solo flujo.",
     },
     aguacate: {
+      card: { summary: "App Flutter con YOLO26n en el teléfono: detecta si es Hass u otro y si está inmaduro, maduro o podrido.", stat: "97.65%", label: "mAP50 en validación; funciona sin red" },
       plate: "Hass, otro y madurez",
       plateItems: ["YOLO26n", "TFLite", "Cámara"],
       meta: "Flutter · en el teléfono",
@@ -256,6 +257,7 @@ export const es = {
       ],
     },
     tienda: {
+      card: { summary: "App móvil para vender, app de escritorio en Windows para administrar, y un API NestJS con Prisma y PostgreSQL.", stat: "Con o sin red", label: "las ventas se guardan en SQLite y se suben al volver la red" },
       plate: "Ventas con o sin red",
       plateItems: ["Flutter", "NestJS", "PostgreSQL"],
       meta: "Móvil y escritorio",
@@ -291,18 +293,17 @@ export const es = {
       { term: "Principal", text: "lo que uso a diario en proyectos reales." },
       { term: "Bases", text: "tecnologías con las que he trabajado y con las que puedo apoyar un proyecto." },
     ],
-    groups: { core: "Principal", base: "Bases", cloud: "Cloud", tools: "Herramientas" },
+    groups: { core: "Principal", ai: "IA / ML", backend: "Backend", base: "Bases", cloud: "Cloud", tools: "Herramientas" },
     scope: "Las bases no son especialidades: las conozco lo suficiente para sumarme a un proyecto que las use.",
   },
   education: {
     title: "Formación",
-    lead: "Ingeniería en curso y técnico en informática. Español nativo e inglés B1.",
+    lead: "Ingeniería en TICs y técnico en informática. Español nativo e inglés B1.",
     items: [
       {
         when: "2021 – en curso",
         title: "Ingeniería en Tecnologías de la Información y Comunicaciones (TICs)",
         place: "Tecnológico Nacional de México (TecNM) Campus La Piedad",
-        note: "Titulación estimada: ene–feb 2027",
       },
       {
         when: "Ago 2018 – Jun 2021",

@@ -9,7 +9,7 @@ export function Stack() {
     <section className="section" id="stack">
       <div className="wrap">
         <header className="section-head">
-          <p className="num">02</p>
+          <p className="num">03</p>
           <h2>{text.stack.title}</h2>
           <ul className="section-lead stack-lead">
             {text.stack.lead.map((line) => (

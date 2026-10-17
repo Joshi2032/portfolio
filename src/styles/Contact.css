@@ -156,3 +156,15 @@
 .contact-copy:hover .contact-copy-tip,
 .contact-copy:focus-visible .contact-copy-tip,
 .contact-copy.is-copied .contact-copy-tip { opacity: 1; }
+
+@media (min-width: 900px) {
+  .contact-body {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.6fr);
+    gap: 1rem clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+    padding: 1.8rem 1.9rem;
+  }
+
+  .contact-form { max-width: 760px; }
+}

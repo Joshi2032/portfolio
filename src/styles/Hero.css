@@ -211,3 +211,20 @@ h1 em {
 
 .metric-project:hover,
 .metric-project:focus-visible { color: var(--accent-ink); text-decoration: underline; }
+
+/* Highlights live in the hero grid: full width under copy + dossier on desktop,
+   right after the copy (before the dossier) on narrow screens. */
+.hero-grid { grid-template-areas: "copy dossier" "highlights highlights"; }
+.hero-copy { grid-area: copy; }
+.dossier { grid-area: dossier; }
+.hero-grid > .highlights { grid-area: highlights; margin: 0.4rem 0 0.4rem; }
+
+@media (max-width: bp-tablet) {
+  .hero-grid { grid-template-areas: "copy" "highlights" "dossier"; }
+  .hero-grid > .highlights { margin: 0; }
+}
+
+@media (max-width: bp-compact) {
+  .actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .actions .btn-primary { grid-column: 1 / -1; }
+}

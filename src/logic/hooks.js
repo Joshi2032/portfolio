@@ -3,11 +3,15 @@ import { useEffect, useRef, useState } from "react";
 // Saved only when the visitor picks a language with the ES/EN toggle.
 const STORAGE_KEY = "portfolio-lang-choice";
 
+// The prerendered English home lives at /portfolio/en/.
+const EN_PATH = /\/en\/?$/;
+
 // Same rules as the inline script in index.html (which sets <html lang> before paint):
-// ?lang= wins, then the saved choice, then the browser's first preferred language.
-export function detectLang({ search, saved, languages }) {
+// ?lang= wins, then the /en/ path, then the saved choice, then the browser's first preferred language.
+export function detectLang({ search, path = "", saved, languages }) {
   const param = new URLSearchParams(search).get("lang");
   if (param === "en" || param === "es") return param;
+  if (EN_PATH.test(path)) return "en";
   if (saved === "en" || saved === "es") return saved;
   const first = (languages ?? []).find(Boolean);
   return first && /^es\b/i.test(first) ? "es" : first ? "en" : "es";
@@ -20,15 +24,18 @@ function readLang() {
   } catch {
     /* private mode */
   }
-  // Crawlers keep the canonical Spanish home so hreflang (es = /, en = ?lang=en) stays truthful.
+  // Crawlers keep the canonical Spanish home so hreflang (es = /, en = /en/) stays truthful.
   const bot = /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent);
   const languages = bot ? ["es"] : navigator.languages?.length ? navigator.languages : [navigator.language];
-  return detectLang({ search: window.location.search, saved, languages });
+  return detectLang({ search: window.location.search, path: window.location.pathname, saved, languages });
 }
 
 function writeLangUrl(value) {
   const url = new URL(window.location.href);
-  if (value === "en") url.searchParams.set("lang", "en");
+  if (EN_PATH.test(url.pathname)) {
+    if (value === "es") url.searchParams.set("lang", "es");
+    else url.searchParams.delete("lang");
+  } else if (value === "en") url.searchParams.set("lang", "en");
   else url.searchParams.delete("lang");
   const next = `${url.pathname}${url.search}${url.hash}`;
   const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;

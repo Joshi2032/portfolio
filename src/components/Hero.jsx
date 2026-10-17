@@ -44,8 +44,6 @@ export function Hero() {
             ))}
           </ul>
         </aside>
-      </div>
-      <div className="wrap">
         <section className="highlights" aria-labelledby="highlights-title">
           <div className="highlights-head">
             <h2 id="highlights-title">{text.metricsTitle}</h2>

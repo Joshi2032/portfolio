@@ -67,7 +67,7 @@ export function Contact() {
     <section className="section" id="contacto">
       <div className="wrap">
         <header className="section-head">
-          <p className="num">05</p>
+          <p className="num">06</p>
           <h2>{contact.title}</h2>
           <p className="section-lead">{contact.lead}</p>
         </header>

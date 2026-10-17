@@ -39,19 +39,14 @@ export const en = {
   metricsProject: "Project",
   metrics: [
     { value: "40–80 h → 10 min", label: "Prepare the render, drawings, and quotation", project: "ensamble", projectName: "3D assembly agent" },
-    { value: "3 apps", label: "Zapata, Sushi Lim, and Casa Lim", project: "restaurantes", projectName: "Restaurant management" },
-    { value: "Gemma 4 12B", label: "Fine-tuned with QLoRA on CUDA", project: "ensamble", projectName: "3D assembly agent" },
+    { value: "3 restaurants", label: "On one Flutter + Supabase base", project: "restaurantes", projectName: "Restaurant management" },
+    { value: "97.65% mAP50", label: "Detector on the phone, no network needed", project: "aguacate", projectName: "Avocado state detector" },
   ],
   about: {
     title: "Profile",
     text: "Full Stack developer. I apply artificial intelligence to industrial processes and take it from a fine-tuned model to the tool the team uses.",
     softTitle: "Soft skills",
     soft: ["Problem-solving", "Teamwork", "Adaptability"],
-    notes: [
-      { title: "Place", text: "La Piedad, Michoacan, Mexico." },
-      { title: "Education", text: "Information and Communication Technologies Engineering (ICT), Tecnológico Nacional de México (TecNM), La Piedad Campus, expected graduation Jan–Feb 2027." },
-      { title: "Languages", list: ["Spanish — native", "English — B1"] },
-    ],
   },
   projectsIntro: {
     share: "Share",
@@ -77,6 +72,7 @@ export const en = {
   },
   projects: {
     ensamble: {
+      card: { summary: "An agent with Gemma 4 12B (QLoRA) and Qwen that builds 3D racks from real parts and delivers the render, drawings, and quotation.", stat: "40–80 h → 10 min", label: "to prepare the render, drawings, and quotation" },
       plate: "Real parts, drawing, and quote",
       plateItems: ["Gemma 4 12B", "Qwen", "QLoRA · CUDA"],
       client: "PM",
@@ -133,6 +129,7 @@ export const en = {
       },
     },
     restaurantes: {
+      card: { summary: "I built and migrated three operations to Flutter and Supabase, in parallel with the work at PM.", stat: "3 restaurants", label: "on one base: shared auth, storage, and realtime" },
       plate: "Three restaurants, one stack",
       plateItems: ["Zapata", "Sushi Lim", "Casa Lim"],
       client: "Zapata, Sushi Lim, and Casa Lim",
@@ -145,6 +142,7 @@ export const en = {
       delivery: "Three apps built and migrated on the same base.",
     },
     maxifum: {
+      card: { summary: "Internal staff control, a desktop app to follow the operation live, and the company's website.", stat: "Live", label: "supervision with photo evidence checked by AI" },
       plate: "Field work, GPS, and evidence",
       plateItems: ["Roles and tasks", "GPS", "Photos with AI"],
       client: "MAXIFUM",
@@ -162,6 +160,7 @@ export const en = {
       delivery: "Live supervision with evidence checked by AI.",
     },
     kaizen: {
+      card: { summary: "I digitized the plant's Kaizen improvement-proposal process: from paper to a web system with role-based approval.", stat: "2 wk → 8 h", label: "night-shift proposal response" },
       plate: "Kaizen, end to end",
       plateItems: ["C#", "MySQL", "Angular"],
       client: "Mitsubishi Electric",
@@ -218,6 +217,7 @@ export const en = {
       },
     },
     sap: {
+      card: { summary: "I automated business processes in SAP BTP Cockpit, with SAP HANA as the system of record and operations moved to the cloud.", stat: "One flow", label: "request, approval, and recording through to SAP HANA" },
       plate: "Approval through to SAP HANA",
       plateItems: ["SAP BTP", "SAP HANA", "Email"],
       client: "Enjo-it",
@@ -233,6 +233,7 @@ export const en = {
       delivery: "Request, approval, and recording sit in one flow.",
     },
     aguacate: {
+      card: { summary: "A Flutter app with YOLO26n on the phone: it tells Hass from other and whether it is unripe, ripe, or rotten.", stat: "97.65%", label: "validation mAP50; works without a network" },
       plate: "Hass, other, and ripeness",
       plateItems: ["YOLO26n", "TFLite", "Camera"],
       meta: "Flutter · on the phone",
@@ -256,6 +257,7 @@ export const en = {
       ],
     },
     tienda: {
+      card: { summary: "A mobile app for sales, a Windows desktop app for administration, and a NestJS API with Prisma and PostgreSQL.", stat: "Online or offline", label: "sales are saved in SQLite and uploaded when the network returns" },
       plate: "Sales with or without a network",
       plateItems: ["Flutter", "NestJS", "PostgreSQL"],
       meta: "Mobile and desktop",
@@ -291,23 +293,22 @@ export const en = {
       { term: "Core", text: "what I use every day on real projects." },
       { term: "Working knowledge", text: "technologies I have worked with and can use to support a project." },
     ],
-    groups: { core: "Core", base: "Working knowledge", cloud: "Cloud", tools: "Tools" },
+    groups: { core: "Core", ai: "AI / ML", backend: "Backend", base: "Working knowledge", cloud: "Cloud", tools: "Tools" },
     scope: "Working knowledge isn't a specialty: I know these well enough to join a project that uses them.",
   },
   education: {
     title: "Education",
-    lead: "Degree in progress and a technical high school diploma. Native Spanish and English B1.",
+    lead: "ICT Engineering and a technical high school diploma. Native Spanish and English B1.",
     items: [
       {
         when: "2021 – Present",
         title: "Information and Communication Technologies Engineering (ICT)",
         place: "Tecnológico Nacional de México (TecNM), La Piedad Campus",
-        note: "Expected graduation: Jan–Feb 2027",
       },
       {
         when: "Aug 2018 – Jun 2021",
-        title: "Associate Degree in Computer Science",
-        place: "Technical High School, Conalep",
+        title: "Computer Technician (technical high school diploma)",
+        place: "Conalep",
       },
     ],
     languagesTitle: "Languages",

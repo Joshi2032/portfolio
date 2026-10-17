@@ -194,6 +194,20 @@ await test("language: browser detection, ?lang override and saved toggle choice"
   await en.context().close();
 });
 
+await test("language: /en/ home is English with English meta, even for a Spanish browser", async () => {
+  const page = await newPage(viewports[0], "es-MX");
+  await page.goto(`${base}en/`, { waitUntil: "load" });
+  assert.equal(await page.evaluate(() => document.documentElement.lang), "en");
+  assert.equal(await page.locator("#site-nav a").first().textContent(), "Projects");
+  assert.match(await page.locator('link[rel="canonical"]').getAttribute("href"), /\/portfolio\/en\/$/);
+  assert.match(await page.locator('meta[property="og:image"]').getAttribute("content"), /home-en\.png$/);
+  assert.ok(!page.url().includes("lang="), "the /en/ path should not need ?lang=en");
+  await page.locator(".lang button", { hasText: "ES" }).click();
+  assert.equal(await page.locator("#site-nav a").first().textContent(), "Proyectos");
+  assert.ok(page.url().includes("lang=es"), "switching to Spanish on /en/ should be reflected in the URL");
+  await page.context().close();
+});
+
 await browser.close();
 server.close();
 if (failures) {

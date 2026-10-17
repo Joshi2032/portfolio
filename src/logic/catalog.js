@@ -6,7 +6,7 @@ export const projectOrder = [
   { id: "maxifum", tags: ["flutter", "ia"], plate: "plate-ops", index: "03", org: "MAXIFUM" },
   { id: "kaizen", tags: ["csharp"], plate: "plate-plant", index: "04", org: "Mitsubishi Electric" },
   { id: "sap", tags: ["sap"], plate: "plate-cloud", index: "05", org: "Enjo-it" },
-  { id: "aguacate", tags: ["ia", "flutter"], plate: "plate-avo", index: "06", org: "YOLO26n" },
+  { id: "aguacate", tags: ["ia", "flutter"], plate: "plate-avo", index: "06", org: "YOLO26n", orgRaw: true },
   { id: "tienda", tags: ["flutter"], plate: "plate-shop", index: "07", org: "Flutter + NestJS" },
 ];
 
@@ -18,10 +18,12 @@ export const filters = [
 ];
 
 export const stackGroups = [
-  { id: "core", items: ["Flutter", "Supabase", "C#", "MySQL", "SAP BTP / HANA", "Gemma 4 12B (QLoRA)", "Qwen"] },
-  { id: "base", variant: "base", items: ["Angular", "TypeScript", "React", "Vue", "Java", "Spring Boot", "Node", "PHP"] },
+  { id: "core", items: ["Flutter", "Supabase", "C#", "Angular", "MySQL", "SAP BTP / HANA"] },
+  { id: "ai", items: ["Gemma 4 12B (QLoRA)", "Qwen", "YOLO26n", "TFLite"] },
+  { id: "backend", items: ["NestJS", "Prisma", "PostgreSQL"] },
+  { id: "base", variant: "base", items: ["TypeScript", "React", "Vue", "Java", "Spring Boot", "Node", "PHP"] },
   { id: "cloud", items: ["Firebase", "AWS", "Docker", "Git"] },
-  { id: "tools", items: ["GitHub", "GPS", "n8n"] },
+  { id: "tools", items: ["GitHub", "n8n"] },
 ];
 
 export const cvFiles = {

@@ -34,8 +34,8 @@
 
 .lang-row {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: flex-start;
+  gap: 0.5rem 2.5rem;
   align-items: baseline;
   margin-top: 1rem;
   padding-top: 1rem;
@@ -54,7 +54,7 @@
   }
 }
 
-.lang-list { margin: 0; padding: 0; list-style: none; color: var(--muted); text-align: right; }
+.lang-list { margin: 0; padding: 0; list-style: none; color: var(--muted); text-align: left; }
 .lang-list li + li { margin-top: 0.15rem; }
 
 @media (max-width: bp-compact) {

@@ -9,17 +9,23 @@
     <meta property="og:url" content="https://joshi2032.github.io/portfolio/" />
     <meta property="og:title" content="Josué Isaí Salazar Castro · Portafolio" />
     <meta property="og:description" content="Portafolio de Josué Isaí Salazar Castro, desarrollador Full Stack enfocado en Flutter y en inteligencia artificial aplicada a procesos industriales." />
-    <meta property="og:image" content="https://joshi2032.github.io/portfolio/og.png" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:site_name" content="Josué Isaí Salazar Castro" />
+    <meta property="og:image" content="https://joshi2032.github.io/portfolio/og/home-es.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://joshi2032.github.io/portfolio/og.png" />
+    <meta name="twitter:title" content="Josué Isaí Salazar Castro · Portafolio" />
+    <meta name="twitter:description" content="Portafolio de Josué Isaí Salazar Castro, desarrollador Full Stack enfocado en Flutter y en inteligencia artificial aplicada a procesos industriales." />
+    <meta name="twitter:image" content="https://joshi2032.github.io/portfolio/og/home-es.png" />
     <meta name="author" content="Josué Isaí Salazar Castro" />
     <meta name="theme-color" content="#10120e" />
     <script>
       (function () {
-        // Language before first paint: ?lang=, then the saved toggle choice, then the browser.
+        // Language before first paint: ?lang=, then the /en/ path, then the saved toggle choice, then the browser.
         var lang = new URLSearchParams(location.search).get("lang"), saved;
+        if (lang !== "en" && lang !== "es" && /\/en\/?$/.test(location.pathname)) lang = "en";
         if (lang !== "en" && lang !== "es") {
           try { saved = localStorage.getItem("portfolio-lang-choice"); } catch (e) {}
           if (saved === "en" || saved === "es") lang = saved;
@@ -46,6 +52,9 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href="https://joshi2032.github.io/portfolio/" />
+    <link rel="alternate" hreflang="es" href="https://joshi2032.github.io/portfolio/" />
+    <link rel="alternate" hreflang="en" href="https://joshi2032.github.io/portfolio/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://joshi2032.github.io/portfolio/" />
     <link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
     <script data-goatcounter="https://joshi2032.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

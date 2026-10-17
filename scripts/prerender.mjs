@@ -1,6 +1,6 @@
 // Generates static share pages (per project), redirects for retired note URLs, with their own
 // Open Graph / Twitter meta, plus the sitemap. Runs after `vite build`.
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { es } from "../src/logic/copy/es.js";
@@ -71,7 +71,7 @@ for (const project of projectOrder) {
       `${head({
         lang,
         title,
-        description: details.lede,
+        description: details.card.summary,
         url,
         image: `${SITE}og/${project.id}-${lang}.png`,
         alternates,
@@ -120,7 +120,26 @@ for (const lang of ["es", "en"]) {
   );
 }
 
-const home = { es: SITE, en: `${SITE}?lang=en` };
+// English home: the built index.html with English meta at /en/. The app reads the /en/ path as lang=en.
+function englishHome() {
+  const swap = (html, from, to) => {
+    if (!html.includes(from)) throw new Error(`prerender: missing in index.html: ${from}`);
+    return html.split(from).join(to);
+  };
+  let html = readFileSync(join(dist, "index.html"), "utf8");
+  html = swap(html, '<html lang="es">', '<html lang="en">');
+  html = swap(html, esc(es.meta.title), esc(en.meta.title));
+  html = swap(html, esc(es.meta.description), esc(en.meta.description));
+  html = swap(html, `<meta property="og:url" content="${SITE}" />`, `<meta property="og:url" content="${SITE}en/" />`);
+  html = swap(html, `<link rel="canonical" href="${SITE}" />`, `<link rel="canonical" href="${SITE}en/" />`);
+  html = swap(html, '<meta property="og:locale" content="es_MX" />', '<meta property="og:locale" content="en_US" />');
+  html = swap(html, '<meta property="og:locale:alternate" content="en_US" />', '<meta property="og:locale:alternate" content="es_MX" />');
+  html = swap(html, `${SITE}og/home-es.png`, `${SITE}og/home-en.png`);
+  write("en/", html);
+}
+englishHome();
+
+const home = { es: SITE, en: `${SITE}en/` };
 const entries = [{ loc: home.es, alternates: home }, { loc: home.en, alternates: home }, ...sitemap];
 writeFileSync(
   join(dist, "sitemap.xml"),
