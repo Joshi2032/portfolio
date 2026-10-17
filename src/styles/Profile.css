@@ -1,6 +1,6 @@
 .profile-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(1.75rem, 4vw, 4.5rem);
   align-items: start;
 }
@@ -10,7 +10,7 @@
 }
 
 .profile-layout .section-lead {
-  max-width: none;
+  max-width: 46rem;
 }
 
 .profile-notes {
@@ -37,26 +37,7 @@
   font-size: 1.02rem;
 }
 
-.soft {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem 1.3rem;
-  margin: 1.2rem 0 0;
-  padding: 0;
-  list-style: none;
-  color: var(--muted);
-}
 
-.soft li::before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  margin-right: 0.45rem;
-  background: var(--mark-dot);
-  border-radius: 50%;
-  transform: translateY(-1px);
-}
 
 @media (max-width: bp-tablet) {
   .profile-layout {
@@ -65,30 +46,10 @@
   }
 }
 
-.soft-title {
-  margin: 1.4rem 0 0;
-  color: var(--faint);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
 
-.soft-title + .soft { margin-top: 0.6rem; }
 
 .note-list { margin: 0.4rem 0 0; padding: 0; list-style: none; color: var(--muted); font-size: 1.02rem; }
 .note-list li + li { margin-top: 0.15rem; }
 
-.profile-soft {
-  padding-top: 0.9rem;
-  border-top: 1px solid var(--line);
-  align-self: end;
-}
 
-.profile-soft .soft-title { margin-top: 0; }
 
-.profile-soft .soft {
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 1.02rem;
-}

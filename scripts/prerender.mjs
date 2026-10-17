@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 import { es } from "../src/logic/copy/es.js";
 import { en } from "../src/logic/copy/en.js";
 import { projectOrder } from "../src/logic/catalog.js";
+import { render } from "../dist-ssr/entry-server.js";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = join(root, "dist");
@@ -135,6 +136,10 @@ function englishHome() {
   html = swap(html, '<meta property="og:locale" content="es_MX" />', '<meta property="og:locale" content="en_US" />');
   html = swap(html, '<meta property="og:locale:alternate" content="en_US" />', '<meta property="og:locale:alternate" content="es_MX" />');
   html = swap(html, `${SITE}og/home-es.png`, `${SITE}og/home-en.png`);
+  // Body: the server-rendered English home in place of the Spanish one.
+  const body = /<div id="root" data-prerendered="es">[\s\S]*<\/div>(?=\s*<\/body>)/;
+  if (!body.test(html)) throw new Error("prerender: prerendered #root missing in index.html");
+  html = html.replace(body, () => `<div id="root" data-prerendered="en">${render("en")}</div>`);
   write("en/", html);
 }
 englishHome();

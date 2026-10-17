@@ -17,7 +17,7 @@ export const note = {
         id: "objetivo",
         title: "El objetivo",
         body: [
-          "Reducir 60% los tiempos del proceso, con seguimiento en tiempo real y un proceso totalmente digital, de agosto a diciembre de 2025.",
+          "Reducir 60% los tiempos del proceso y hacerlo totalmente digital, de agosto a diciembre de 2025.",
         ],
         list: [
           "Digitalizar el formato completo.",
@@ -101,7 +101,7 @@ export const note = {
         id: "goal",
         title: "The goal",
         body: [
-          "Cut process times by 60%, with real-time tracking and a fully digital process, from August to December 2025.",
+          "Cut process times by 60% and make the process fully digital, from August to December 2025.",
         ],
         list: [
           "Digitize the full form.",

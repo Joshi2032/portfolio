@@ -140,6 +140,7 @@ h1 em {
 
 @media (prefers-reduced-motion: no-preference) {
   .hero-copy,
+  .hero-photo,
   .dossier {
     animation: rise 0.7s ease both;
   }
@@ -209,13 +210,32 @@ h1 em {
 
 /* Highlights live in the hero grid: full width under copy + dossier on desktop,
    right after the copy (before the dossier) on narrow screens. */
-.hero-grid { grid-template-areas: "copy dossier" "highlights highlights"; }
+.hero-grid { grid-template-areas: "copy photo" "copy dossier" "highlights highlights"; }
 .hero-copy { grid-area: copy; }
+
+.hero-photo {
+  grid-area: photo;
+  display: block;
+  width: min(100%, 280px);
+  align-self: end;
+}
+
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgb(var(--bg2-rgb));
+}
 .dossier { grid-area: dossier; }
 .hero-grid > .highlights { grid-area: highlights; margin: 0.4rem 0 0.4rem; }
 
 @media (max-width: bp-tablet) {
-  .hero-grid { grid-template-areas: "copy" "highlights" "dossier"; }
+  .hero-grid { grid-template-areas: "photo" "copy" "highlights" "dossier"; }
+  .hero-photo { width: min(38vw, 150px); }
   .hero-grid > .highlights { margin: 0; }
 }
 

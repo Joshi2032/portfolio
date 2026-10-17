@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { hydration } from "./hydration.js";
 
 // Saved only when the visitor picks a language with the ES/EN toggle.
 const STORAGE_KEY = "portfolio-lang-choice";
@@ -17,7 +18,7 @@ export function detectLang({ search, path = "", saved, languages }) {
   return first && /^es\b/i.test(first) ? "es" : first ? "en" : "es";
 }
 
-function readLang() {
+export function readLang() {
   let saved = null;
   try {
     saved = localStorage.getItem(STORAGE_KEY);
@@ -42,8 +43,8 @@ function writeLangUrl(value) {
   if (next !== current) history.replaceState(history.state, "", next);
 }
 
-export function useLanguageState() {
-  const [lang, setLangState] = useState(readLang);
+export function useLanguageState(initialLang) {
+  const [lang, setLangState] = useState(() => initialLang ?? readLang());
 
   useEffect(() => {
     if (lang === "en") writeLangUrl("en");
@@ -111,6 +112,27 @@ export function useScrollHeader() {
   }, []);
 
   return scrolled;
+}
+
+// True once the element has scrolled up behind the fixed header (or is missing).
+export function useScrolledPast(selector, headerOffset = 72) {
+  const [past, setPast] = useState(false);
+
+  useEffect(() => {
+    const target = document.querySelector(selector);
+    if (!target) {
+      setPast(true);
+      return undefined;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => setPast(!entry.isIntersecting && entry.boundingClientRect.top < headerOffset),
+      { rootMargin: `-${headerOffset}px 0px 0px 0px` },
+    );
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [selector, headerOffset]);
+
+  return past;
 }
 
 export function useActiveSection(ids) {
@@ -289,9 +311,17 @@ function storedTheme() {
 }
 
 export function useTheme() {
-  const [theme, setThemeState] = useState(readTheme);
+  // null = not known yet (server render, or hydrating it): the inline script in index.html has
+  // already painted the right theme, so only the toggle's label waits for the stored value.
+  const [theme, setThemeState] = useState(() =>
+    typeof document === "undefined" || hydration.active ? null : readTheme(),
+  );
 
   useEffect(() => {
+    if (theme === null) {
+      setThemeState(readTheme());
+      return;
+    }
     document.documentElement.dataset.theme = theme;
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", THEME_COLORS[theme]);

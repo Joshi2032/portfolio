@@ -37,14 +37,12 @@ export const es = {
   metricsProject: "Proyecto",
   metrics: [
     { value: "40–80 h → 10 min", label: "Tiempo para preparar cada respuesta", project: "ensamble", projectName: "Agente de ensamble 3D" },
-    { value: "3 restaurantes", label: "Apps construidas y migradas a Flutter + Supabase", project: "restaurantes", projectName: "Gestión para restaurantes" },
+    { value: "2 sem → 8 h", label: "Respuesta a propuestas del turno nocturno", project: "kaizen", projectName: "Flujo digital de propuestas Kaizen" },
     { value: "97.65% mAP50", label: "Detector de madurez en el teléfono", project: "aguacate", projectName: "Detector del estado del aguacate" },
   ],
   about: {
     title: "Perfil",
     text: "Llevo la inteligencia artificial de un modelo ajustado a la herramienta que usa el equipo, y trabajo en todo el sistema: base de datos, backend e interfaz.",
-    softTitle: "Habilidades blandas",
-    soft: ["Resolución de problemas", "Trabajo en equipo", "Adaptabilidad"],
   },
   projectsIntro: {
     share: "Compartir",
@@ -154,7 +152,7 @@ export const es = {
       site: { href: "https://www.maxifumdelbajio.com/", label: "maxifumdelbajio.com" },
     },
     kaizen: {
-      card: { summary: "Digitalicé el proceso de propuestas de mejora Kaizen de la planta: del papel a un sistema web con aprobación por rol.", stat: "2 sem → 8 h", label: "respuesta a propuestas del turno nocturno" },
+      card: { summary: "Digitalicé el proceso de propuestas de mejora Kaizen de la planta: del papel a un sistema web con aprobación por rol.", stat: "20 → 5 min", label: "para llenar una propuesta" },
       plate: "Kaizen, de punta a punta",
       plateItems: ["Formato 5S", "Revisión en varios pasos", "Desde cualquier dispositivo"],
       category: "Manufactura",
@@ -162,7 +160,7 @@ export const es = {
       meta: "Practicante",
       when: "Ago 2025 – Dic 2025",
       title: "Flujo digital de propuestas Kaizen",
-      lede: "Digitalicé el proceso de propuestas de mejora Kaizen de la planta: del papel a un sistema web con aprobación por rol y seguimiento en tiempo real.",
+      lede: "Digitalicé el proceso de propuestas de mejora Kaizen de la planta: del papel a un sistema web con aprobación por rol.",
       tags: ["C#", "MySQL", "Angular", "PDF"],
       flow: {
         title: "Cómo funciona",
@@ -350,6 +348,5 @@ export const es = {
     subject: "Contacto desde el portafolio",
     send: "Enviar correo",
   },
-  brandRole: "Full Stack Developer · La Piedad, Michoacán",
-  footer: "Full Stack Developer · La Piedad, Michoacán",
+  brandRole: "La Piedad, Michoacán",
 };

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Contact } from "./components/Contact.jsx";
 import { Education } from "./components/Education.jsx";
 import { Footer } from "./components/Footer.jsx";
@@ -20,6 +20,11 @@ export default function App() {
   const progressRef = useRef(null);
   useScrollProgress(progressRef);
   const inert = menu.open || undefined;
+
+  // index.html hides the prerendered page when it is in the other language; show it once React has rendered.
+  useEffect(() => {
+    document.documentElement.classList.remove("lang-swap");
+  }, []);
 
   return (
     <>

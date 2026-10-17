@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
@@ -24,10 +25,32 @@ function breakpointTokens() {
   };
 }
 
-export default defineConfig(({ command }) => ({
-  plugins: [
+// Puts the server-rendered Spanish home (built first with `vite build --ssr`) into index.html,
+// before the service worker precache is generated. scripts/prerender.mjs writes /en/ the same way.
+function prerenderHome() {
+  const entry = new URL("./dist-ssr/entry-server.js", import.meta.url);
+  return {
+    name: "prerender-home",
+    apply: (_, env) => env.command === "build" && !env.isSsrBuild,
+    transformIndexHtml: {
+      order: "post",
+      async handler(html) {
+        if (!existsSync(entry)) throw new Error("prerender-home: run `vite build --ssr src/entry-server.jsx --outDir dist-ssr` first");
+        const { render } = await import(`${entry.href}?t=${Date.now()}`);
+        const shell = /<div id="root">[\s\S]*?<\/main>\s*<\/div>/;
+        if (!shell.test(html)) throw new Error("prerender-home: #root shell not found in index.html");
+        return html.replace(shell, () => `<div id="root" data-prerendered="es">${render("es")}</div>`);
+      },
+    },
+  };
+}
+
+export default defineConfig(({ command, isSsrBuild }) => ({
+  build: isSsrBuild ? { outDir: "dist-ssr", emptyOutDir: true, copyPublicDir: false } : undefined,
+  plugins: isSsrBuild ? [react(), breakpointTokens()] : [
     react(),
     breakpointTokens(),
+    prerenderHome(),
     VitePWA({
       registerType: "autoUpdate",
       injectRegister: "auto",

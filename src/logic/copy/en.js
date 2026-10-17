@@ -37,14 +37,12 @@ export const en = {
   metricsProject: "Project",
   metrics: [
     { value: "40–80 h → 10 min", label: "Time to prepare each response", project: "ensamble", projectName: "3D assembly agent" },
-    { value: "3 restaurants", label: "Apps built and migrated to Flutter + Supabase", project: "restaurantes", projectName: "Restaurant management" },
+    { value: "2 wk → 8 h", label: "Night-shift proposal response", project: "kaizen", projectName: "Digital Kaizen proposal workflow" },
     { value: "97.65% mAP50", label: "Ripeness detector on the phone", project: "aguacate", projectName: "Avocado state detector" },
   ],
   about: {
     title: "Profile",
     text: "I take artificial intelligence from a fine-tuned model to the tool the team uses, and I work across the whole system: database, backend, and interface.",
-    softTitle: "Soft skills",
-    soft: ["Problem-solving", "Teamwork", "Adaptability"],
   },
   projectsIntro: {
     share: "Share",
@@ -154,7 +152,7 @@ export const en = {
       site: { href: "https://www.maxifumdelbajio.com/", label: "maxifumdelbajio.com" },
     },
     kaizen: {
-      card: { summary: "I digitized the plant's Kaizen improvement-proposal process: from paper to a web system with role-based approval.", stat: "2 wk → 8 h", label: "night-shift proposal response" },
+      card: { summary: "I digitized the plant's Kaizen improvement-proposal process: from paper to a web system with role-based approval.", stat: "20 → 5 min", label: "to fill in a proposal" },
       plate: "Kaizen, end to end",
       plateItems: ["5S format", "Multi-step review", "Any device"],
       category: "Manufacturing",
@@ -162,7 +160,7 @@ export const en = {
       meta: "Intern",
       when: "Aug 2025 – Dec 2025",
       title: "Digital Kaizen proposal workflow",
-      lede: "I digitized the plant's Kaizen improvement-proposal process: from paper to a web system with role-based approval and real-time tracking.",
+      lede: "I digitized the plant's Kaizen improvement-proposal process: from paper to a web system with role-based approval.",
       tags: ["C#", "MySQL", "Angular", "PDF"],
       flow: {
         title: "How it works",
@@ -350,6 +348,5 @@ export const en = {
     subject: "Contact from the portfolio",
     send: "Send email",
   },
-  brandRole: "Full Stack Developer · La Piedad, Michoacan, Mexico",
-  footer: "Full Stack Developer · La Piedad, Michoacan, Mexico",
+  brandRole: "La Piedad, Michoacan, Mexico",
 };

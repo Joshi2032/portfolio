@@ -13,12 +13,6 @@ export function Profile() {
           <h2>{about.title}</h2>
           <p className="section-lead">{about.text}</p>
         </header>
-        <div className="profile-soft">
-          <p className="soft-title" id="soft-title">{about.softTitle}</p>
-          <ul className="soft" aria-labelledby="soft-title">
-            {about.soft.map((skill) => <li key={skill}>{skill}</li>)}
-          </ul>
-        </div>
       </div>
     </section>
   );

@@ -4,8 +4,8 @@ import { useDocumentMeta, useLanguageState } from "./hooks.js";
 
 const LanguageContext = createContext(null);
 
-export function LanguageProvider({ children }) {
-  const { lang, setLang } = useLanguageState();
+export function LanguageProvider({ children, initialLang }) {
+  const { lang, setLang } = useLanguageState(initialLang);
   const text = copy[lang];
 
   useDocumentMeta(lang, text.meta);

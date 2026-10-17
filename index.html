@@ -36,6 +36,14 @@
           }
         }
         document.documentElement.lang = lang;
+        // The HTML is prerendered in Spanish at / and in English at /en/. If this visit wants the
+        // other language, hide it until React renders the right one (shown again after 4 s regardless).
+        var prerendered = /\/en\/?$/.test(location.pathname) ? "en" : "es";
+        if (lang !== prerendered) {
+          var root = document.documentElement;
+          root.classList.add("lang-swap");
+          setTimeout(function () { root.classList.remove("lang-swap"); }, 4000);
+        }
       })();
       (function () {
         var theme;
@@ -48,6 +56,7 @@
         if (meta) meta.setAttribute("content", theme === "light" ? "#f3efe4" : "#10120e");
       })();
     </script>
+    <style>.lang-swap #root{visibility:hidden}</style>
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -63,7 +72,10 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Josué Isaí Salazar Castro",
-        "jobTitle": "Full Stack Developer",
+        "jobTitle": ["AI Engineer", "Full Stack Developer"],
+        "worksFor": { "@type": "Organization", "name": "PM" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Tecnológico Nacional de México (TecNM) Campus La Piedad" },
+        "knowsAbout": ["Flutter", "Supabase", "C#", "Angular", "MySQL", "SAP BTP", "SAP HANA", "NestJS", "Prisma", "PostgreSQL", "YOLO26n", "TFLite", "Gemma 4 12B (QLoRA)", "Qwen", "TypeScript", "React", "Firebase", "Docker"],
         "url": "https://joshi2032.github.io/portfolio/",
         "image": "https://joshi2032.github.io/portfolio/foto/josue-600.jpg",
         "email": "mailto:joshi.jc2032@gmail.com",

@@ -8,7 +8,7 @@ export const note = {
         id: "arquitectura",
         title: "Arquitectura",
         list: [
-          "Monorepo con dos apps Flutter (celular Android para vender y escritorio Windows para administrar), dos paquetes compartidos (core: modelos, cliente del API y motor de sincronización; ui: tema y componentes) y el servidor.",
+          "Monorepo: las dos apps Flutter comparten dos paquetes (core: modelos, cliente del API y motor de sincronización; ui: tema y componentes) y viven junto al servidor.",
           "API en NestJS 11 con Prisma 6, sobre PostgreSQL alojado en Supabase. La API corre en la computadora de la tienda, arranca sola con Windows y atiende en la red local; un túnel permite vender fuera de la tienda.",
           "Cada app prueba la red local unos 3 segundos; si no responde, prueba la nube; si ninguna responde, sigue con su copia local.",
         ],
@@ -74,7 +74,7 @@ export const note = {
         id: "architecture",
         title: "Architecture",
         list: [
-          "A monorepo with two Flutter apps (an Android phone app for selling and a Windows desktop app for administration), two shared packages (core: models, API client, and sync engine; ui: theme and components), and the server.",
+          "Monorepo: both Flutter apps share two packages (core: models, API client, and sync engine; ui: theme and components) and live alongside the server.",
           "NestJS 11 API with Prisma 6, on PostgreSQL hosted on Supabase. The API runs on the store's computer, starts with Windows, and serves the local network; a tunnel allows selling outside the store.",
           "Each app tries the local network for about 3 seconds, then the cloud; if neither answers, it keeps working from its local copy.",
         ],
