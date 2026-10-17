@@ -208,6 +208,30 @@ await test("language: /en/ home is English with English meta, even for a Spanish
   await page.context().close();
 });
 
+await test("contact: validation, success note, WhatsApp channel, no phone or Gmail", async () => {
+  const page = await newPage(viewports[0], "es-MX");
+  await page.goto(base, { waitUntil: "load" });
+  const section = page.locator("#contacto");
+  await section.scrollIntoViewIfNeeded();
+  const text = await section.innerText();
+  assert.ok(!/352|tel:/.test(text), "phone number must not be visible");
+  assert.equal(await section.locator('a[href^="tel:"]').count(), 0);
+  assert.ok(!/gmail\.com\/mail|Abrir en Gmail/i.test(await section.innerHTML()), "no Gmail compose button");
+  assert.ok((await section.locator('a[href^="https://wa.me/"]').count()) >= 2, "WhatsApp channel and button");
+  const send = section.locator("a.contact-send");
+  await send.click();
+  assert.equal(await section.locator(".contact-error").count(), 2, "both required fields flagged");
+  assert.equal(await section.locator('input[name="email"]').getAttribute("aria-invalid"), "true");
+  await section.locator('input[name="email"]').fill("ana@empresa.com");
+  await section.locator("textarea").fill("Hola");
+  assert.equal(await section.locator(".contact-error").count(), 0, "errors clear while typing");
+  await page.evaluate(() => document.querySelector("#contacto a.contact-send").addEventListener("click", (e) => e.preventDefault()));
+  await send.click();
+  await section.locator(".contact-sent").waitFor();
+  assert.match(await send.getAttribute("href"), /^mailto:joshi\.jc2032@gmail\.com\?/);
+  await page.context().close();
+});
+
 await browser.close();
 server.close();
 if (failures) {
