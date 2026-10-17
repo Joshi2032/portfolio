@@ -531,7 +531,7 @@
 .project-float-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.7rem; margin-top: 1.3rem; }
 .project-share-btn { display: inline-flex; align-items: center; gap: 0.5rem; }
 
-/* Technical note inside the avocado dialog */
+/* Expandable notes inside project dialogs (avocado, Kaizen, store) */
 .tech-note {
   margin-top: 1.6rem;
   padding-top: 1.3rem;
@@ -587,6 +587,12 @@
 
 .tech-note-body { padding: 0 0.1rem 1.1rem; }
 .tech-note-body p { margin: 0 0 0.8rem; max-width: 78ch; color: var(--muted); }
+
+.tech-list { margin: 0 0 0.9rem; padding-left: 1.2rem; max-width: 78ch; color: var(--muted); }
+.tech-list li { margin: 0 0 0.45rem; padding-left: 0.2rem; }
+.tech-list li::marker { color: var(--accent-ink); }
+.tech-steps li::marker { font-weight: 600; }
+.tech-table td { white-space: nowrap; }
 
 .tech-stats {
   display: grid;

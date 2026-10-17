@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { note as techNote } from "../notes/detectorAguacate.js";
+import { notes } from "../notes/index.js";
 
 // Dialog-only content, loaded on demand (see projectChunks.js).
 
@@ -12,8 +12,9 @@ function FlowCard({ step, className }) {
   );
 }
 
-export function TechNote({ lang }) {
-  const n = techNote[lang];
+export function TechNote({ id, lang }) {
+  const n = notes[id]?.[lang];
+  if (!n) return null;
   return (
     <section className="tech-note" aria-labelledby="tech-note-title">
       <h4 id="tech-note-title">{n.title}</h4>
@@ -32,7 +33,35 @@ export function TechNote({ lang }) {
                 ))}
               </ul>
             ) : null}
-            {section.body.map((text) => <p key={text}>{text}</p>)}
+            {(section.body ?? []).map((text) => <p key={text}>{text}</p>)}
+            {section.list ? (
+              <ul className="tech-list">
+                {section.list.map((text) => <li key={text}>{text}</li>)}
+              </ul>
+            ) : null}
+            {section.ordered ? (
+              <ol className="tech-list tech-steps">
+                {section.ordered.map((text) => <li key={text}>{text}</li>)}
+              </ol>
+            ) : null}
+            {section.table ? (
+              <table className="tech-models tech-table">
+                <caption>{section.table.caption}</caption>
+                <thead>
+                  <tr>{section.table.head.map((h) => <th key={h} scope="col">{h}</th>)}</tr>
+                </thead>
+                <tbody>
+                  {section.table.rows.map((row) => (
+                    <tr key={row[0]}>
+                      <th scope="row">{row[0]}</th>
+                      {row.slice(1).map((cell, j) => (
+                        <td key={section.table.head[j + 1]} data-label={section.table.head[j + 1]}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : null}
             {section.models ? (
               <table className="tech-models">
                 <caption>
@@ -116,7 +145,7 @@ export function ProjectFlow({ flow }) {
         <span className="pm-arrow" aria-hidden="true" />
         <FlowCard step={flow.output} className="pm-out" />
       </div>
-      <p className="pm-stat"><strong>{flow.stat}</strong><span>{flow.statNote}</span></p>
+      {flow.stat ? <p className="pm-stat"><strong>{flow.stat}</strong><span>{flow.statNote}</span></p> : null}
     </figure>
   );
 }

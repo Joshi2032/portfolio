@@ -163,13 +163,7 @@ export const es = {
       when: "Ago 2025 – Dic 2025",
       title: "Flujo digital de propuestas Kaizen",
       lede: "Digitalicé el proceso de propuestas de mejora Kaizen de la planta: del papel a un sistema web con aprobación por rol y seguimiento en tiempo real.",
-      points: [
-        "Levanté requerimientos, analicé el proceso manual y diseñé la base de datos MySQL (propuestas, categorías, 5S, estados de revisión).",
-        "Módulos en C# con login por rol, formulario digital, historial y aprobación multipaso; PDF dinámico y acceso multidispositivo.",
-        "Migración de módulos a Angular, con validación y pruebas; planeación y seguimiento con Gantt.",
-      ],
       tags: ["C#", "MySQL", "Angular", "PDF"],
-      delivery: "Llenado del formulario: de 20 a 5 min.",
       flow: {
         title: "Cómo funciona",
         aria: "Flujo de propuestas Kaizen",
@@ -194,18 +188,6 @@ export const es = {
           {
             title: "PDF dinámico",
             note: "Se genera con los datos de la propuesta"
-          }
-        ],
-        compare: [
-          {
-            label: "Antes",
-            title: "Papel",
-            note: "2 semanas de respuesta en el turno nocturno"
-          },
-          {
-            label: "Ahora",
-            title: "Digital",
-            note: "~8 h de respuesta"
           }
         ]
       },
@@ -252,7 +234,7 @@ export const es = {
       ],
     },
     tienda: {
-      card: { summary: "App móvil para vender, app de escritorio en Windows para administrar, y un API NestJS con Prisma y PostgreSQL.", stat: "Cada 20 s", label: "sube las ventas pendientes, y también al cobrar" },
+      card: { summary: "App móvil para vender, app de escritorio en Windows para administrar, y un API NestJS con Prisma y PostgreSQL.", stat: "Realtime", label: "se actualiza al detectar un cambio; respaldo cada 45 s" },
       plate: "Ventas con o sin red",
       plateItems: ["Cobro en el móvil", "Reportes de margen", "Ventas para imprimir"],
       category: "Comercio",
@@ -260,13 +242,29 @@ export const es = {
       when: "Sync híbrido",
       title: "Sistema de tienda",
       lede: "App móvil para vender, app de escritorio en Windows para administrar, y un API NestJS con Prisma y PostgreSQL.",
-      points: [
-        "Si la red falla, el móvil guarda cada venta en SQLite.",
-        "El escritorio administra productos y clientes, lista ventas para imprimir y muestra reportes.",
-        "La app prueba la red de la tienda y, si no responde, la nube.",
-      ],
       tags: ["Flutter", "NestJS", "PostgreSQL", "SQLite"],
-      delivery: "El margen usa el costo guardado en cada línea de venta.",
+      flow: {
+        title: "Cómo se conecta",
+        aria: "Arquitectura del sistema de tienda",
+        paths: [
+          {
+            label: "Celular",
+            steps: [
+              { title: "Venta en SQLite", note: "Se guarda primero en el teléfono" },
+              { title: "Cola de pendientes", note: "Se envía al sincronizar" },
+            ],
+          },
+          {
+            label: "Escritorio",
+            steps: [
+              { title: "Administración en Windows", note: "Catálogo, entradas y reportes" },
+              { title: "Copia local", note: "Sigue sin servidor" },
+            ],
+          },
+        ],
+        engine: { title: "API NestJS", note: "Red local o túnel" },
+        output: { title: "PostgreSQL en Supabase", note: "Realtime avisa a las apps" },
+      },
       shots: [
         {
           src: "proyectos/tienda/productos.png",

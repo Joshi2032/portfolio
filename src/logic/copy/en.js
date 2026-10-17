@@ -163,13 +163,7 @@ export const en = {
       when: "Aug 2025 – Dec 2025",
       title: "Digital Kaizen proposal workflow",
       lede: "I digitized the plant's Kaizen improvement-proposal process: from paper to a web system with role-based approval and real-time tracking.",
-      points: [
-        "Gathered requirements, mapped the manual process, and designed the MySQL schema (proposals, categories, 5S, review states).",
-        "C# modules with role-based login, digital form, history, and multi-step approval; dynamic PDF and multi-device access.",
-        "Migrated modules to Angular with validation and testing; planned and tracked the work with Gantt charts.",
-      ],
       tags: ["C#", "MySQL", "Angular", "PDF"],
-      delivery: "Form filling: from 20 to 5 min.",
       flow: {
         title: "How it works",
         aria: "Kaizen proposal flow",
@@ -194,18 +188,6 @@ export const en = {
           {
             title: "Dynamic PDF",
             note: "Generated from the proposal's data"
-          }
-        ],
-        compare: [
-          {
-            label: "Before",
-            title: "Paper",
-            note: "2-week response on the night shift"
-          },
-          {
-            label: "Now",
-            title: "Digital",
-            note: "~8 h response"
           }
         ]
       },
@@ -252,7 +234,7 @@ export const en = {
       ],
     },
     tienda: {
-      card: { summary: "A mobile app for sales, a Windows desktop app for administration, and a NestJS API with Prisma and PostgreSQL.", stat: "Every 20 s", label: "uploads pending sales, and also at checkout" },
+      card: { summary: "A mobile app for sales, a Windows desktop app for administration, and a NestJS API with Prisma and PostgreSQL.", stat: "Realtime", label: "updates when a change is detected; fallback every 45 s" },
       plate: "Sales with or without a network",
       plateItems: ["Checkout on the phone", "Margin reports", "Printable sales"],
       category: "Retail",
@@ -260,13 +242,29 @@ export const en = {
       when: "Hybrid sync",
       title: "Store system",
       lede: "A mobile app for sales, a Windows desktop app for administration, and a NestJS API with Prisma and PostgreSQL.",
-      points: [
-        "If the network drops, the phone saves each sale in SQLite.",
-        "The desktop app manages products and customers, lists sales ready to print, and shows reports.",
-        "The app tries the store network and, if it does not respond, the cloud.",
-      ],
       tags: ["Flutter", "NestJS", "PostgreSQL", "SQLite"],
-      delivery: "Margin uses the cost saved on each sale line.",
+      flow: {
+        title: "How it connects",
+        aria: "Store system architecture",
+        paths: [
+          {
+            label: "Phone",
+            steps: [
+              { title: "Sale in SQLite", note: "Saved on the phone first" },
+              { title: "Pending queue", note: "Sent on sync" },
+            ],
+          },
+          {
+            label: "Desktop",
+            steps: [
+              { title: "Admin on Windows", note: "Catalog, receipts, and reports" },
+              { title: "Local copy", note: "Keeps working without the server" },
+            ],
+          },
+        ],
+        engine: { title: "NestJS API", note: "Local network or tunnel" },
+        output: { title: "PostgreSQL on Supabase", note: "Realtime notifies the apps" },
+      },
       shots: [
         {
           src: "proyectos/tienda/productos.png",

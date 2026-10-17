@@ -13,8 +13,11 @@ export function loadViewer() {
   return viewer;
 }
 
+// Projects with an expandable note (see src/notes/index.js).
+export const NOTE_IDS = ["aguacate", "kaizen", "tienda"];
+
 export function needsExtras(id, details) {
-  return Boolean(details?.flow) || id === "aguacate";
+  return Boolean(details?.flow) || NOTE_IDS.includes(id);
 }
 
 export function prefetchProject(id, details) {

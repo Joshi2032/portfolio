@@ -6,7 +6,7 @@ import { copyText } from "../logic/clipboard.js";
 import { trackEvent } from "../logic/analytics.js";
 import { useMediaQuery } from "../responsive/useMediaQuery.js";
 import { showWithoutScroll } from "./showWithoutScroll.js";
-import { loadExtras, loadViewer, needsExtras, prefetchProject } from "./projectChunks.js";
+import { NOTE_IDS, loadExtras, loadViewer, needsExtras, prefetchProject } from "./projectChunks.js";
 import "../styles/Projects.css";
 
 function PlateMotion({ reduceMotion }) {
@@ -99,9 +99,11 @@ function ProjectKind({ details, intro }) {
 function ProjectFacts({ details }) {
   return (
     <>
-      <ul className="points">
-        {details.points.map((point) => <li key={point}>{point}</li>)}
-      </ul>
+      {details.points?.length ? (
+        <ul className="points">
+          {details.points.map((point) => <li key={point}>{point}</li>)}
+        </ul>
+      ) : null}
       {details.site ? (
         <p className="project-site">
           <a href={details.site.href} target="_blank" rel="noreferrer">{details.site.label}</a>
@@ -439,7 +441,7 @@ export function Projects() {
                 <ShareButton lang={lang} id={openProject.id} title={openDetails.title} intro={intro} />
               </div>
               {openDetails.flow && extrasMod ? <extrasMod.ProjectFlow flow={openDetails.flow} /> : null}
-              {openProject.id === "aguacate" && extrasMod ? <extrasMod.TechNote lang={lang} /> : null}
+              {NOTE_IDS.includes(openProject.id) && extrasMod ? <extrasMod.TechNote id={openProject.id} lang={lang} /> : null}
             </div>
           </div>
         </dialog>
