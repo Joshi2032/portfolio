@@ -60,7 +60,32 @@ html.menu-open .site-header {
   object-fit: cover;
 }
 
-.brand-text { letter-spacing: -0.03em; }
+.brand { min-width: 0; }
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.brand-name { font-size: 0.98rem; white-space: nowrap; }
+
+.brand-role {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 450;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 560px) {
+  .brand-role { display: none; }
+  .brand-name { white-space: normal; font-size: 0.92rem; max-width: 9.5rem; }
+}
 
 .nav {
   display: flex;

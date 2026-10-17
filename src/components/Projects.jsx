@@ -357,7 +357,6 @@ export function Projects() {
                 <PlateMotion reduceMotion={reduceMotion} />
                 <div>
                   <p className="plate-index">{project.index}</p>
-                  <p className="plate-kicker">{details.plate}</p>
                 </div>
                 <div>
                   <ul className="plate-list">
@@ -373,6 +372,7 @@ export function Projects() {
                   <p className="when">{details.when}</p>
                 </div>
                 <h3 id={`${project.id}-title`}>{details.title}</h3>
+                <p className="project-sub">{details.plate}</p>
                 <p className="card-summary">{details.card.summary}</p>
                 <p className="card-result">
                   <strong>{details.card.stat}</strong>
@@ -412,7 +412,6 @@ export function Projects() {
               <PlateMotion reduceMotion={reduceMotion} />
               <div>
                 <p className="plate-index">{openProject.index}</p>
-                <p className="plate-kicker">{openDetails.plate}</p>
               </div>
               <div>
                 <ul className="plate-list">
@@ -429,6 +428,7 @@ export function Projects() {
               <div className={openDetails.alongside ? "float-works" : undefined}>
                 <div>
                   <h3 id="project-float-title">{openDetails.title}</h3>
+                  <p className="project-sub">{openDetails.plate}</p>
                   <p>{openDetails.lede}</p>
                   <ProjectFacts details={openDetails} />
                   {openDetails.shots?.length ? <ProjectShots details={openDetails} onOpen={openShot} /> : null}

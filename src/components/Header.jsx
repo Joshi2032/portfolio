@@ -29,7 +29,10 @@ export function Header({ menu }) {
             <source type="image/webp" srcSet={`${import.meta.env.BASE_URL}foto/josue-144.webp`} />
             <img src={`${import.meta.env.BASE_URL}foto/josue-144.jpg`} width="40" height="40" alt="" decoding="async" fetchPriority="high" />
           </picture>
-          <span className="brand-text">Josué Isaí</span>
+          <span className="brand-text">
+            <span className="brand-name">Josué Isaí Salazar Castro</span>
+            <span className="brand-role">{text.brandRole}</span>
+          </span>
         </a>
         <nav
           ref={menu.navRef}

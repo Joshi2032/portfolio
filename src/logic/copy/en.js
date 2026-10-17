@@ -31,7 +31,6 @@ export const en = {
     items: [
       { title: "AI Engineer · PM", detail: "Aug 2025 – Present" },
       { title: "Full Stack freelance", detail: "Dec 2025 – Present · part-time" },
-      { title: "Completed internships", detail: "Mitsubishi Electric · Enjo-it" },
     ],
   },
   metricsTitle: "Highlights",
@@ -53,7 +52,7 @@ export const en = {
     copyLink: "Copy link",
     linkCopied: "Link copied",
     title: "Projects",
-    lead: "An agent for racks and drawings, restaurant operations, staff control, and two enterprise systems.",
+    lead: "Applied AI, mobile apps, and web and enterprise systems for industry, restaurants, agriculture, and retail.",
     filters: {
       all: "All",
       ia: "AI",
@@ -305,7 +304,7 @@ export const en = {
       {
         when: "Aug 2018 – Jun 2021",
         title: "Computer Technician (technical high school diploma)",
-        place: "Conalep",
+        place: "Conalep, La Piedad Campus",
       },
     ],
     languagesTitle: "Languages",
@@ -338,10 +337,10 @@ export const en = {
     emailMissing: "Enter your email so I can reply.",
     emailInvalid: "Check your email: it doesn't look valid.",
     subjectLabel: "Subject (optional)",
-    gmail: "Open in Gmail",
     whatsapp: "WhatsApp",
     subject: "Contact from the portfolio",
     send: "Send email",
   },
+  brandRole: "Full Stack Developer · La Piedad, Michoacan, Mexico",
   footer: "Full Stack Developer · La Piedad, Michoacan, Mexico",
 };

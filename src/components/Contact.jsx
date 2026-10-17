@@ -28,7 +28,6 @@ export function Contact() {
     message.trim(),
   ].filter(Boolean).join("\n\n");
   const mailHref = `mailto:${MAIL}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(body)}`;
-  const gmailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(MAIL)}&su=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(body)}`;
   const draft = [name.trim() ? `${contact.name}: ${name.trim()}` : "", message.trim()].filter(Boolean).join("\n\n");
   const whatsappHref = draft
     ? `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(draft)}`
@@ -148,7 +147,6 @@ export function Contact() {
               ) : null}
               <div className="contact-actions">
                 <a className="btn btn-primary" href={mailHref} onClick={onSend}>{contact.send}</a>
-                <a className="btn btn-ghost" href={gmailHref} target="_blank" rel="noreferrer" onClick={onSend}>{contact.gmail}</a>
                 <a className="btn btn-ghost" href={whatsappHref} target="_blank" rel="noreferrer">{contact.whatsapp}</a>
               </div>
             </form>

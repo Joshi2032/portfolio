@@ -31,7 +31,6 @@ export const es = {
     items: [
       { title: "IA Engineer · PM", detail: "Ago 2025 – Presente" },
       { title: "Full Stack freelance", detail: "Dic 2025 – Presente · tiempo parcial" },
-      { title: "Prácticas concluidas", detail: "Mitsubishi Electric · Enjo-it" },
     ],
   },
   metricsTitle: "Resultados destacados",
@@ -53,7 +52,7 @@ export const es = {
     copyLink: "Copiar enlace",
     linkCopied: "Enlace copiado",
     title: "Proyectos",
-    lead: "Un agente para racks y planos, operación de restaurantes, control de personal y dos sistemas empresariales.",
+    lead: "IA aplicada, apps móviles y sistemas web y empresariales para la industria, restaurantes, el agro y el comercio.",
     filters: {
       all: "Todos",
       ia: "IA",
@@ -305,7 +304,7 @@ export const es = {
       {
         when: "Ago 2018 – Jun 2021",
         title: "Técnico en Informática",
-        place: "Preparatoria Técnica, Conalep",
+        place: "Preparatoria Técnica, Conalep Campus La Piedad",
       },
     ],
     languagesTitle: "Idiomas",
@@ -338,10 +337,10 @@ export const es = {
     emailMissing: "Escribe tu correo para poder responderte.",
     emailInvalid: "Revisa tu correo: no parece válido.",
     subjectLabel: "Asunto (opcional)",
-    gmail: "Abrir en Gmail",
     whatsapp: "WhatsApp",
     subject: "Contacto desde el portafolio",
     send: "Enviar correo",
   },
+  brandRole: "Full Stack Developer · La Piedad, Michoacán",
   footer: "Full Stack Developer · La Piedad, Michoacán",
 };
