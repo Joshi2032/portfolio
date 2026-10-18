@@ -73,14 +73,25 @@ export default defineConfig(({ command, isSsrBuild }) => ({
       },
       workbox: {
         globPatterns: ["**/*.{html,js,css,woff2,png,jpg,avif,webp,ico,svg,lottie,pdf,xml,txt}"],
-        globIgnores: ["og/**", "og.png", "foto/josue-600.jpg", "foto/*.jpg", "foto/*.webp", "foto/josue-432.*", "foto/josue-288.*"],
+        globIgnores: ["**/index.html", "og/**", "og.png", "foto/josue-600.jpg", "foto/*.jpg", "foto/*.webp", "foto/josue-432.*", "foto/josue-288.*"],
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
-        navigateFallback: "index.html",
-        navigateFallbackDenylist: [/\/404\.html$/, /\/proyectos\/[^/.]+\/?$/, /\/notas\//, /\/en\//],
+        // Pages always come from the network first, so a returning visitor gets HTML that matches
+        // the deployed CSS/JS; the cached copy is only used offline or on a very slow network.
+        navigateFallback: null,
         cleanupOutdatedCaches: true,
         clientsClaim: true,
         skipWaiting: true,
         runtimeCaching: [
+          {
+            urlPattern: ({ request }) => request.mode === "navigate",
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "pages",
+              networkTimeoutSeconds: 4,
+              expiration: { maxEntries: 20 },
+              cacheableResponse: { statuses: [200] },
+            },
+          },
           {
             urlPattern: /^https:\/\/(cdn\.jsdelivr\.net|unpkg\.com)\/npm\/@lottiefiles\/.*\.wasm$/,
             handler: "CacheFirst",

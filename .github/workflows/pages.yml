@@ -31,6 +31,8 @@ jobs:
         run: node scripts/ci-a11y.mjs
       - name: End-to-end dialogs and navigation
         run: node scripts/ci-e2e.mjs
+      - name: Keep the live version's assets for open pages
+        run: node scripts/keep-previous-assets.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

@@ -9,6 +9,19 @@ import "./styles/global/base.css";
 import "./styles/global/layout.css";
 import App from "./App.jsx";
 
+// After a deploy, a page opened on the previous version may ask for a chunk that no longer
+// exists; reload once to pick up the current version instead of staying half-loaded.
+window.addEventListener("vite:preloadError", (event) => {
+  try {
+    if (sessionStorage.getItem("portfolio-reloaded")) return;
+    sessionStorage.setItem("portfolio-reloaded", "1");
+  } catch {
+    return;
+  }
+  event.preventDefault();
+  window.location.reload();
+});
+
 const container = document.getElementById("root");
 const lang = readLang();
 const app = (
