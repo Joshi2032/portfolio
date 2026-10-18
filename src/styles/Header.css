@@ -196,3 +196,26 @@ html.menu-open .site-header {
 
   .nav a { font-size: 1.35rem; color: var(--ink); }
 }
+
+/* The controls keep their full size; when the bar is tight, the name gives way (ellipsis) instead.
+   .lang has overflow: hidden, which drops its automatic min-width to 0, so without this it shrank
+   and clipped the EN button on phones. */
+.lang,
+.theme-toggle,
+.nav-toggle { flex: none; }
+
+.brand-name { overflow: hidden; text-overflow: ellipsis; }
+
+@media (max-width: 560px) {
+  .brand-name {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow-wrap: normal;
+  }
+}
+
+@media (max-width: 400px) {
+  .bar { gap: 0.6rem; }
+  .theme-toggle { margin-left: 0; }
+}
