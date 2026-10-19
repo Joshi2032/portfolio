@@ -234,12 +234,12 @@ export const en = {
     tienda: {
       card: { summary: "A mobile app for sales, a Windows desktop app for administration, and a NestJS API with Prisma and PostgreSQL.", stat: "Realtime", label: "updates when a change is detected; fallback every 45 s" },
       plate: "Sales with or without a network",
-      plateItems: ["Checkout on the phone", "Margin reports", "Printable sales"],
+      plateItems: ["Checkout with customer or store credit", "Ticket and printing", "LAN → cloud → offline"],
       category: "Retail",
       meta: "Point of sale",
       when: "Hybrid sync",
       title: "Store system",
-      lede: "A mobile app for sales, a Windows desktop app for administration, and a NestJS API with Prisma and PostgreSQL.",
+      lede: "A mobile app for sales (customer, wholesale, and four payment methods), a Windows desktop app for administration, and a NestJS API with Prisma and PostgreSQL. Without a network, the phone keeps working in SQLite and syncs later.",
       tags: ["Flutter", "NestJS", "PostgreSQL", "SQLite"],
       flow: {
         title: "How it connects",
@@ -265,16 +265,24 @@ export const en = {
       },
       shots: [
         {
+          src: "proyectos/tienda/cobrar-carrito.png",
+          alt: "Phone checkout with cart, total, and four payment methods",
+        },
+        {
+          src: "proyectos/tienda/ticket.png",
+          alt: "Phone inventory with search and up-to-date sync status",
+        },
+        {
           src: "proyectos/tienda/productos.png",
-          alt: "Product catalog on the desktop app",
+          alt: "Desktop product catalog with the full module menu",
         },
         {
           src: "proyectos/tienda/reportes.png",
-          alt: "Profit and margin reports",
+          alt: "Profit, margin, and payment-method reports",
         },
         {
-          src: "proyectos/tienda/cobrar.png",
-          alt: "Checkout on the phone",
+          src: "proyectos/tienda/ventas-escritorio.png",
+          alt: "Desktop stock receipts with the full module menu",
         },
       ],
     },

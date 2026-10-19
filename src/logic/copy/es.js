@@ -234,12 +234,12 @@ export const es = {
     tienda: {
       card: { summary: "App móvil para vender, app de escritorio en Windows para administrar, y un API NestJS con Prisma y PostgreSQL.", stat: "Realtime", label: "se actualiza al detectar un cambio; respaldo cada 45 s" },
       plate: "Ventas con o sin red",
-      plateItems: ["Cobro en el móvil", "Reportes de margen", "Ventas para imprimir"],
+      plateItems: ["Cobro con cliente o fiado", "Ticket e impresión", "LAN → nube → offline"],
       category: "Comercio",
       meta: "Punto de venta",
       when: "Sync híbrido",
       title: "Sistema de tienda",
-      lede: "App móvil para vender, app de escritorio en Windows para administrar, y un API NestJS con Prisma y PostgreSQL.",
+      lede: "App móvil para vender (cliente, mayoreo y cuatro formas de pago), app de escritorio en Windows para administrar, y un API NestJS con Prisma y PostgreSQL. Si no hay red, el teléfono sigue con SQLite y sincroniza después.",
       tags: ["Flutter", "NestJS", "PostgreSQL", "SQLite"],
       flow: {
         title: "Cómo se conecta",
@@ -265,16 +265,24 @@ export const es = {
       },
       shots: [
         {
+          src: "proyectos/tienda/cobrar-carrito.png",
+          alt: "Cobro en el móvil: carrito, total y cuatro formas de pago",
+        },
+        {
+          src: "proyectos/tienda/ticket.png",
+          alt: "Inventario en el móvil con búsqueda y sincronización al día",
+        },
+        {
           src: "proyectos/tienda/productos.png",
-          alt: "Catálogo de productos en el escritorio",
+          alt: "Catálogo de productos en escritorio con el menú de módulos",
         },
         {
           src: "proyectos/tienda/reportes.png",
-          alt: "Reportes de utilidad y margen",
+          alt: "Reportes de utilidad, margen y formas de pago",
         },
         {
-          src: "proyectos/tienda/cobrar.png",
-          alt: "Cobro en el móvil",
+          src: "proyectos/tienda/ventas-escritorio.png",
+          alt: "Entradas de mercancía en escritorio con el menú de módulos",
         },
       ],
     },
