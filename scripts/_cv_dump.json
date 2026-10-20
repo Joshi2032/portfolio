@@ -1,0 +1,4790 @@
+{
+ "ES": {
+  "rect": [
+   0.0,
+   0.0,
+   612.1799926757812,
+   792.0
+  ],
+  "spans": [
+   {
+    "x": 30.9,
+    "y": 28.8,
+    "x2": 270.0,
+    "y2": 48.6,
+    "oy": 43.7,
+    "size": 19.9,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "JOSUE ISAI SALAZAR CASTRO"
+   },
+   {
+    "x": 30.9,
+    "y": 53.5,
+    "x2": 220.2,
+    "y2": 64.5,
+    "oy": 61.7,
+    "size": 11.0,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "Full Stack Developer · Flutter · IA aplicada"
+   },
+   {
+    "x": 30.9,
+    "y": 70.4,
+    "x2": 140.8,
+    "y2": 79.2,
+    "oy": 77.0,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "La Piedad, Michoacán, México"
+   },
+   {
+    "x": 211.1,
+    "y": 70.4,
+    "x2": 300.4,
+    "y2": 79.2,
+    "oy": 77.0,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "joshi.jc2032@gmail.com"
+   },
+   {
+    "x": 391.1,
+    "y": 70.4,
+    "x2": 456.5,
+    "y2": 79.2,
+    "oy": 77.0,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Cel. 352 188 7541"
+   },
+   {
+    "x": 30.9,
+    "y": 132.5,
+    "x2": 179.0,
+    "y2": 143.2,
+    "oy": 140.5,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#0f6e56",
+    "text": "Stack Tecnológico & Herramientas"
+   },
+   {
+    "x": 36.9,
+    "y": 157.5,
+    "x2": 73.8,
+    "y2": 166.1,
+    "oy": 163.9,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "PRINCIPAL"
+   },
+   {
+    "x": 36.9,
+    "y": 168.1,
+    "x2": 287.4,
+    "y2": 176.3,
+    "oy": 174.2,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Flutter/Dart, Supabase, C#, MySQL, SAP BTP/HANA, Gemma 4 12B (QLoRA), Qwen."
+   },
+   {
+    "x": 318.3,
+    "y": 157.5,
+    "x2": 340.4,
+    "y2": 166.1,
+    "oy": 163.9,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "BASES"
+   },
+   {
+    "x": 318.3,
+    "y": 168.1,
+    "x2": 517.5,
+    "y2": 176.3,
+    "oy": 174.2,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Angular, TypeScript, React, Vue, Java, Spring Boot, Node, PHP."
+   },
+   {
+    "x": 36.9,
+    "y": 185.9,
+    "x2": 61.8,
+    "y2": 194.5,
+    "oy": 192.3,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "CLOUD"
+   },
+   {
+    "x": 36.9,
+    "y": 196.1,
+    "x2": 124.4,
+    "y2": 204.3,
+    "oy": 202.3,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Firebase, AWS, Docker, Git."
+   },
+   {
+    "x": 36.9,
+    "y": 214.0,
+    "x2": 93.7,
+    "y2": 222.5,
+    "oy": 220.3,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "HERRAMIENTAS"
+   },
+   {
+    "x": 36.9,
+    "y": 224.5,
+    "x2": 95.0,
+    "y2": 232.7,
+    "oy": 230.6,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "GitHub, GPS, n8n, MCP."
+   },
+   {
+    "x": 318.3,
+    "y": 224.5,
+    "x2": 511.9,
+    "y2": 232.7,
+    "oy": 230.6,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Resolución de problemas, trabajo en equipo, adaptabilidad."
+   },
+   {
+    "x": 30.9,
+    "y": 247.5,
+    "x2": 133.1,
+    "y2": 258.1,
+    "oy": 255.5,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#0f6e56",
+    "text": "Experiencia Profesional"
+   },
+   {
+    "x": 30.9,
+    "y": 272.0,
+    "x2": 103.3,
+    "y2": 282.6,
+    "oy": 280.0,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "IA Engineer · PM"
+   },
+   {
+    "x": 456.7,
+    "y": 273.3,
+    "x2": 532.8,
+    "y2": 282.2,
+    "oy": 280.0,
+    "size": 8.9,
+    "font": "Calibri-Bold",
+    "color": "#1e7a3c",
+    "text": "Ago 2025 – Presente"
+   },
+   {
+    "x": 30.9,
+    "y": 300.1,
+    "x2": 204.1,
+    "y2": 309.7,
+    "oy": 307.3,
+    "size": 9.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Agente de Ensamble 3D, Cotización y Planos"
+   },
+   {
+    "x": 455.7,
+    "y": 300.9,
+    "x2": 532.5,
+    "y2": 309.4,
+    "oy": 307.3,
+    "size": 8.5,
+    "font": "Calibri",
+    "color": "#1b5fa8",
+    "text": "Gemma 4 12B + Qwen"
+   },
+   {
+    "x": 49.0,
+    "y": 313.6,
+    "x2": 55.6,
+    "y2": 324.6,
+    "oy": 321.8,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 67.1,
+    "y": 315.2,
+    "x2": 545.9,
+    "y2": 324.1,
+    "oy": 321.8,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Gemma 4 12B, ajustado con QLoRA, arma el ensamble 3D con piezas reales y elige la configuración que mejor aprovecha la bodega."
+   },
+   {
+    "x": 49.0,
+    "y": 328.2,
+    "x2": 55.6,
+    "y2": 339.1,
+    "oy": 336.4,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 67.1,
+    "y": 329.7,
+    "x2": 479.1,
+    "y2": 338.6,
+    "oy": 336.4,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "El Qwen, especializado en leer planos, genera los racks, la cotización estimada y el plano ya armado con los racks."
+   },
+   {
+    "x": 49.0,
+    "y": 342.7,
+    "x2": 55.6,
+    "y2": 353.7,
+    "oy": 350.9,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 67.1,
+    "y": 344.3,
+    "x2": 508.2,
+    "y2": 353.2,
+    "oy": 350.9,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Un motor de render genera el render 3D a partir de las dimensiones, restricciones y condiciones de montaje del almacén."
+   },
+   {
+    "x": 49.0,
+    "y": 356.9,
+    "x2": 55.6,
+    "y2": 367.9,
+    "oy": 365.1,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "image_bbox": [
+     526.2,
+     24.5,
+     550.7,
+     49.0
+    ]
+   },
+   {
+    "image_bbox": [
+     556.5,
+     24.5,
+     581.0,
+     49.0
+    ]
+   },
+   {
+    "x": 30.9,
+    "y": 90.0,
+    "x2": 565.4,
+    "y2": 99.6,
+    "oy": 97.2,
+    "size": 9.6,
+    "font": "Calibri-Bold",
+    "color": "#4a4a4a",
+    "text": "Enfoque en llevar la inteligencia artificial de un modelo ajustado a la herramienta que usa el equipo, con cobertura de todo el sistema:"
+   },
+   {
+    "x": 30.9,
+    "y": 98.6,
+    "x2": 166.5,
+    "y2": 108.2,
+    "oy": 105.8,
+    "size": 9.6,
+    "font": "Calibri-Bold",
+    "color": "#4a4a4a",
+    "text": "base de datos, backend e interfaz."
+   },
+   {
+    "x": 67.1,
+    "y": 358.5,
+    "x2": 529.4,
+    "y2": 367.4,
+    "oy": 365.2,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "El tiempo para preparar esa respuesta bajó de 40–80 h laborales (1–2 semanas, jornadas de 8 h) a 10 min: se logró un ahorro de"
+   },
+   {
+    "x": 67.1,
+    "y": 366.4,
+    "x2": 159.0,
+    "y2": 375.3,
+    "oy": 373.0,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "tiempo del 99.6%–99.8%."
+   },
+   {
+    "x": 30.9,
+    "y": 283.7,
+    "x2": 283.8,
+    "y2": 292.6,
+    "oy": 290.4,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Agentes de IA (LLM) para procesos industriales y plataformas empresariales, con embeddings."
+   },
+   {
+    "x": 318.3,
+    "y": 183.5,
+    "x2": 352.4,
+    "y2": 192.0,
+    "oy": 189.9,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "BACKEND"
+   },
+   {
+    "x": 318.3,
+    "y": 193.5,
+    "x2": 408.4,
+    "y2": 201.7,
+    "oy": 199.7,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "NestJS, Prisma, PostgreSQL, API REST"
+   },
+   {
+    "x": 459.6,
+    "y": 432.6,
+    "x2": 533.2,
+    "y2": 441.5,
+    "oy": 439.3,
+    "size": 8.9,
+    "font": "Calibri-Bold",
+    "color": "#1e7a3c",
+    "text": "Dic 2025 – Presente"
+   },
+   {
+    "x": 30.9,
+    "y": 459.8,
+    "x2": 179.6,
+    "y2": 469.4,
+    "oy": 467.0,
+    "size": 9.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Sistema de Gestión para Restaurantes"
+   },
+   {
+    "x": 468.8,
+    "y": 460.6,
+    "x2": 532.9,
+    "y2": 469.1,
+    "oy": 467.0,
+    "size": 8.5,
+    "font": "Calibri",
+    "color": "#1b5fa8",
+    "text": "Flutter + Supabase"
+   },
+   {
+    "x": 49.0,
+    "y": 473.3,
+    "x2": 55.6,
+    "y2": 484.3,
+    "oy": 481.5,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 30.9,
+    "y": 489.2,
+    "x2": 242.2,
+    "y2": 498.8,
+    "oy": 496.4,
+    "size": 9.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Plataforma Web y Control Administrativo (MAXIFUM)"
+   },
+   {
+    "x": 473.0,
+    "y": 490.0,
+    "x2": 532.6,
+    "y2": 498.6,
+    "oy": 496.4,
+    "size": 8.5,
+    "font": "Calibri",
+    "color": "#1b5fa8",
+    "text": "Flutter + GPS + AI"
+   },
+   {
+    "x": 49.0,
+    "y": 502.4,
+    "x2": 55.6,
+    "y2": 513.4,
+    "oy": 510.6,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 49.0,
+    "y": 517.3,
+    "x2": 55.6,
+    "y2": 528.3,
+    "oy": 525.5,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 30.9,
+    "y": 536.3,
+    "x2": 268.7,
+    "y2": 547.0,
+    "oy": 544.3,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Practicante · Mitsubishi Electric Automotive de México"
+   },
+   {
+    "x": 457.8,
+    "y": 537.7,
+    "x2": 533.2,
+    "y2": 546.5,
+    "oy": 544.3,
+    "size": 8.9,
+    "font": "Calibri-Bold",
+    "color": "#1e7a3c",
+    "text": "Ago 2025 – Dic 2025"
+   },
+   {
+    "x": 49.0,
+    "y": 564.5,
+    "x2": 55.6,
+    "y2": 575.5,
+    "oy": 572.7,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 49.0,
+    "y": 579.0,
+    "x2": 55.6,
+    "y2": 590.0,
+    "oy": 587.3,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 49.0,
+    "y": 593.6,
+    "x2": 55.6,
+    "y2": 604.6,
+    "oy": 601.8,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 456.7,
+    "y": 614.0,
+    "x2": 533.2,
+    "y2": 622.8,
+    "oy": 620.6,
+    "size": 8.9,
+    "font": "Calibri-Bold",
+    "color": "#1e7a3c",
+    "text": "Sep 2023 – Feb 2025"
+   },
+   {
+    "x": 49.0,
+    "y": 640.4,
+    "x2": 55.6,
+    "y2": 651.4,
+    "oy": 648.7,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 49.0,
+    "y": 666.3,
+    "x2": 55.6,
+    "y2": 677.3,
+    "oy": 674.5,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 30.9,
+    "y": 687.5,
+    "x2": 173.7,
+    "y2": 698.2,
+    "oy": 695.5,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#0f6e56",
+    "text": "Formación Académica & Idiomas"
+   },
+   {
+    "x": 35.1,
+    "y": 710.8,
+    "x2": 245.2,
+    "y2": 719.3,
+    "oy": 717.1,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Ingeniería en Tecnologías de la Información y Comunicación"
+   },
+   {
+    "x": 35.1,
+    "y": 722.0,
+    "x2": 231.2,
+    "y2": 730.2,
+    "oy": 728.1,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Instituto Tecnológico Nacional de México, Campus La Piedad"
+   },
+   {
+    "x": 35.1,
+    "y": 731.9,
+    "x2": 249.0,
+    "y2": 740.1,
+    "oy": 738.1,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Universidad · 2021 – en curso · Titulación estimada: ene–feb 2027"
+   },
+   {
+    "x": 35.1,
+    "y": 744.1,
+    "x2": 114.8,
+    "y2": 752.6,
+    "oy": 750.5,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Técnico en Informática"
+   },
+   {
+    "x": 35.1,
+    "y": 755.4,
+    "x2": 204.6,
+    "y2": 763.5,
+    "oy": 761.5,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Preparatoria Técnica, Conalep · Ago 2018 – Jun 2021"
+   },
+   {
+    "x": 314.1,
+    "y": 710.8,
+    "x2": 346.1,
+    "y2": 719.3,
+    "oy": 717.1,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "IDIOMAS"
+   },
+   {
+    "x": 314.1,
+    "y": 722.0,
+    "x2": 419.6,
+    "y2": 730.2,
+    "oy": 728.1,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Español: Nativo      ·      Inglés: B1"
+   },
+   {
+    "image_bbox": [
+     526.2,
+     68.5,
+     550.7,
+     93.0
+    ]
+   },
+   {
+    "image_bbox": [
+     556.5,
+     68.5,
+     581.0,
+     93.0
+    ]
+   },
+   {
+    "x": 30.9,
+    "y": 430.1,
+    "x2": 186.6,
+    "y2": 440.7,
+    "oy": 438.0,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Desarrollador Full Stack (Freelance)"
+   },
+   {
+    "x": 67.1,
+    "y": 472.8,
+    "x2": 467.6,
+    "y2": 481.7,
+    "oy": 479.4,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Apps de Zapata, Sushi Lim y Casa Lim: construcción y migración en Flutter + Supabase (base de datos, auth, storage, realtime)."
+   },
+   {
+    "x": 67.1,
+    "y": 501.9,
+    "x2": 408.6,
+    "y2": 510.8,
+    "oy": 508.5,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Diseño del control interno con roles, tareas, GPS y validación de evidencias fotográficas con IA."
+   },
+   {
+    "x": 67.1,
+    "y": 516.8,
+    "x2": 311.7,
+    "y2": 525.7,
+    "oy": 523.4,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Aplicación de escritorio para monitorear al personal en tiempo real."
+   },
+   {
+    "x": 67.1,
+    "y": 564.0,
+    "x2": 404.0,
+    "y2": 572.9,
+    "oy": 570.6,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Módulos de interfaz en C# con historial de propuestas y formularios según el estado del flujo."
+   },
+   {
+    "x": 67.1,
+    "y": 578.5,
+    "x2": 357.9,
+    "y2": 587.4,
+    "oy": 585.2,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Módulo centralizado: filtrado, exportación a PDF y aprobación multipaso por rol."
+   },
+   {
+    "x": 67.1,
+    "y": 593.1,
+    "x2": 321.3,
+    "y2": 602.0,
+    "oy": 599.7,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Migración de módulos a Angular, con validación y pruebas del cambio."
+   },
+   {
+    "x": 67.1,
+    "y": 641.5,
+    "x2": 530.6,
+    "y2": 650.4,
+    "oy": 648.2,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Flujos de aprobación por correo en SAP BTP Cockpit: cada solicitud seguía reglas de negocio y, al aprobarse, se registraba en SAP"
+   },
+   {
+    "x": 67.1,
+    "y": 649.4,
+    "x2": 90.9,
+    "y2": 658.3,
+    "oy": 656.1,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "HANA."
+   },
+   {
+    "x": 67.1,
+    "y": 665.8,
+    "x2": 485.1,
+    "y2": 674.7,
+    "oy": 672.5,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Migración de la información operativa a la nube con SAP BTP, uniendo almacenamiento, solicitudes y aprobaciones."
+   },
+   {
+    "x": 30.9,
+    "y": 611.4,
+    "x2": 99.9,
+    "y2": 622.0,
+    "oy": 619.3,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Interno ∙ Enjo‐it"
+   },
+   {
+    "x": 30.9,
+    "y": 548.1,
+    "x2": 235.0,
+    "y2": 557.0,
+    "oy": 554.8,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Digitalización de propuestas de mejora Kaizen en planta."
+   },
+   {
+    "x": 30.9,
+    "y": 623.0,
+    "x2": 284.8,
+    "y2": 631.9,
+    "oy": 629.6,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Automatización de procesos y aprobaciones empresariales en la nube."
+   },
+   {
+    "x": 30.9,
+    "y": 441.7,
+    "x2": 277.0,
+    "y2": 450.6,
+    "oy": 448.3,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Software a medida para restaurantes y operaciones administrativas."
+   },
+   {
+    "x": 30.9,
+    "y": 381.6,
+    "x2": 204.3,
+    "y2": 391.2,
+    "oy": 388.8,
+    "size": 9.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Plataforma empresarial por departamentos"
+   },
+   {
+    "x": 471.2,
+    "y": 382.6,
+    "x2": 535.4,
+    "y2": 391.1,
+    "oy": 389.0,
+    "size": 8.5,
+    "font": "Calibri",
+    "color": "#1b5fa8",
+    "text": "Flutter + Supabase"
+   },
+   {
+    "x": 49.0,
+    "y": 397.1,
+    "x2": 53.4,
+    "y2": 406.0,
+    "oy": 403.8,
+    "size": 8.9,
+    "font": "Calibri-Bold",
+    "color": "#4a4a4a",
+    "text": "•"
+   },
+   {
+    "x": 67.1,
+    "y": 397.1,
+    "x2": 362.4,
+    "y2": 406.0,
+    "oy": 403.8,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Organización de módulos por departamento: en conjunto, funciona como un ERP."
+   },
+   {
+    "x": 49.0,
+    "y": 410.6,
+    "x2": 53.4,
+    "y2": 419.5,
+    "oy": 417.3,
+    "size": 8.9,
+    "font": "Calibri-Bold",
+    "color": "#4a4a4a",
+    "text": "•"
+   },
+   {
+    "x": 67.1,
+    "y": 410.6,
+    "x2": 390.1,
+    "y2": 419.5,
+    "oy": 417.3,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Kanban con tablero, Gantt y calendario, y fecha planeada contra fecha real en cada tarea."
+   }
+  ],
+  "drawings": [
+   {
+    "rect": [
+     29.5,
+     83.4,
+     582.7,
+     84.8
+    ],
+    "fill": [
+     0.10599999874830246,
+     0.37299999594688416,
+     0.6589999794960022
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     146.9,
+     582.7,
+     147.6
+    ],
+    "fill": [
+     0.058800000697374344,
+     0.4309999942779541,
+     0.3370000123977661
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     151.9,
+     30.9,
+     156.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     151.9,
+     30.9,
+     152.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     151.9,
+     311.6,
+     152.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     152.2,
+     312.0,
+     156.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     151.9,
+     312.0,
+     152.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     151.9,
+     593.0,
+     152.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     151.9,
+     593.4,
+     156.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     151.9,
+     593.4,
+     152.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     156.5,
+     30.9,
+     180.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     156.5,
+     312.0,
+     180.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     156.5,
+     593.4,
+     180.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     180.3,
+     30.9,
+     184.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     180.3,
+     311.6,
+     180.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     180.3,
+     312.0,
+     184.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     180.3,
+     593.0,
+     180.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     180.3,
+     593.4,
+     184.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     184.9,
+     30.9,
+     208.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     184.9,
+     312.0,
+     208.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     184.9,
+     593.4,
+     208.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     208.3,
+     30.9,
+     212.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     208.3,
+     311.6,
+     208.7
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     208.3,
+     312.0,
+     212.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     208.3,
+     593.0,
+     208.7
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     208.3,
+     593.4,
+     212.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     212.9,
+     30.9,
+     236.7
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     236.7,
+     30.9,
+     237.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     236.7,
+     30.9,
+     237.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     236.7,
+     311.6,
+     237.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     212.9,
+     312.0,
+     236.7
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     236.7,
+     312.0,
+     237.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     236.7,
+     593.0,
+     237.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     212.9,
+     593.4,
+     236.7
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     236.7,
+     593.4,
+     237.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     236.7,
+     593.4,
+     237.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     262.2,
+     582.7,
+     262.9
+    ],
+    "fill": [
+     0.058800000697374344,
+     0.4309999942779541,
+     0.3370000123977661
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     658.2,
+     582.7,
+     659.0
+    ],
+    "fill": [
+     0.058800000697374344,
+     0.4309999942779541,
+     0.3370000123977661
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     127.4,
+     582.7,
+     128.8
+    ],
+    "fill": [
+     0.10599999874830246,
+     0.37299999594688416,
+     0.6589999794960022
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     190.9,
+     582.7,
+     191.6
+    ],
+    "fill": [
+     0.058800000697374344,
+     0.4309999942779541,
+     0.3370000123977661
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     195.9,
+     30.9,
+     200.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     195.9,
+     30.9,
+     196.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     195.9,
+     311.6,
+     196.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     196.2,
+     312.0,
+     200.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     195.9,
+     312.0,
+     196.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     195.9,
+     593.0,
+     196.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     195.9,
+     593.4,
+     200.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     195.9,
+     593.4,
+     196.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     200.5,
+     30.9,
+     224.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     200.5,
+     312.0,
+     224.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     200.5,
+     593.4,
+     224.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     224.3,
+     30.9,
+     228.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     224.3,
+     311.6,
+     224.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     224.3,
+     312.0,
+     228.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     224.3,
+     593.0,
+     224.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     224.3,
+     593.4,
+     228.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     228.9,
+     30.9,
+     252.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     228.9,
+     312.0,
+     252.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     228.9,
+     593.4,
+     252.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     252.3,
+     30.9,
+     256.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     252.3,
+     311.6,
+     252.7
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     252.3,
+     312.0,
+     256.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     252.3,
+     593.0,
+     252.7
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     252.3,
+     593.4,
+     256.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     256.9,
+     30.9,
+     280.7
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     280.7,
+     30.9,
+     281.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     280.7,
+     30.9,
+     281.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     280.7,
+     311.6,
+     281.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     256.9,
+     312.0,
+     280.7
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     280.7,
+     312.0,
+     281.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     280.7,
+     593.0,
+     281.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     256.9,
+     593.4,
+     280.7
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     280.7,
+     593.4,
+     281.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     280.7,
+     593.4,
+     281.0
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     306.2,
+     582.7,
+     306.9
+    ],
+    "fill": [
+     0.058800000697374344,
+     0.4309999942779541,
+     0.3370000123977661
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     702.2,
+     582.7,
+     703.0
+    ],
+    "fill": [
+     0.058800000697374344,
+     0.4309999942779541,
+     0.3370000123977661
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   }
+  ],
+  "images": [
+   [
+    "54",
+    "55",
+    "67",
+    "67",
+    "8",
+    "DeviceRGB",
+    "",
+    "Im1",
+    "FlateDecode",
+    "58"
+   ],
+   [
+    "56",
+    "57",
+    "67",
+    "67",
+    "8",
+    "DeviceRGB",
+    "",
+    "Im2",
+    "FlateDecode",
+    "58"
+   ]
+  ],
+  "links": [
+   {
+    "kind": "2",
+    "xref": "63",
+    "from": "Rect(526.2999877929688, 24.5, 551.1300048828125, 49.32000732421875)",
+    "uri": "https://github.com/Joshi2032",
+    "id": "fitz-L0"
+   },
+   {
+    "kind": "2",
+    "xref": "64",
+    "from": "Rect(556.7999877929688, 24.5, 581.2999877929688, 49.32000732421875)",
+    "uri": "https://www.linkedin.com/in/josue-isai-salazar-castro-47600a227/",
+    "id": "fitz-L1"
+   }
+  ],
+  "fonts": [
+   [
+    "48",
+    "ttf",
+    "Type0",
+    "Calibri Bold",
+    "kbSubESz",
+    "Identity-H"
+   ],
+   [
+    "44",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "kbTagESz",
+    "Identity-H"
+   ],
+   [
+    "48",
+    "ttf",
+    "Type0",
+    "Calibri Bold",
+    "kbDotESz0",
+    "Identity-H"
+   ],
+   [
+    "44",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "kbTxtESz0",
+    "Identity-H"
+   ],
+   [
+    "48",
+    "ttf",
+    "Type0",
+    "Calibri Bold",
+    "kbDotESz1",
+    "Identity-H"
+   ],
+   [
+    "44",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "kbTxtESz1",
+    "Identity-H"
+   ],
+   [
+    "5",
+    "ttf",
+    "TrueType",
+    "BCDEEE+Calibri-Bold",
+    "F1",
+    "WinAnsiEncoding"
+   ],
+   [
+    "9",
+    "ttf",
+    "TrueType",
+    "BCDFEE+Calibri",
+    "F2",
+    "WinAnsiEncoding"
+   ],
+   [
+    "13",
+    "ttf",
+    "Type0",
+    "BCDGEE+Calibri-Bold",
+    "F3",
+    "Identity-H"
+   ],
+   [
+    "20",
+    "ttf",
+    "Type0",
+    "BCDHEE+Calibri",
+    "F4",
+    "Identity-H"
+   ],
+   [
+    "26",
+    "n/a",
+    "TrueType",
+    "ArialMT",
+    "F5",
+    "WinAnsiEncoding"
+   ],
+   [
+    "29",
+    "ttf",
+    "Type0",
+    "Calibri Bold",
+    "calibrib",
+    "Identity-H"
+   ],
+   [
+    "35",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "calibri",
+    "Identity-H"
+   ],
+   [
+    "40",
+    "ttf",
+    "Type0",
+    "Calibri Bold",
+    "cjb2",
+    "Identity-H"
+   ],
+   [
+    "44",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "descES69x",
+    "Identity-H"
+   ],
+   [
+    "44",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "descES56x",
+    "Identity-H"
+   ],
+   [
+    "44",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "descES67x",
+    "Identity-H"
+   ],
+   [
+    "44",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "descES66x",
+    "Identity-H"
+   ],
+   [
+    "48",
+    "ttf",
+    "Type0",
+    "Calibri Bold",
+    "scopeBESv2",
+    "Identity-H"
+   ],
+   [
+    "44",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "scopeRESv2",
+    "Identity-H"
+   ]
+  ]
+ },
+ "EN": {
+  "rect": [
+   0.0,
+   0.0,
+   612.1799926757812,
+   792.0
+  ],
+  "spans": [
+   {
+    "x": 30.9,
+    "y": 28.8,
+    "x2": 270.0,
+    "y2": 48.6,
+    "oy": 43.7,
+    "size": 19.9,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "JOSUE ISAI SALAZAR CASTRO"
+   },
+   {
+    "x": 30.9,
+    "y": 53.5,
+    "x2": 217.3,
+    "y2": 64.5,
+    "oy": 61.7,
+    "size": 11.0,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "Full Stack Developer · Flutter · Applied AI"
+   },
+   {
+    "x": 30.9,
+    "y": 70.4,
+    "x2": 140.8,
+    "y2": 79.2,
+    "oy": 77.0,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "La Piedad, Michoacán, México"
+   },
+   {
+    "x": 211.1,
+    "y": 70.4,
+    "x2": 300.4,
+    "y2": 79.2,
+    "oy": 77.0,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "joshi.jc2032@gmail.com"
+   },
+   {
+    "x": 391.1,
+    "y": 70.4,
+    "x2": 456.4,
+    "y2": 79.2,
+    "oy": 77.0,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Cell 352 188 7541"
+   },
+   {
+    "x": 30.9,
+    "y": 132.5,
+    "x2": 110.6,
+    "y2": 143.2,
+    "oy": 140.5,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#0f6e56",
+    "text": "Tech Stack & Tools"
+   },
+   {
+    "x": 36.9,
+    "y": 157.5,
+    "x2": 56.3,
+    "y2": 166.1,
+    "oy": 163.9,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "CORE"
+   },
+   {
+    "x": 36.9,
+    "y": 168.1,
+    "x2": 287.4,
+    "y2": 176.3,
+    "oy": 174.2,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Flutter/Dart, Supabase, C#, MySQL, SAP BTP/HANA, Gemma 4 12B (QLoRA), Qwen."
+   },
+   {
+    "x": 318.3,
+    "y": 157.5,
+    "x2": 402.6,
+    "y2": 166.1,
+    "oy": 163.9,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "WORKING KNOWLEDGE"
+   },
+   {
+    "x": 318.3,
+    "y": 168.1,
+    "x2": 517.5,
+    "y2": 176.3,
+    "oy": 174.2,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Angular, TypeScript, React, Vue, Java, Spring Boot, Node, PHP."
+   },
+   {
+    "x": 36.9,
+    "y": 185.9,
+    "x2": 61.8,
+    "y2": 194.5,
+    "oy": 192.3,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "CLOUD"
+   },
+   {
+    "x": 36.9,
+    "y": 196.1,
+    "x2": 124.4,
+    "y2": 204.3,
+    "oy": 202.3,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Firebase, AWS, Docker, Git."
+   },
+   {
+    "x": 36.9,
+    "y": 222.8,
+    "x2": 59.7,
+    "y2": 231.3,
+    "oy": 229.2,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "TOOLS"
+   },
+   {
+    "x": 36.9,
+    "y": 233.4,
+    "x2": 95.0,
+    "y2": 241.6,
+    "oy": 239.5,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "GitHub, GPS, n8n, MCP."
+   },
+   {
+    "x": 318.3,
+    "y": 222.8,
+    "x2": 359.9,
+    "y2": 231.3,
+    "oy": 229.2,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "SOFT SKILLS"
+   },
+   {
+    "x": 318.3,
+    "y": 233.4,
+    "x2": 451.9,
+    "y2": 241.6,
+    "oy": 239.5,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Problem-solving, teamwork, adaptability."
+   },
+   {
+    "x": 30.9,
+    "y": 256.4,
+    "x2": 134.7,
+    "y2": 267.0,
+    "oy": 264.3,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#0f6e56",
+    "text": "Professional Experience"
+   },
+   {
+    "x": 30.9,
+    "y": 280.9,
+    "x2": 103.3,
+    "y2": 291.5,
+    "oy": 288.9,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "AI Engineer · PM"
+   },
+   {
+    "x": 461.3,
+    "y": 282.2,
+    "x2": 532.9,
+    "y2": 291.1,
+    "oy": 288.9,
+    "size": 8.9,
+    "font": "Calibri-Bold",
+    "color": "#1e7a3c",
+    "text": "Aug 2025 – Present"
+   },
+   {
+    "x": 30.9,
+    "y": 309.3,
+    "x2": 199.3,
+    "y2": 318.9,
+    "oy": 316.5,
+    "size": 9.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "3D Assembly, Quotation & Drawings Agent"
+   },
+   {
+    "x": 455.7,
+    "y": 310.1,
+    "x2": 532.5,
+    "y2": 318.6,
+    "oy": 316.5,
+    "size": 8.5,
+    "font": "Calibri",
+    "color": "#1b5fa8",
+    "text": "Gemma 4 12B + Qwen"
+   },
+   {
+    "x": 49.0,
+    "y": 322.5,
+    "x2": 55.6,
+    "y2": 333.4,
+    "oy": 330.7,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 67.1,
+    "y": 324.0,
+    "x2": 537.4,
+    "y2": 332.9,
+    "oy": 330.7,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Gemma 4 12B, fine-tuned with QLoRA, builds the 3D assembly from real parts and picks the layout that best uses the warehouse."
+   },
+   {
+    "x": 49.0,
+    "y": 337.0,
+    "x2": 55.6,
+    "y2": 348.0,
+    "oy": 345.3,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 67.1,
+    "y": 338.6,
+    "x2": 568.6,
+    "y2": 347.5,
+    "oy": 345.3,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "The Qwen model, specialized in reading drawings, produces the racks, the estimated quote, and the drawing already fitted with the racks."
+   },
+   {
+    "x": 49.0,
+    "y": 351.6,
+    "x2": 55.6,
+    "y2": 362.6,
+    "oy": 359.8,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 67.1,
+    "y": 353.2,
+    "x2": 491.9,
+    "y2": 362.0,
+    "oy": 359.8,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "A rendering engine produces the 3D render from the warehouse dimensions, constraints, and installation conditions."
+   },
+   {
+    "x": 49.0,
+    "y": 365.8,
+    "x2": 55.6,
+    "y2": 376.7,
+    "oy": 374.0,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "image_bbox": [
+     526.2,
+     24.5,
+     550.7,
+     49.0
+    ]
+   },
+   {
+    "image_bbox": [
+     556.5,
+     24.5,
+     581.0,
+     49.0
+    ]
+   },
+   {
+    "x": 30.9,
+    "y": 90.0,
+    "x2": 579.5,
+    "y2": 99.6,
+    "oy": 97.2,
+    "size": 9.6,
+    "font": "Calibri-Bold",
+    "color": "#4a4a4a",
+    "text": "Focus on taking artificial intelligence from a fine‐tuned model to the tool the team uses, across the whole system: database, backend, and"
+   },
+   {
+    "x": 30.9,
+    "y": 98.6,
+    "x2": 69.1,
+    "y2": 108.2,
+    "oy": 105.8,
+    "size": 9.6,
+    "font": "Calibri-Bold",
+    "color": "#4a4a4a",
+    "text": "interface."
+   },
+   {
+    "x": 67.1,
+    "y": 367.3,
+    "x2": 500.0,
+    "y2": 376.2,
+    "oy": 374.0,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "The time to prepare that response fell from 40–80 working hours (1–2 weeks at 8 h/day) to 10 minutes: a time saving of"
+   },
+   {
+    "x": 67.1,
+    "y": 375.2,
+    "x2": 168.4,
+    "y2": 384.1,
+    "oy": 381.9,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "99.6%–99.8% was achieved."
+   },
+   {
+    "x": 30.9,
+    "y": 292.6,
+    "x2": 244.5,
+    "y2": 301.5,
+    "oy": 299.3,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "AI agents (LLM) for industrial processes and enterprise platforms, with embeddings."
+   },
+   {
+    "x": 318.3,
+    "y": 183.5,
+    "x2": 352.4,
+    "y2": 192.0,
+    "oy": 189.9,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "BACKEND"
+   },
+   {
+    "x": 318.3,
+    "y": 193.5,
+    "x2": 408.4,
+    "y2": 201.7,
+    "oy": 199.7,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "NestJS, Prisma, PostgreSQL, REST API"
+   },
+   {
+    "x": 461.7,
+    "y": 441.9,
+    "x2": 532.9,
+    "y2": 450.7,
+    "oy": 448.5,
+    "size": 8.9,
+    "font": "Calibri-Bold",
+    "color": "#1e7a3c",
+    "text": "Dec 2025 – Present"
+   },
+   {
+    "x": 30.9,
+    "y": 469.0,
+    "x2": 159.1,
+    "y2": 478.6,
+    "oy": 476.2,
+    "size": 9.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Restaurant Management System"
+   },
+   {
+    "x": 468.8,
+    "y": 469.8,
+    "x2": 532.9,
+    "y2": 478.3,
+    "oy": 476.2,
+    "size": 8.5,
+    "font": "Calibri",
+    "color": "#1b5fa8",
+    "text": "Flutter + Supabase"
+   },
+   {
+    "x": 49.0,
+    "y": 482.2,
+    "x2": 55.6,
+    "y2": 493.1,
+    "oy": 490.4,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 30.9,
+    "y": 498.1,
+    "x2": 202.9,
+    "y2": 507.7,
+    "oy": 505.3,
+    "size": 9.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Web Platform & Admin Control (MAXIFUM)"
+   },
+   {
+    "x": 473.0,
+    "y": 498.9,
+    "x2": 532.6,
+    "y2": 507.4,
+    "oy": 505.3,
+    "size": 8.5,
+    "font": "Calibri",
+    "color": "#1b5fa8",
+    "text": "Flutter + GPS + AI"
+   },
+   {
+    "x": 49.0,
+    "y": 511.6,
+    "x2": 55.6,
+    "y2": 522.6,
+    "oy": 519.8,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 49.0,
+    "y": 526.2,
+    "x2": 55.6,
+    "y2": 537.1,
+    "oy": 534.4,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 30.9,
+    "y": 545.2,
+    "x2": 246.8,
+    "y2": 555.9,
+    "oy": 553.2,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Intern · Mitsubishi Electric Automotive de México"
+   },
+   {
+    "x": 455.3,
+    "y": 546.5,
+    "x2": 533.2,
+    "y2": 555.4,
+    "oy": 553.2,
+    "size": 8.9,
+    "font": "Calibri-Bold",
+    "color": "#1e7a3c",
+    "text": "Aug 2025 – Dec 2025"
+   },
+   {
+    "x": 49.0,
+    "y": 573.3,
+    "x2": 55.6,
+    "y2": 584.3,
+    "oy": 581.6,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 49.0,
+    "y": 587.9,
+    "x2": 55.6,
+    "y2": 598.9,
+    "oy": 596.1,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 49.0,
+    "y": 602.4,
+    "x2": 55.6,
+    "y2": 613.4,
+    "oy": 610.7,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 30.9,
+    "y": 621.5,
+    "x2": 93.8,
+    "y2": 632.1,
+    "oy": 629.5,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Intern · Enjo-it"
+   },
+   {
+    "x": 456.7,
+    "y": 622.8,
+    "x2": 533.2,
+    "y2": 631.7,
+    "oy": 629.5,
+    "size": 8.9,
+    "font": "Calibri-Bold",
+    "color": "#1e7a3c",
+    "text": "Sep 2023 – Feb 2025"
+   },
+   {
+    "x": 49.0,
+    "y": 650.0,
+    "x2": 55.6,
+    "y2": 661.0,
+    "oy": 658.2,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 49.0,
+    "y": 664.5,
+    "x2": 55.6,
+    "y2": 675.5,
+    "oy": 672.8,
+    "size": 11.0,
+    "font": "Calibri",
+    "color": "#000000",
+    "text": "●"
+   },
+   {
+    "x": 30.9,
+    "y": 685.4,
+    "x2": 131.9,
+    "y2": 696.0,
+    "oy": 693.4,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#0f6e56",
+    "text": "Education & Languages"
+   },
+   {
+    "x": 35.1,
+    "y": 708.6,
+    "x2": 221.7,
+    "y2": 717.1,
+    "oy": 715.0,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "B.S. in Information and Communication Technologies"
+   },
+   {
+    "x": 35.1,
+    "y": 719.9,
+    "x2": 234.0,
+    "y2": 728.0,
+    "oy": 726.0,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "National Technological Institute of Mexico, La Piedad Campus"
+   },
+   {
+    "x": 35.1,
+    "y": 729.8,
+    "x2": 242.9,
+    "y2": 738.0,
+    "oy": 735.9,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "University · 2021 – Present · Expected graduation: Jan–Feb 2027"
+   },
+   {
+    "x": 35.1,
+    "y": 742.3,
+    "x2": 169.8,
+    "y2": 750.9,
+    "oy": 748.7,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Associate Degree in Computer Science"
+   },
+   {
+    "x": 35.1,
+    "y": 753.2,
+    "x2": 208.5,
+    "y2": 761.4,
+    "oy": 759.4,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Technical High School, Conalep · Aug 2018 – Jun 2021"
+   },
+   {
+    "x": 314.1,
+    "y": 708.6,
+    "x2": 358.2,
+    "y2": 717.1,
+    "oy": 715.0,
+    "size": 8.5,
+    "font": "Calibri-Bold",
+    "color": "#1b5fa8",
+    "text": "LANGUAGES"
+   },
+   {
+    "x": 314.1,
+    "y": 719.9,
+    "x2": 423.1,
+    "y2": 728.0,
+    "oy": 726.0,
+    "size": 8.2,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Spanish: Native      ·      English: B1"
+   },
+   {
+    "image_bbox": [
+     526.2,
+     68.5,
+     550.7,
+     93.0
+    ]
+   },
+   {
+    "image_bbox": [
+     556.5,
+     68.5,
+     581.0,
+     93.0
+    ]
+   },
+   {
+    "x": 30.9,
+    "y": 439.3,
+    "x2": 171.8,
+    "y2": 449.9,
+    "oy": 447.2,
+    "size": 10.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Full Stack Developer (Freelance)"
+   },
+   {
+    "x": 67.1,
+    "y": 481.7,
+    "x2": 454.9,
+    "y2": 490.6,
+    "oy": 488.3,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Zapata, Sushi Lim, and Casa Lim apps built and migrated in Flutter + Supabase (database, auth, storage, and realtime)."
+   },
+   {
+    "x": 67.1,
+    "y": 511.1,
+    "x2": 395.5,
+    "y2": 520.0,
+    "oy": 517.8,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Internal control system with roles, tasks, GPS location, and AI validation of photo evidence."
+   },
+   {
+    "x": 67.1,
+    "y": 525.7,
+    "x2": 222.6,
+    "y2": 534.6,
+    "oy": 532.3,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Desktop app for real‐time staff monitoring."
+   },
+   {
+    "x": 67.1,
+    "y": 572.8,
+    "x2": 340.2,
+    "y2": 581.7,
+    "oy": 579.5,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "C# UI modules with proposal history and forms that follow workflow status."
+   },
+   {
+    "x": 67.1,
+    "y": 587.4,
+    "x2": 347.6,
+    "y2": 596.3,
+    "oy": 594.1,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Centralized module: filtering, PDF export, and role‐based multi‐step approval."
+   },
+   {
+    "x": 67.1,
+    "y": 601.9,
+    "x2": 330.8,
+    "y2": 610.8,
+    "oy": 608.6,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Module migration to Angular, with validation and testing for the cutover."
+   },
+   {
+    "x": 67.1,
+    "y": 649.5,
+    "x2": 534.8,
+    "y2": 658.4,
+    "oy": 656.2,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Email approval workflows in SAP BTP Cockpit: each request followed business rules and, once approved, was stored in SAP HANA."
+   },
+   {
+    "x": 67.1,
+    "y": 664.0,
+    "x2": 453.4,
+    "y2": 672.9,
+    "oy": 670.7,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Operational data migration to the cloud with SAP BTP, joining storage, requests, and approvals in one flow."
+   },
+   {
+    "x": 30.9,
+    "y": 556.9,
+    "x2": 241.3,
+    "y2": 565.8,
+    "oy": 563.6,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Digitization of Kaizen improvement proposals at the plant."
+   },
+   {
+    "x": 30.9,
+    "y": 633.2,
+    "x2": 235.6,
+    "y2": 642.1,
+    "oy": 639.9,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Business process automation and approvals in the cloud."
+   },
+   {
+    "x": 30.9,
+    "y": 450.9,
+    "x2": 261.4,
+    "y2": 459.8,
+    "oy": 457.5,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Custom software for restaurants and administrative operations."
+   },
+   {
+    "x": 30.9,
+    "y": 390.8,
+    "x2": 186.5,
+    "y2": 400.4,
+    "oy": 398.0,
+    "size": 9.6,
+    "font": "Calibri-Bold",
+    "color": "#1a2233",
+    "text": "Department‐based enterprise platform"
+   },
+   {
+    "x": 471.2,
+    "y": 391.8,
+    "x2": 535.4,
+    "y2": 400.3,
+    "oy": 398.2,
+    "size": 8.5,
+    "font": "Calibri",
+    "color": "#1b5fa8",
+    "text": "Flutter + Supabase"
+   },
+   {
+    "x": 49.0,
+    "y": 406.3,
+    "x2": 53.4,
+    "y2": 415.2,
+    "oy": 413.0,
+    "size": 8.9,
+    "font": "Calibri-Bold",
+    "color": "#4a4a4a",
+    "text": "•"
+   },
+   {
+    "x": 67.1,
+    "y": 406.3,
+    "x2": 306.5,
+    "y2": 415.2,
+    "oy": 413.0,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Modules organized by department; as a whole, it works as an ERP."
+   },
+   {
+    "x": 49.0,
+    "y": 419.8,
+    "x2": 53.4,
+    "y2": 428.7,
+    "oy": 426.5,
+    "size": 8.9,
+    "font": "Calibri-Bold",
+    "color": "#4a4a4a",
+    "text": "•"
+   },
+   {
+    "x": 67.1,
+    "y": 419.8,
+    "x2": 393.0,
+    "y2": 428.7,
+    "oy": 426.5,
+    "size": 8.9,
+    "font": "Calibri",
+    "color": "#4a4a4a",
+    "text": "Kanban with board, Gantt, and calendar views, and planned vs. actual dates on every task."
+   }
+  ],
+  "drawings": [
+   {
+    "rect": [
+     29.5,
+     83.4,
+     582.7,
+     84.8
+    ],
+    "fill": [
+     0.10599999874830246,
+     0.37299999594688416,
+     0.6589999794960022
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     146.9,
+     582.7,
+     147.6
+    ],
+    "fill": [
+     0.058800000697374344,
+     0.4309999942779541,
+     0.3370000123977661
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     151.9,
+     30.9,
+     156.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     151.9,
+     30.9,
+     152.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     151.9,
+     311.6,
+     152.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     152.2,
+     312.0,
+     156.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     151.9,
+     312.0,
+     152.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     151.9,
+     593.0,
+     152.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     151.9,
+     593.4,
+     156.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     151.9,
+     593.4,
+     152.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     156.5,
+     30.9,
+     180.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     156.5,
+     312.0,
+     180.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     156.5,
+     593.4,
+     180.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     180.3,
+     30.9,
+     184.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     180.3,
+     311.6,
+     180.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     180.3,
+     312.0,
+     184.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     180.3,
+     593.0,
+     180.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     180.3,
+     593.4,
+     184.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     184.9,
+     30.9,
+     217.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     184.9,
+     312.0,
+     217.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     184.9,
+     593.4,
+     217.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     217.2,
+     30.9,
+     221.8
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     217.2,
+     311.6,
+     217.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     217.2,
+     312.0,
+     221.8
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     217.2,
+     593.0,
+     217.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     217.2,
+     593.4,
+     221.8
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     221.8,
+     30.9,
+     245.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     245.6,
+     30.9,
+     245.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     245.6,
+     30.9,
+     245.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     245.6,
+     311.6,
+     245.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     221.8,
+     312.0,
+     245.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     245.6,
+     312.0,
+     245.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     245.6,
+     593.0,
+     245.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     221.8,
+     593.4,
+     245.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     245.6,
+     593.4,
+     245.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     245.6,
+     593.4,
+     245.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     271.1,
+     582.7,
+     271.8
+    ],
+    "fill": [
+     0.058800000697374344,
+     0.4309999942779541,
+     0.3370000123977661
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     656.1,
+     582.7,
+     656.8
+    ],
+    "fill": [
+     0.058800000697374344,
+     0.4309999942779541,
+     0.3370000123977661
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     127.4,
+     582.7,
+     128.8
+    ],
+    "fill": [
+     0.10599999874830246,
+     0.37299999594688416,
+     0.6589999794960022
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     190.9,
+     582.7,
+     191.6
+    ],
+    "fill": [
+     0.058800000697374344,
+     0.4309999942779541,
+     0.3370000123977661
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     195.9,
+     30.9,
+     200.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     195.9,
+     30.9,
+     196.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     195.9,
+     311.6,
+     196.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     196.2,
+     312.0,
+     200.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     195.9,
+     312.0,
+     196.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     195.9,
+     593.0,
+     196.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     195.9,
+     593.4,
+     200.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     195.9,
+     593.4,
+     196.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     200.5,
+     30.9,
+     224.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     200.5,
+     312.0,
+     224.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     200.5,
+     593.4,
+     224.3
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     224.3,
+     30.9,
+     228.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     224.3,
+     311.6,
+     224.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     224.3,
+     312.0,
+     228.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     224.3,
+     593.0,
+     224.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     224.3,
+     593.4,
+     228.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     228.9,
+     30.9,
+     261.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     228.9,
+     312.0,
+     261.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     228.9,
+     593.4,
+     261.2
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     261.2,
+     30.9,
+     265.8
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     261.2,
+     311.6,
+     261.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     261.2,
+     312.0,
+     265.8
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     261.2,
+     593.0,
+     261.5
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     261.2,
+     593.4,
+     265.8
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     265.8,
+     30.9,
+     289.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     289.6,
+     30.9,
+     289.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.5,
+     289.6,
+     30.9,
+     289.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     30.9,
+     289.6,
+     311.6,
+     289.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     265.8,
+     312.0,
+     289.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     311.6,
+     289.6,
+     312.0,
+     289.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     312.0,
+     289.6,
+     593.0,
+     289.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     265.8,
+     593.4,
+     289.6
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     289.6,
+     593.4,
+     289.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     593.0,
+     289.6,
+     593.4,
+     289.9
+    ],
+    "fill": [
+     0.8509193658828735,
+     0.8510414361953735,
+     0.8508888483047485
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     315.1,
+     582.7,
+     315.8
+    ],
+    "fill": [
+     0.058800000697374344,
+     0.4309999942779541,
+     0.3370000123977661
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   },
+   {
+    "rect": [
+     29.5,
+     700.1,
+     582.7,
+     700.8
+    ],
+    "fill": [
+     0.058800000697374344,
+     0.4309999942779541,
+     0.3370000123977661
+    ],
+    "color": null,
+    "width": null,
+    "type": "f",
+    "n": 1
+   }
+  ],
+  "images": [
+   [
+    "50",
+    "51",
+    "67",
+    "67",
+    "8",
+    "DeviceRGB",
+    "",
+    "Im1",
+    "FlateDecode",
+    "54"
+   ],
+   [
+    "52",
+    "53",
+    "67",
+    "67",
+    "8",
+    "DeviceRGB",
+    "",
+    "Im2",
+    "FlateDecode",
+    "54"
+   ]
+  ],
+  "links": [
+   {
+    "kind": "2",
+    "xref": "59",
+    "from": "Rect(526.2999877929688, 24.5, 551.1300048828125, 49.32000732421875)",
+    "uri": "https://github.com/Joshi2032",
+    "id": "fitz-L0"
+   },
+   {
+    "kind": "2",
+    "xref": "60",
+    "from": "Rect(556.7999877929688, 24.5, 581.2999877929688, 49.32000732421875)",
+    "uri": "https://www.linkedin.com/in/josue-isai-salazar-castro-47600a227/",
+    "id": "fitz-L1"
+   }
+  ],
+  "fonts": [
+   [
+    "44",
+    "ttf",
+    "Type0",
+    "Calibri Bold",
+    "kbSubENz",
+    "Identity-H"
+   ],
+   [
+    "40",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "kbTagENz",
+    "Identity-H"
+   ],
+   [
+    "44",
+    "ttf",
+    "Type0",
+    "Calibri Bold",
+    "kbDotENz0",
+    "Identity-H"
+   ],
+   [
+    "40",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "kbTxtENz0",
+    "Identity-H"
+   ],
+   [
+    "44",
+    "ttf",
+    "Type0",
+    "Calibri Bold",
+    "kbDotENz1",
+    "Identity-H"
+   ],
+   [
+    "40",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "kbTxtENz1",
+    "Identity-H"
+   ],
+   [
+    "5",
+    "ttf",
+    "TrueType",
+    "BCDEEE+Calibri-Bold",
+    "F1",
+    "WinAnsiEncoding"
+   ],
+   [
+    "9",
+    "ttf",
+    "TrueType",
+    "BCDFEE+Calibri",
+    "F2",
+    "WinAnsiEncoding"
+   ],
+   [
+    "13",
+    "ttf",
+    "Type0",
+    "BCDGEE+Calibri-Bold",
+    "F3",
+    "Identity-H"
+   ],
+   [
+    "20",
+    "ttf",
+    "Type0",
+    "BCDHEE+Calibri",
+    "F4",
+    "Identity-H"
+   ],
+   [
+    "26",
+    "n/a",
+    "TrueType",
+    "ArialMT",
+    "F5",
+    "WinAnsiEncoding"
+   ],
+   [
+    "29",
+    "ttf",
+    "Type0",
+    "Calibri Bold",
+    "calibrib",
+    "Identity-H"
+   ],
+   [
+    "35",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "calibri",
+    "Identity-H"
+   ],
+   [
+    "40",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "descEN60x",
+    "Identity-H"
+   ],
+   [
+    "40",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "descEN58x",
+    "Identity-H"
+   ],
+   [
+    "40",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "descEN55x",
+    "Identity-H"
+   ],
+   [
+    "40",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "descEN62x",
+    "Identity-H"
+   ],
+   [
+    "44",
+    "ttf",
+    "Type0",
+    "Calibri Bold",
+    "scopeBENv2",
+    "Identity-H"
+   ],
+   [
+    "40",
+    "ttf",
+    "Type0",
+    "Calibri Regular",
+    "scopeRENv2",
+    "Identity-H"
+   ]
+  ]
+ }
+}
