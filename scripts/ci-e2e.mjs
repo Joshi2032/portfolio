@@ -116,6 +116,30 @@ for (const device of viewports) {
     }
     await page.context().close();
   });
+
+  await test(`${device.name}: #project cold load opens the dialog and closing cleans the hash`, async () => {
+    const page = await newPage(device);
+    await page.goto(base + "#ensamble", { waitUntil: "load" });
+    await projectOpen(page).waitFor();
+    assert.match(await page.locator("#project-float-title").textContent(), /Piezas reales|Real parts/);
+    assert.equal(new URL(page.url()).hash, "", "project hash left in the URL after opening");
+    await page.keyboard.press("Escape");
+    await projectOpen(page).waitFor({ state: "detached" });
+    assert.equal(new URL(page.url()).hash, "", "project hash left in the URL after closing");
+
+    // Arriving via an in-page anchor then opening/closing must not strand the hash either.
+    await page.goto(base, { waitUntil: "load" });
+    await page.locator('a[href="#ensamble"]').first().click();
+    assert.equal(new URL(page.url()).hash, "#ensamble");
+    const card = page.locator("#ensamble");
+    await card.scrollIntoViewIfNeeded();
+    await card.click();
+    await projectOpen(page).waitFor();
+    await page.keyboard.press("Escape");
+    await projectOpen(page).waitFor({ state: "detached" });
+    assert.equal(new URL(page.url()).hash, "", "project hash stranded after closing from an anchor");
+    await page.context().close();
+  });
 }
 
 await test("mobile: menu is an opaque full-height overlay; Back, Esc and links close it", async () => {

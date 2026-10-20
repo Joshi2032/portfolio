@@ -45,6 +45,15 @@ function shareUrl(lang, id) {
   return `${SITE}${lang === "en" ? "en/" : ""}proyectos/${id}/`;
 }
 
+// A project id in the hash (e.g. #ensamble) is a deep link, not a section anchor:
+// strip it from the URL once the dialog takes over or closes, keeping ?lang etc.
+function cleanProjectHash() {
+  const hash = window.location.hash.slice(1);
+  if (!projectOrder.some((project) => project.id === hash)) return;
+  const url = new URL(window.location.href);
+  history.replaceState(history.state, "", `${url.pathname}${url.search}`);
+}
+
 function ShareButton({ lang, id, title, intro }) {
   const [copied, setCopied] = useState(false);
   const canShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
@@ -207,6 +216,9 @@ export function Projects() {
     function onPop() {
       if (ignorePops.current > 0) {
         ignorePops.current -= 1;
+        // Own close (button/Esc/backdrop): depth already dropped to 0 in
+        // onDialogClose, so a leftover project hash can be cleaned here.
+        if (depth.current === 0) cleanProjectHash();
         return;
       }
       depth.current = Math.max(0, depth.current - 1);
@@ -217,6 +229,7 @@ export function Projects() {
         if (target instanceof HTMLElement) target.focus({ preventScroll: true });
       } else if (current) {
         setOpenId(null);
+        cleanProjectHash();
         const target = returnFocus.current;
         if (target instanceof HTMLElement) target.focus({ preventScroll: true });
       }
@@ -227,14 +240,19 @@ export function Projects() {
 
   useEffect(() => {
     const id = new URLSearchParams(window.location.search).get("p");
-    if (!id) return;
+    const hashId = window.location.hash.slice(1);
+    // Cold load with a project hash (#ensamble) behaves like ?p=ensamble:
+    // open the dialog instead of leaving the page at the top.
+    const fromHash = !id && projectOrder.some((project) => project.id === hashId);
+    const target = id || (fromHash ? hashId : null);
+    if (!target) return;
     const url = new URL(window.location.href);
     url.searchParams.delete("p");
-    history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
-    const project = projectOrder.find((item) => item.id === id);
+    history.replaceState(null, "", `${url.pathname}${url.search}${fromHash ? "" : url.hash}`);
+    const project = projectOrder.find((item) => item.id === target);
     if (!project) return;
-    returnFocus.current = document.getElementById(id);
-    openProjectLayer(id);
+    returnFocus.current = document.getElementById(target);
+    openProjectLayer(target);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
