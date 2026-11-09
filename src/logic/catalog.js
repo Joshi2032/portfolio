@@ -19,7 +19,7 @@ export const filters = [
 
 export const stackGroups = [
   { id: "core", items: ["Flutter", "Supabase", "C#", "Angular", "MySQL", "SAP BTP / HANA"] },
-  { id: "ai", items: ["Gemma 4 12B (QLoRA)", "Qwen", "YOLO26n", "TFLite"] },
+  { id: "ai", items: ["Gemma 4 12B (QLoRA)", "Qwen", "YOLO11n", "TFLite", "ONNX"] },
   { id: "backend", items: ["NestJS", "Prisma", "PostgreSQL"] },
   { id: "base", variant: "base", items: ["TypeScript", "React", "Vue", "Java", "Spring Boot", "Node", "PHP"] },
   { id: "cloud", items: ["Firebase", "AWS", "Docker", "Git"] },

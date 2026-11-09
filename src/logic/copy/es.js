@@ -38,7 +38,7 @@ export const es = {
   metrics: [
     { value: "40–80 h → 10 min", label: "Tiempo para preparar cada respuesta", project: "ensamble", projectName: "Agente de ensamble 3D" },
     { value: "2 sem → 8 h", label: "Respuesta a propuestas del turno nocturno", project: "kaizen", projectName: "Flujo digital de propuestas Kaizen" },
-    { value: "97.65% mAP50", label: "Detector de madurez en el teléfono", project: "aguacate", projectName: "Detector del estado del aguacate" },
+    { value: "54.5% → 77.3%", label: "Aguacates encontrados en fotos reales de celular", project: "aguacate", projectName: "Detector del estado del aguacate" },
   ],
   about: {
     title: "Perfil",
@@ -207,27 +207,64 @@ export const es = {
       tags: ["SAP BTP", "SAP HANA", "Nube"],
     },
     aguacate: {
-      card: { summary: "Detecta con YOLO26n si un aguacate es Hass u otro y si está inmaduro, maduro o podrido.", stat: "97.65%", label: "mAP50 sobre 1 585 imágenes de validación" },
-      plate: "Hass, otro y madurez",
-      plateItems: ["Cámara en vivo", "Seguimiento por fruto", "Historial guardado"],
+      card: { summary: "Tres modelos YOLO11n en cascada encuentran cada aguacate y dicen si es Hass o Fuerte y si está verde, maduro o pasado.", stat: "77.3%", label: "aguacates encontrados en fotos reales de celular (antes 54.5%)" },
+      plate: "Hass o Fuerte, y su madurez",
+      plateItems: ["En vivo, foto y escaneo 360°", "Cámaras RTSP, Raspberry Pi y Jetson", "Historial en Supabase"],
       category: "Agro",
-      meta: "App Flutter",
-      when: "Funciona sin red",
+      meta: "App Flutter y cámaras",
+      when: "Versión 3.1",
       title: "Detector del estado del aguacate",
-      lede: "Detecta con YOLO26n si hay aguacate, si es Hass u otro, y si está inmaduro, maduro o podrido.",
+      lede: "Tres modelos YOLO11n en cascada encuentran cada aguacate y dicen si es Hass o Fuerte y si está verde, maduro o pasado. Corre en una app Flutter y en cámaras fijas, y las dos guardan en Supabase.",
       points: [
-        "Cuatro pantallas: foto de un frame, cámara en vivo con identificadores estables (ByteTrack), historial en SQLite en el teléfono y una pantalla de ciencia.",
-        "También se puede elegir una imagen de la galería. El modelo TFLite (9.7 MB) va dentro de la app.",
-        "El modelo del teléfono es un ajuste fino del entrenamiento solo con Hass. Las clases con fotos son Hass y «otro», a partir de Mendeley, Agro227, Fruits-360 y Fruits-30.",
-        "La app puede nombrar Hass, Méndez, Fuerte, Criollo, Reed, Bacon y otro.",
+        "La app tiene detección en vivo, análisis de foto, historial y un escaneo 360°: se gira el aguacate, la vuelta se cierra sola y la variedad y la madurez salen del voto de todas las capturas.",
+        "Un detector YOLO11n (640 px) y dos clasificadores YOLO11n-cls (224 px) sobre el recorte. Van por separado porque las fotos de variedad y las de madurez vienen de datasets distintos.",
+        "Revisé cada fuente a ojo: varios datasets de «variedades» eran fotos de hojas. Ahora sirven como negativos, y la v3 ya no marca ninguna hoja como aguacate (la v2 marcaba el 13%).",
+        "El clasificador de variedad llegó a 100% en la primera época porque aprendía el fondo de estudio. Lo corregí pegando cada fruto sobre fondos aleatorios, iguales para las dos clases.",
+        "El mismo pipeline corre en webcams, cámaras IP (RTSP), Raspberry Pi y Jetson con TFLite u ONNX, y escribe en la misma base que la app.",
       ],
-      tags: ["Flutter", "YOLO26n", "TFLite"],
-      resultStat: "97.65%",
-      result: "mAP50 en validación del YOLO26n final; en el mismo conjunto, mAP50-95 es 96.88%.",
+      tags: ["Flutter", "YOLO11n", "TFLite", "ONNX", "Supabase"],
+      resultStat: "77.3%",
+      result: "de los aguacates encontrados en un set de fotos reales que nunca entró al entrenamiento (54.5% con la v3). La caja cubre en promedio el 86.9% del fruto.",
+      flow: {
+        title: "Cómo funciona",
+        aria: "Flujo del detector de aguacate",
+        paths: [
+          {
+            label: "Celular",
+            steps: [
+              { title: "En vivo, foto o 360°", note: "La cámara entrega unos 12 frames por segundo" },
+              { title: "Detector YOLO11n", note: "Encuentra cada aguacate en la imagen" },
+            ],
+          },
+          {
+            label: "Cámaras fijas",
+            steps: [
+              { title: "RTSP, Pi o Jetson", note: "Mismo preprocesado que la app" },
+              { title: "Mismo detector", note: "En TFLite u ONNX" },
+            ],
+          },
+        ],
+        engine: { title: "Dos clasificadores", note: "Variedad: Hass o Fuerte · madurez: verde, maduro o pasado" },
+        output: { title: "Supabase", note: "Sesiones, detecciones e imágenes en un historial común" },
+        stat: "54.5% → 77.3%",
+        statNote: "aguacates encontrados en fotos reales, de la v3 a la v3.1",
+      },
       shots: [
         {
-          src: "proyectos/aguacate/camara.png",
-          alt: "Cámara en vivo del detector, con cajas de madurez",
+          src: "proyectos/aguacate/en-vivo.webp",
+          alt: "Detección en vivo: tres aguacates en el árbol, con la variedad y la madurez sobre cada caja",
+        },
+        {
+          src: "proyectos/aguacate/escaneo-360.webp",
+          alt: "Resultado del escaneo 360°: vuelta completa, 9 capturas, Hass y maduro",
+        },
+        {
+          src: "proyectos/aguacate/foto.webp",
+          alt: "Análisis de una foto: un aguacate Hass maduro, guardado en el historial",
+        },
+        {
+          src: "proyectos/aguacate/historial.webp",
+          alt: "Historial de sesiones en vivo, fotos, escaneos y cámaras",
         },
       ],
     },

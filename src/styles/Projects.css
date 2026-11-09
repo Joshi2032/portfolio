@@ -749,3 +749,60 @@
 
 .card-tags { margin-top: 0.85rem; }
 
+
+/* Flow drawing: nodes appear in order (--i) when the diagram scrolls into view.
+   Only with motion allowed; otherwise the diagram is shown as is. */
+@media (prefers-reduced-motion: no-preference) {
+  .pm-draw {
+    --pm-step: 150ms;
+  }
+  .pm-draw .pm-card,
+  .pm-draw .pm-loop,
+  .pm-draw .pm-stat,
+  .pm-draw .pm-compare-item {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition-delay: calc(var(--i, 0) * var(--pm-step));
+  }
+  /* Arrows draw in the direction they point. */
+  .pm-draw .pm-arrow {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transition: opacity 0.2s ease, clip-path 0.4s ease-out;
+    transition-delay: calc(var(--i, 0) * var(--pm-step));
+  }
+  .pm-draw:not(.is-drawn) .pm-step .pm-arrow {
+    clip-path: inset(0 0 100% 0);
+  }
+  /* The line where both paths merge. */
+  .pm-draw .pm-paths {
+    border-color: transparent;
+    transition: border-color 0.4s ease;
+    transition-delay: calc(var(--i, 0) * var(--pm-step));
+  }
+  .pm-draw.is-drawn .pm-card,
+  .pm-draw.is-drawn .pm-loop,
+  .pm-draw.is-drawn .pm-stat,
+  .pm-draw.is-drawn .pm-compare-item {
+    opacity: 1;
+    transform: none;
+  }
+  .pm-draw.is-drawn .pm-arrow {
+    opacity: 1;
+    clip-path: inset(0);
+  }
+  .pm-draw.is-drawn .pm-paths {
+    border-color: rgba(var(--accent-rgb), 0.45);
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (max-width: 900px) {
+  .pm-draw:not(.is-drawn) .pm-graph .pm-arrow {
+    clip-path: inset(0 0 100% 0);
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (min-width: 1200px) {
+  .pm-draw:not(.is-drawn) .pm-step .pm-arrow {
+    clip-path: inset(0 100% 0 0);
+  }
+}

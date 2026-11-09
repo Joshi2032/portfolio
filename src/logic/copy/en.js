@@ -38,7 +38,7 @@ export const en = {
   metrics: [
     { value: "40–80 h → 10 min", label: "Time to prepare each response", project: "ensamble", projectName: "3D assembly agent" },
     { value: "2 wk → 8 h", label: "Night-shift proposal response", project: "kaizen", projectName: "Digital Kaizen proposal workflow" },
-    { value: "97.65% mAP50", label: "Ripeness detector on the phone", project: "aguacate", projectName: "Avocado state detector" },
+    { value: "54.5% → 77.3%", label: "Avocados found in real phone photos", project: "aguacate", projectName: "Avocado state detector" },
   ],
   about: {
     title: "Profile",
@@ -207,27 +207,64 @@ export const en = {
       tags: ["SAP BTP", "SAP HANA", "Cloud"],
     },
     aguacate: {
-      card: { summary: "Uses YOLO26n to tell whether an avocado is Hass or other and whether it is unripe, ripe, or rotten.", stat: "97.65%", label: "mAP50 on 1,585 validation images" },
-      plate: "Hass, other, and ripeness",
-      plateItems: ["Live camera", "Per-fruit tracking", "Saved history"],
+      card: { summary: "Three cascaded YOLO11n models find each avocado and tell whether it is Hass or Fuerte and whether it is unripe, ripe, or overripe.", stat: "77.3%", label: "of avocados found in real phone photos (up from 54.5%)" },
+      plate: "Hass or Fuerte, and ripeness",
+      plateItems: ["Live, photo, and 360° scan", "RTSP cameras, Raspberry Pi, and Jetson", "History in Supabase"],
       category: "Agriculture",
-      meta: "Flutter app",
-      when: "Works offline",
+      meta: "Flutter app and cameras",
+      when: "Version 3.1",
       title: "Avocado state detector",
-      lede: "Uses YOLO26n to detect whether an avocado is present, whether it is Hass or other, and whether it is unripe, ripe, or rotten.",
+      lede: "Three cascaded YOLO11n models find each avocado and tell whether it is Hass or Fuerte and whether it is unripe, ripe, or overripe. It runs in a Flutter app and on fixed cameras, and both save to Supabase.",
       points: [
-        "Four screens: a one-frame photo, a live camera with stable IDs (ByteTrack), a history stored in SQLite on the phone, and a Science screen.",
-        "A picture can also be picked from the gallery. The TFLite model (9.7 MB) ships inside the app.",
-        "The phone model is a fine-tune of the Hass-only training run. The classes with photos are Hass and “other”, drawn from Mendeley, Agro227, Fruits-360, and Fruits-30.",
-        "The app can name Hass, Méndez, Fuerte, Criollo, Reed, Bacon, and other.",
+        "The app has live detection, photo analysis, history, and a 360° scan: you turn the avocado, the scan closes itself after a full turn, and variety and ripeness come from a vote across every capture.",
+        "A YOLO11n detector (640 px) and two YOLO11n-cls classifiers (224 px) on the crop. They are separate because the variety photos and the ripeness photos come from different datasets.",
+        "I reviewed every source by eye: several “variety” datasets were photos of leaves. They now serve as negatives, and v3 no longer marks any leaf as an avocado (v2 marked 13%).",
+        "The variety classifier hit 100% in its first epoch because it was learning the studio background. I fixed it by pasting each fruit onto random backgrounds, the same for both classes.",
+        "The same pipeline runs on webcams, IP cameras (RTSP), Raspberry Pi, and Jetson with TFLite or ONNX, and writes to the same database as the app.",
       ],
-      tags: ["Flutter", "YOLO26n", "TFLite"],
-      resultStat: "97.65%",
-      result: "mAP50 on validation for the final YOLO26n; on the same set, mAP50-95 is 96.88%.",
+      tags: ["Flutter", "YOLO11n", "TFLite", "ONNX", "Supabase"],
+      resultStat: "77.3%",
+      result: "of avocados found in a set of real photos that never entered training (54.5% with v3). On average the box covers 86.9% of the fruit.",
+      flow: {
+        title: "How it works",
+        aria: "Avocado detector flow",
+        paths: [
+          {
+            label: "Phone",
+            steps: [
+              { title: "Live, photo, or 360°", note: "The camera delivers about 12 frames per second" },
+              { title: "YOLO11n detector", note: "Finds each avocado in the image" },
+            ],
+          },
+          {
+            label: "Fixed cameras",
+            steps: [
+              { title: "RTSP, Pi, or Jetson", note: "Same preprocessing as the app" },
+              { title: "Same detector", note: "In TFLite or ONNX" },
+            ],
+          },
+        ],
+        engine: { title: "Two classifiers", note: "Variety: Hass or Fuerte · ripeness: unripe, ripe, or overripe" },
+        output: { title: "Supabase", note: "Sessions, detections, and images in one shared history" },
+        stat: "54.5% → 77.3%",
+        statNote: "avocados found in real photos, from v3 to v3.1",
+      },
       shots: [
         {
-          src: "proyectos/aguacate/camara.png",
-          alt: "Live camera of the detector, with ripeness boxes",
+          src: "proyectos/aguacate/en-vivo.webp",
+          alt: "Live detection: three avocados on the tree, with variety and ripeness over each box",
+        },
+        {
+          src: "proyectos/aguacate/escaneo-360.webp",
+          alt: "360° scan result: full turn, 9 captures, Hass and ripe",
+        },
+        {
+          src: "proyectos/aguacate/foto.webp",
+          alt: "Photo analysis: one ripe Hass avocado, saved to history",
+        },
+        {
+          src: "proyectos/aguacate/historial.webp",
+          alt: "History of live, photo, scan, and camera sessions",
         },
       ],
     },
