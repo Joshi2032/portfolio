@@ -34,6 +34,6 @@ img{position:absolute;right:72px;top:64px;width:330px;height:500px;object-fit:co
 <img src="${b64("proyectos/aguacate/en-vivo.webp","image/webp")}">
 </body></html>`, { waitUntil: "load" });
   await page.evaluate(() => document.fonts.ready);
-  await page.screenshot({ path: `portfolio/public/og/aguacate-${lang}.png` });
+  await page.screenshot({ path: `public/og/aguacate-${lang}.png` });
 }
 await browser.close();
