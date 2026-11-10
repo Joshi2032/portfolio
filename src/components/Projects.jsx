@@ -5,6 +5,7 @@ import { useLanguage } from "../logic/LanguageContext.jsx";
 import { copyText } from "../logic/clipboard.js";
 import { trackEvent } from "../logic/analytics.js";
 import { showWithoutScroll } from "./showWithoutScroll.js";
+import { LazyLottie } from "./LazyLottie.jsx";
 import { countUp, flip, growFrom, observeReveal } from "../logic/motion.js";
 import { NOTE_IDS, loadExtras, loadViewer, needsExtras, prefetchProject } from "./projectChunks.js";
 import "../styles/Projects.css";
@@ -140,6 +141,64 @@ function ProjectShots({ details, onOpen }) {
         </button>
       ))}
     </figure>
+  );
+}
+
+// Decorative bubbles band on each card. It shows a still frame and only plays
+// while its own card is hovered or focused, so at most one moves at a time
+// (and none with reduced motion). The player loads when the card nears the viewport.
+function CardLottie() {
+  const ref = useRef(null);
+  const [near, setNear] = useState(false);
+  const [player, setPlayer] = useState(null);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || typeof IntersectionObserver === "undefined") return undefined;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setNear(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: "200px 0px" });
+    observer.observe(node);
+    const cell = node.closest(".cell");
+    if (!cell) return () => observer.disconnect();
+    const on = () => setActive(true);
+    const off = () => setActive(false);
+    cell.addEventListener("pointerenter", on);
+    cell.addEventListener("pointerleave", off);
+    cell.addEventListener("focusin", on);
+    cell.addEventListener("focusout", off);
+    return () => {
+      observer.disconnect();
+      cell.removeEventListener("pointerenter", on);
+      cell.removeEventListener("pointerleave", off);
+      cell.removeEventListener("focusin", on);
+      cell.removeEventListener("focusout", off);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!player) return;
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (active && !reduce) player.play();
+    else player.pause();
+  }, [player, active]);
+
+  return (
+    <span className="cell-lottie" aria-hidden="true" ref={ref}>
+      {near ? (
+        <LazyLottie
+          src={`${import.meta.env.BASE_URL}lottie/abstract.lottie`}
+          loop
+          autoplay={false}
+          dotLottieRefCallback={setPlayer}
+          layout={{ fit: "cover", align: [0.5, 0.5] }}
+        />
+      ) : null}
+    </span>
   );
 }
 
@@ -439,6 +498,7 @@ export function Projects() {
                   </span>
                 ) : null}
                 <span className="cell-body">
+                  {details.preview ? null : <CardLottie />}
                   <span className="cell-top">
                     <span className="cell-num">{project.index}</span>
                     <span className="cell-cat">{details.category}</span>

@@ -83,6 +83,17 @@
 .is-grid .cell:has(.cell-media.is-wide) .cell-body { flex: 0 0 auto; }
 .cell-media.is-wide { flex: 1 1 14rem; min-height: 12rem; border-left: 0; border-top: 1px solid var(--line); }
 
+/* Bubbles band at the top of each card (still until the card is hovered or focused). */
+.cell-lottie {
+  display: block; flex: none; height: 4.5rem; overflow: hidden; pointer-events: none;
+  margin: calc(-1 * clamp(1.1rem, 1.6vw, 1.5rem)) calc(-1 * clamp(1.1rem, 1.6vw, 1.5rem)) 0.35rem;
+  border-bottom: 1px solid var(--line);
+  transition: opacity 0.4s ease;
+}
+.cell-lottie canvas { display: block; width: 100%; height: 100%; }
+.cell:not(:hover):not(:focus-visible) .cell-lottie { opacity: 0.85; }
+.is-index .cell-lottie { display: none; }
+
 /* Flow sketch inside a big cell; it draws itself when the cell appears. */
 .mini-flow { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; padding: 1.2rem; }
 .mini-node { padding: 0.6rem 0.8rem; border: 1px solid var(--line); border-radius: 12px; background: var(--bg-2); font-family: var(--serif); font-size: 1rem; }
