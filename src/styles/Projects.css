@@ -139,6 +139,7 @@
 
 .plate-ia { --mark: #e2ff57; background: #1a220f; }
 .plate-food { --mark: #ffb088; background: #271910; }
+.plate-lim { --mark: #ff8a95; background: #26121a; }
 .plate-ops { --mark: #8fd4ff; background: #121c22; }
 .plate-plant { --mark: #ffb0a4; background: #241716; }
 .plate-cloud { --mark: #c8c6ff; background: #171923; }
@@ -407,6 +408,18 @@
   border: 1px solid var(--line);
   border-radius: 16px;
   background: #0c0e0b;
+}
+
+/* Landscape (desktop) screenshots: wider cells and a fixed 16:10 frame. */
+.shots.is-wide {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+.shots.is-wide img {
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: left top;
 }
 
 .shot-zoom {

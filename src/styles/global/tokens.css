@@ -54,6 +54,7 @@
 :root[data-theme="light"] .plate-ia { --mark: #4c5a04; background: #e8f1c2; }
 :root[data-theme="light"] .project-float .plate-ia { background: linear-gradient(165deg, rgba(214, 240, 63, 0.5), transparent 52%), #e3eec0; }
 :root[data-theme="light"] .plate-food { --mark: #9a4416; background: #f6e2d4; }
+:root[data-theme="light"] .plate-lim { --mark: #a3203a; background: #f6dde2; }
 :root[data-theme="light"] .plate-ops { --mark: #1f5c82; background: #dceaf3; }
 :root[data-theme="light"] .plate-plant { --mark: #973a2e; background: #f4dfda; }
 :root[data-theme="light"] .plate-cloud { --mark: #4a46a0; background: #e5e3f5; }

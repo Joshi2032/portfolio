@@ -154,7 +154,7 @@ function ProjectAlongside({ work }) {
 
 function ProjectShots({ details, onOpen }) {
   return (
-    <figure className="shots">
+    <figure className={details.shotsWide ? "shots is-wide" : "shots"}>
       {details.shots.map((shot) => (
         <button
           key={shot.src}

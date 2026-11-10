@@ -14,7 +14,7 @@ export function loadViewer() {
 }
 
 // Projects with an expandable note (see src/notes/index.js).
-export const NOTE_IDS = ["aguacate", "kaizen", "tienda"];
+export const NOTE_IDS = ["lim", "aguacate", "kaizen", "tienda"];
 
 export function needsExtras(id, details) {
   return Boolean(details?.flow) || NOTE_IDS.includes(id);
