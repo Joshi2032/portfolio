@@ -105,7 +105,7 @@ for (const device of viewports) {
 
   await test(`${device.name}: ?p= deep links open the dialog and Back shows home`, async () => {
     const page = await newPage(device);
-    for (const [path, title] of [["?p=aguacate", /Hass/], ["?p=kaizen&lang=en", /Kaizen/], ["proyectos/tienda/", /ventas|sales/i]]) {
+    for (const [path, title] of [["?p=aguacate", /aguacate/i], ["?p=kaizen&lang=en", /Kaizen/], ["proyectos/tienda/", /tienda|store/i]]) {
       await page.goto(base + path, { waitUntil: "load" });
       await projectOpen(page).waitFor();
       assert.match(await page.locator("#project-float-title").textContent(), title);
@@ -121,7 +121,7 @@ for (const device of viewports) {
     const page = await newPage(device);
     await page.goto(base + "#ensamble", { waitUntil: "load" });
     await projectOpen(page).waitFor();
-    assert.match(await page.locator("#project-float-title").textContent(), /Piezas reales|Real parts/);
+    assert.match(await page.locator("#project-float-title").textContent(), /ensamble|assembly/i);
     assert.equal(new URL(page.url()).hash, "", "project hash left in the URL after opening");
     await page.keyboard.press("Escape");
     await projectOpen(page).waitFor({ state: "detached" });

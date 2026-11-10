@@ -1,43 +1,14 @@
-import { useEffect, useRef, useState } from "react";
-import { LazyLottie } from "./LazyLottie.jsx";
+import { Fragment, useEffect, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import { filters, matchesFilter, projectOrder } from "../logic/catalog.js";
 import { useLanguage } from "../logic/LanguageContext.jsx";
 import { copyText } from "../logic/clipboard.js";
 import { trackEvent } from "../logic/analytics.js";
-import { useMediaQuery } from "../responsive/useMediaQuery.js";
 import { showWithoutScroll } from "./showWithoutScroll.js";
+import { countUp, flip, growFrom, observeReveal } from "../logic/motion.js";
 import { NOTE_IDS, loadExtras, loadViewer, needsExtras, prefetchProject } from "./projectChunks.js";
 import "../styles/Projects.css";
-
-function PlateMotion({ reduceMotion }) {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (reduceMotion || !node || typeof IntersectionObserver === "undefined") return undefined;
-    const observer = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
-      { rootMargin: "120px 0px" },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [reduceMotion]);
-
-  if (reduceMotion) return null;
-  return (
-    <div className="plate-lottie" aria-hidden="true" ref={ref}>
-      {visible ? (
-        <LazyLottie
-          src={`${import.meta.env.BASE_URL}lottie/abstract.lottie`}
-          loop
-          autoplay
-          layout={{ fit: "cover", align: [0.5, 0.5] }}
-        />
-      ) : null}
-    </div>
-  );
-}
+import "../styles/Mosaic.css";
 
 const SITE = "https://joshi2032.github.io/portfolio/";
 
@@ -105,7 +76,7 @@ function ProjectKind({ details, intro }) {
   );
 }
 
-function ProjectFacts({ details }) {
+function ProjectFacts({ details, withResult = true }) {
   return (
     <>
       {details.points?.length ? (
@@ -121,7 +92,7 @@ function ProjectFacts({ details }) {
       <ul className="tags">
         {details.tags.map((tag) => <li key={tag}>{tag}</li>)}
       </ul>
-      {details.result ? (
+      {!withResult ? null : details.result ? (
         <p className="result">
           <strong>{details.resultStat}</strong>
           <span>{details.result}</span>
@@ -172,9 +143,69 @@ function ProjectShots({ details, onOpen }) {
   );
 }
 
+function MiniFlow({ flow }) {
+  const nodes = flow.steps
+    ? flow.steps.map((step) => step.title)
+    : [...flow.paths[0].steps.map((step) => step.title), flow.engine.title, flow.output.title];
+  return (
+    <span className="mini-flow" aria-hidden="true">
+      {nodes.map((title, i) => (
+        <Fragment key={title}>
+          {i ? <span className="mini-arrow" style={{ "--d": i * 2 - 1 }}>↓</span> : null}
+          <span className={i === nodes.length - 1 ? "mini-node is-end" : "mini-node"} style={{ "--d": i * 2 }}>{title}</span>
+        </Fragment>
+      ))}
+    </span>
+  );
+}
+
+// Visual for the big mosaic cells: the first screenshot, or the flow when there is none.
+function CardMedia({ details }) {
+  const first = details.shots?.[0];
+  if (first) {
+    return (
+      <span className={`cell-media ${details.shotsWide ? "is-wide" : "is-portrait"}`}>
+        <img src={`${import.meta.env.BASE_URL}${first.src}`} alt="" loading="lazy" decoding="async" />
+      </span>
+    );
+  }
+  if (details.flow) return <span className="cell-media is-flow"><MiniFlow flow={details.flow} /></span>;
+  return null;
+}
+
+// A live-looking preview of a website the project built: the full page scrolls
+// inside a browser frame, next to the phone view. Both open in the image viewer.
+function SitePreview({ details, intro, onOpen }) {
+  const [desktop, phone] = details.shots;
+  return (
+    <section className="site-preview" aria-label={intro.sitePreview}>
+      <h4>{intro.sitePreview}</h4>
+      <p className="site-preview-hint">{intro.sitePreviewHint}</p>
+      <div className="site-preview-grid">
+        <button type="button" className="shot browser" aria-label={desktop.alt} onClick={(event) => onOpen(desktop, event)}>
+          <span className="browser-bar" aria-hidden="true"><i /><i /><i /><span>{details.site.label}</span></span>
+          <span className="browser-view">
+            <img src={`${import.meta.env.BASE_URL}${details.preview.src}`} alt="" loading="lazy" decoding="async" />
+          </span>
+        </button>
+        {phone ? (
+          <button type="button" className="shot phone" aria-label={phone.alt} onClick={(event) => onOpen(phone, event)}>
+            <img src={`${import.meta.env.BASE_URL}${phone.src}`} alt="" loading="lazy" decoding="async" />
+          </button>
+        ) : null}
+      </div>
+      <a className="btn btn-ghost site-preview-open" href={details.site.href} target="_blank" rel="noreferrer">
+        {intro.openSite} {details.site.label} ↗
+      </a>
+    </section>
+  );
+}
+
 export function Projects() {
   const { lang, text } = useLanguage();
   const [filter, setFilter] = useState("all");
+  const [view, setView] = useState("grid");
+  const gridRef = useRef(null);
   const [announcement, setAnnouncement] = useState("");
   const [openId, setOpenId] = useState(null);
   const previous = useRef({ filter, lang });
@@ -190,7 +221,6 @@ export function Projects() {
   const layers = useRef({ openId: null, shotIndex: null });
   const [shotIndex, setShotIndex] = useState(null);
   const intro = text.projectsIntro;
-  const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const visibleCount = projectOrder.filter((project) => matchesFilter(project.tags, filter)).length;
   const openProject = projectOrder.find((project) => project.id === openId) ?? null;
   const openDetails = openProject ? text.projects[openProject.id] : null;
@@ -211,6 +241,8 @@ export function Projects() {
     ignorePops.current += 1;
     history.go(-count);
   }
+
+  useEffect(() => observeReveal(gridRef.current, (cell) => countUp(cell.querySelector("[data-count]"))), []);
 
   useEffect(() => {
     function onPop() {
@@ -266,6 +298,8 @@ export function Projects() {
     const dialog = dialogRef.current;
     if (!dialog || !openId) return undefined;
     showWithoutScroll(dialog);
+    growFrom(dialog, returnFocus.current);
+    dialog.querySelectorAll("[data-count]").forEach(countUp);
     return () => {
       if (!dialog.open) return;
       closingFromCleanup.current = true;
@@ -328,6 +362,18 @@ export function Projects() {
     if (event.target === event.currentTarget) event.currentTarget.close();
   }
 
+  function changeFilter(id) {
+    if (id === filter) return;
+    flip(gridRef.current, () => flushSync(() => setFilter(id)));
+  }
+
+  function changeView(next) {
+    if (next === view) return;
+    flip(gridRef.current, () => flushSync(() => setView(next)));
+  }
+
+  const gridClass = `mosaic ${view === "index" ? "is-index" : "is-grid"}${filter !== "all" ? " is-filtered" : ""}`;
+
   return (
     <section className="section" id="proyectos">
       <div className="wrap">
@@ -336,76 +382,84 @@ export function Projects() {
           <h2>{intro.title}</h2>
           <p className="section-lead">{intro.lead}</p>
         </header>
-        <div className="filters" role="group" aria-label={intro.filters.aria}>
-          {filters.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              aria-pressed={filter === item.id}
-              onClick={() => setFilter(item.id)}
-            >
-              {intro.filters[item.id]}
-            </button>
-          ))}
+        <div className="mosaic-controls">
+          <div className="filters" role="group" aria-label={intro.filters.aria}>
+            {filters.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                aria-pressed={filter === item.id}
+                onClick={() => changeFilter(item.id)}
+              >
+                {intro.filters[item.id]}
+              </button>
+            ))}
+          </div>
+          <div className="view-switch" role="group" aria-label={intro.viewLabel}>
+            {["grid", "index"].map((id) => (
+              <button key={id} type="button" aria-pressed={view === id} onClick={() => changeView(id)}>
+                {id === "grid" ? (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="3" y="3" width="10" height="10" rx="2" /><rect x="15" y="3" width="6" height="10" rx="2" /><rect x="3" y="15" width="6" height="6" rx="2" /><rect x="11" y="15" width="10" height="6" rx="2" /></svg>
+                ) : (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+                )}
+                {id === "grid" ? intro.viewMosaic : intro.viewIndex}
+              </button>
+            ))}
+          </div>
         </div>
         <p className="sr-only" aria-live="polite">{announcement}</p>
-        <div className="project-list">
-        {projectOrder.map((project) => {
-          const details = text.projects[project.id];
-          if (!matchesFilter(project.tags, filter)) return null;
-          const opens = true;
-          const kind = details.client ? "is-client" : "is-own";
-          return (
-            <article
-              className={`project ${kind}${opens ? " has-shots" : ""}`}
-              id={project.id}
-              key={project.id}
-              {...(opens
-                ? {
-                    role: "button",
-                    tabIndex: 0,
-                    "aria-expanded": openId === project.id,
-                    onClick: (event) => openCard(project.id, event),
-                    onKeyDown: (event) => onShotKeyDown(event, project.id),
-                    onPointerEnter: () => prefetchProject(project.id, details),
-                    onFocus: () => prefetchProject(project.id, details),
-                    onTouchStart: () => prefetchProject(project.id, details),
-                  }
-                : {})}
-            >
-              <div className={`plate ${project.plate}`}>
-                <PlateMotion reduceMotion={reduceMotion} />
-                <div>
-                  <p className="plate-index">{project.index}</p>
-                  <p className="plate-kicker">{details.title}</p>
-                </div>
-                <div>
-                  <ul className="plate-list">
-                    {details.plateItems.map((item) => <li key={item}>{item}</li>)}
+        <div className={gridClass} ref={gridRef}>
+          {projectOrder.map((project, order) => {
+            const details = text.projects[project.id];
+            const size = project.size || "s";
+            return (
+              <article
+                className={`cell size-${size} ${project.plate}`}
+                id={project.id}
+                key={project.id}
+                hidden={!matchesFilter(project.tags, filter) || undefined}
+                style={{ "--i": order }}
+                role="button"
+                tabIndex={0}
+                aria-haspopup="dialog"
+                aria-expanded={openId === project.id}
+                aria-labelledby={`${project.id}-title`}
+                onClick={(event) => openCard(project.id, event)}
+                onKeyDown={(event) => onShotKeyDown(event, project.id)}
+                onPointerEnter={() => prefetchProject(project.id, details)}
+                onFocus={() => prefetchProject(project.id, details)}
+                onTouchStart={() => prefetchProject(project.id, details)}
+              >
+                <span className="cell-plate" aria-hidden="true" />
+                {!project.size && details.preview ? (
+                  <span className="cell-thumb">
+                    <img src={`${import.meta.env.BASE_URL}${details.shots[0].src}`} alt="" loading="lazy" decoding="async" />
+                    <span className="cell-url">{details.site.label}</span>
+                  </span>
+                ) : null}
+                <span className="cell-body">
+                  <span className="cell-top">
+                    <span className="cell-num">{project.index}</span>
+                    <span className="cell-cat">{details.category}</span>
+                  </span>
+                  <h3 id={`${project.id}-title`}>{details.title}</h3>
+                  <span className="cell-tag">{details.plate} · {details.client || details.meta}</span>
+                  <span className="cell-when">{details.when}</span>
+                  <span className="cell-summary">{details.card.summary}</span>
+                  <span className="cell-stat">
+                    <strong data-count={details.card.stat}><span className="stat-real">{details.card.stat}</span></strong>
+                    <span>{details.card.label}</span>
+                  </span>
+                  <ul className="tags">
+                    {details.tags.slice(0, 4).map((tag) => <li key={tag}>{tag}</li>)}
                   </ul>
-                  <p className="plate-org">{details.category}</p>
-                </div>
-              </div>
-              <div className="project-body">
-                <ProjectKind details={details} intro={intro} />
-                <div className="project-top">
-                  <p>{details.meta}</p>
-                  <p className="when">{details.when}</p>
-                </div>
-                <h3 id={`${project.id}-title`}>{details.plate}</h3>
-                <p className="card-summary">{details.card.summary}</p>
-                <p className="card-result">
-                  <strong>{details.card.stat}</strong>
-                  <span>{details.card.label}</span>
-                </p>
-                <ul className="tags card-tags">
-                  {details.tags.slice(0, 4).map((tag) => <li key={tag}>{tag}</li>)}
-                </ul>
-                <p className="shots-hint">{intro.showShots}</p>
-              </div>
-            </article>
-          );
-        })}
+                </span>
+                {project.size ? <CardMedia details={details} /> : null}
+                <span className="cell-cta" aria-hidden="true">{intro.showShots} →</span>
+              </article>
+            );
+          })}
         </div>
       </div>
       {openProject && openDetails ? (
@@ -427,38 +481,47 @@ export function Projects() {
           >
             ×
           </button>
-          <div className="project-float-layout">
-            <div className={`plate ${openProject.plate}`}>
-              <PlateMotion reduceMotion={reduceMotion} />
-              <div>
-                <p className="plate-index">{openProject.index}</p>
-                <p className="plate-kicker">{openDetails.title}</p>
-              </div>
-              <div>
-                <ul className="plate-list">
-                  {openDetails.plateItems.map((item) => <li key={item}>{item}</li>)}
-                </ul>
-                <p className="plate-org">{openDetails.category}</p>
-              </div>
-            </div>
-            <div className="project-body">
-              <ProjectKind details={openDetails} intro={intro} />
-              <div className="project-top">
-                <p>{openDetails.meta}</p>
-              </div>
-              <div className={openDetails.alongside ? "float-works" : undefined}>
-                <div>
-                  <h3 id="project-float-title">{openDetails.plate}</h3>
-                  <p>{openDetails.lede}</p>
-                  <ProjectFacts details={openDetails} />
-                  {openDetails.shots?.length ? <ProjectShots details={openDetails} onOpen={openShot} /> : null}
-                </div>
-                {openDetails.alongside ? <ProjectAlongside work={openDetails.alongside} /> : null}
-              </div>
-              <div className="project-float-actions">
+          <div className="pf-scroll">
+            <header className={`pf-hero ${openProject.plate}`}>
+              <span className="cell-plate" aria-hidden="true" />
+              <p className="cell-top">
+                <span className="cell-num">{openProject.index}</span>
+                <span className="cell-cat">{openDetails.category}</span>
+              </p>
+              <h3 id="project-float-title">{openDetails.title}</h3>
+              <p className="pf-tagline">{openDetails.plate}</p>
+              <div className="pf-meta">
+                <ProjectKind details={openDetails} intro={intro} />
+                <span>{openDetails.meta}</span>
+                <span>{openDetails.when}</span>
                 <ShareButton lang={lang} id={openProject.id} title={openDetails.title} intro={intro} />
               </div>
+            </header>
+            <div className="pf-main">
+              <div className="pf-cols">
+                <div className="pf-text">
+                  <p className="pf-lede">{openDetails.lede}</p>
+                  <ProjectFacts details={openDetails} withResult={false} />
+                </div>
+                <aside className="pf-side">
+                  <p className="result pf-result">
+                    <strong data-count={openDetails.resultStat || openDetails.card.stat}>
+                      <span className="stat-real">{openDetails.resultStat || openDetails.card.stat}</span>
+                    </strong>
+                    <span>{openDetails.result || openDetails.card.label}</span>
+                  </p>
+                  <div className="pf-summary">
+                    <h4>{intro.summary}</h4>
+                    <ul>
+                      {openDetails.plateItems.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  </div>
+                </aside>
+              </div>
+              {openDetails.preview ? <SitePreview details={openDetails} intro={intro} onOpen={openShot} /> : null}
               {openDetails.flow && extrasMod ? <extrasMod.ProjectFlow flow={openDetails.flow} /> : null}
+              {openDetails.shots?.length && !openDetails.preview ? <ProjectShots details={openDetails} onOpen={openShot} /> : null}
+              {openDetails.alongside ? <ProjectAlongside work={openDetails.alongside} /> : null}
               {NOTE_IDS.includes(openProject.id) && extrasMod ? <extrasMod.TechNote id={openProject.id} lang={lang} /> : null}
             </div>
           </div>

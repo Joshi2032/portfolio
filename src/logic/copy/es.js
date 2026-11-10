@@ -65,6 +65,13 @@ export const es = {
     nextShot: "Siguiente",
     forCompany: "Empresa",
     ownWork: "Proyecto propio",
+    viewLabel: "Vista de proyectos",
+    viewMosaic: "Mosaico",
+    viewIndex: "Índice",
+    summary: "En resumen",
+    sitePreview: "Vista previa del sitio",
+    sitePreviewHint: "Se desplaza sola; pasa el cursor para pausarla o tócala para verla completa.",
+    openSite: "Abrir",
   },
   projects: {
     ensamble: {
@@ -211,6 +218,17 @@ export const es = {
       ],
       tags: ["Flutter", "GPS", "IA", "Escritorio"],
       site: { href: "https://www.maxifumdelbajio.com/", label: "maxifumdelbajio.com" },
+      preview: { src: "proyectos/maxifum/sitio-completo.webp", alt: "Página de inicio completa de maxifumdelbajio.com: control de plagas, servicios, catálogo y contacto" },
+      shots: [
+        {
+          src: "proyectos/maxifum/inicio.webp",
+          alt: "Inicio de maxifumdelbajio.com en escritorio: manejo integral para el control de plagas",
+        },
+        {
+          src: "proyectos/maxifum/celular.webp",
+          alt: "maxifumdelbajio.com en el celular",
+        },
+      ],
     },
     kaizen: {
       card: { summary: "Digitalicé el proceso de propuestas de mejora Kaizen de la planta: del papel a un sistema web con aprobación por rol.", stat: "20 → 5 min", label: "para llenar una propuesta" },

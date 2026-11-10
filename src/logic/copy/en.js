@@ -65,6 +65,13 @@ export const en = {
     nextShot: "Next",
     forCompany: "Company",
     ownWork: "Own project",
+    viewLabel: "Project view",
+    viewMosaic: "Mosaic",
+    viewIndex: "Index",
+    summary: "At a glance",
+    sitePreview: "Site preview",
+    sitePreviewHint: "It scrolls on its own; hover to pause it or tap to see it in full.",
+    openSite: "Open",
   },
   projects: {
     ensamble: {
@@ -211,6 +218,17 @@ export const en = {
       ],
       tags: ["Flutter", "GPS", "AI", "Desktop"],
       site: { href: "https://www.maxifumdelbajio.com/", label: "maxifumdelbajio.com" },
+      preview: { src: "proyectos/maxifum/sitio-completo.webp", alt: "Full home page of maxifumdelbajio.com: pest control, services, catalogue, and contact" },
+      shots: [
+        {
+          src: "proyectos/maxifum/inicio.webp",
+          alt: "maxifumdelbajio.com home page on desktop: integrated pest control",
+        },
+        {
+          src: "proyectos/maxifum/celular.webp",
+          alt: "maxifumdelbajio.com on a phone",
+        },
+      ],
     },
     kaizen: {
       card: { summary: "I digitized the plant's Kaizen improvement-proposal process: from paper to a web system with role-based approval.", stat: "20 → 5 min", label: "to fill in a proposal" },
