@@ -45,8 +45,8 @@
 .project.has-shots { cursor: pointer; }
 
 .project-float {
-  width: min(1480px, calc(100vw - clamp(1.5rem, 4vw, 4rem)));
-  max-height: min(92vh, 980px);
+  width: min(140rem, calc(100vw - clamp(1.5rem, 4vw, 4rem)));
+  max-height: min(94vh, 72rem);
   margin: auto;
   padding: 0;
   overflow: hidden;
@@ -63,7 +63,7 @@
 .project-float-layout {
   display: grid;
   grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
-  max-height: min(92vh, 980px);
+  max-height: min(94vh, 72rem);
   overflow: auto;
 }
 
@@ -818,4 +818,15 @@
   .pm-draw:not(.is-drawn) .pm-step .pm-arrow {
     clip-path: inset(0 100% 0 0);
   }
+}
+
+/* Wide monitors: two project cards per row instead of one very wide strip. */
+@media (min-width: 1600px) {
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
+    align-items: stretch;
+  }
+  .project { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); }
 }

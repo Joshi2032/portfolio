@@ -8,6 +8,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Large monitors: grow the base size gradually (16px at 1600px wide, 22px at 2560px),
+   so the whole layout scales instead of leaving empty margins. */
+@media (min-width: 1600px) {
+  html { font-size: clamp(16px, calc(16px + (100vw - 1600px) * 0.00625), 22px); }
+}
+
 body {
   margin: 0;
   font-family: var(--sans);
@@ -103,7 +109,7 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .wrap {
-  width: min(1720px, calc(100% - clamp(1.5rem, 3.5vw, 3rem)));
+  width: min(110rem, calc(100% - clamp(1.5rem, 3.5vw, 3rem)));
   margin-inline: auto;
 }
 

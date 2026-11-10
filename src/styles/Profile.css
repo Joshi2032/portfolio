@@ -53,3 +53,17 @@
 
 
 
+
+/* Wide screens: title on the left, the profile sentence beside it. */
+@media (min-width: 1200px) {
+  .profile-layout .section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    grid-template-areas: "num lead" "title lead";
+    column-gap: clamp(2rem, 5vw, 6rem);
+    align-items: end;
+  }
+  .profile-layout .num { grid-area: num; }
+  .profile-layout h2 { grid-area: title; }
+  .profile-layout .section-lead { grid-area: lead; margin-top: 0; font-size: clamp(1.15rem, 1.4vw, 1.5rem); line-height: 1.5; }
+}
