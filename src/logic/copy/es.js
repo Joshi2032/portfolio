@@ -382,7 +382,7 @@ export const es = {
       shots: [
         {
           src: "proyectos/tienda/cobrar-carrito.png",
-          alt: "Cobro en el móvil: carrito, total y cuatro formas de pago",
+          alt: "Cobro en el móvil: carrito con tarifa, lote y descuento, total y cuatro formas de pago",
         },
         {
           src: "proyectos/tienda/ticket.png",
@@ -390,15 +390,15 @@ export const es = {
         },
         {
           src: "proyectos/tienda/productos.png",
-          alt: "Catálogo de productos en escritorio con el menú de módulos",
+          alt: "Catálogo de productos en escritorio con existencia, costo, precio y margen",
         },
         {
           src: "proyectos/tienda/reportes.png",
-          alt: "Reportes de utilidad, margen y formas de pago",
+          alt: "Reportes: ventas, utilidad bruta, mermas, utilidad por categoría y más vendidos",
         },
         {
-          src: "proyectos/tienda/ventas-escritorio.png",
-          alt: "Entradas de mercancía en escritorio con el menú de módulos",
+          src: "proyectos/tienda/inicio.png",
+          alt: "Inicio en escritorio: ventas del día y de la semana, fiado por cobrar y lo que requiere atención",
         },
       ],
     },

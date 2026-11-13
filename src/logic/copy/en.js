@@ -382,7 +382,7 @@ export const en = {
       shots: [
         {
           src: "proyectos/tienda/cobrar-carrito.png",
-          alt: "Phone checkout with cart, total, and four payment methods",
+          alt: "Phone checkout: cart with price tier, batch, and discount, total, and four payment methods",
         },
         {
           src: "proyectos/tienda/ticket.png",
@@ -390,15 +390,15 @@ export const en = {
         },
         {
           src: "proyectos/tienda/productos.png",
-          alt: "Desktop product catalog with the full module menu",
+          alt: "Desktop product catalog with stock, cost, price, and margin",
         },
         {
           src: "proyectos/tienda/reportes.png",
-          alt: "Profit, margin, and payment-method reports",
+          alt: "Reports: sales, gross profit, shrinkage, profit by category, and best sellers",
         },
         {
-          src: "proyectos/tienda/ventas-escritorio.png",
-          alt: "Desktop stock receipts with the full module menu",
+          src: "proyectos/tienda/inicio.png",
+          alt: "Desktop home: today's and this week's sales, credit owed, and what needs attention",
         },
       ],
     },
